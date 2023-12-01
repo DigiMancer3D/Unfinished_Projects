@@ -1,0 +1,3240 @@
+<!DOCTYPE HTML>
+ <html manifest="Terminalof3D.appcache"  onclick="refocus()">
+<head>
+<title>3D's Terminal
+ </title>
+ <base href="/">
+ <meta name="version" content="0.0.0002">
+ <meta name="subject" content="Terminal Metaverse">
+ <meta property="og:site_name" content="3D's Terminal">
+  <meta property="og:url" content="Terminal.3D">
+  <meta name="url" content="IPFS://Terminal.3D" >
+  <meta name="og:title" content="3D's Terminal" />
+  <meta name="og:url" content="Terminal.3D" />
+  <meta name="og:site_name" content="Terminal.3D" />
+  <meta name="identifier-URL" content="IPFS://Terminal.3D">
+  <meta name="Classification" content="Metaverse">
+  <meta name="keywords" content="Metaverse, Terminal, JS, HTMl, Fun, NFT, Crypto, dev" />
+ <meta name="viewport" content="width=device-width, initial-scale=1">
+ <meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-TerminalBy3D" content="black-translucent">
+<meta name="description" />
+<meta name="author" content="3Douglas, https://twitter.com/z0m8i3d">
+ </meta>
+ <link rel="icon" href="https://ipfs.io/ipfs/QmS1m2Z9A3m7iobYxi7T8zNqNvfQfTh66fty9iwn8yyoKG">
+</head>
+<style>
+
+html {
+width: device-width;
+height: 100%;
+overflow-x: hidden;
+  scroll-behavior: smooth;
+  word-break: break-word;
+  cursor: context-menu;
+  padding: 7%;
+  overflow-y:hidden;
+margin-left:-6vw;  
+}
+
+#upbtn:active {
+cursor: -webkit-none; 
+cursor: none;
+}
+
+.darkmode {
+border-color: black;
+background-color: rgb(0,0,0);
+color: rgb(0,129,6,0.78);
+text-shadow: 0px -3px 16px rgb(194,246,158,0.49);
+line-height: 15px;
+
+}
+
+.exad {
+text-decoration: none;
+background-color: none;
+}
+
+.darkmode2 {
+border-color: rgb(0,0,0,0);
+background-color: rgb(0,0,0,0);
+color: rgb(0,129,6,0.78);
+text-shadow: -0.5px -1.5px 13px rgb(49,255,45,0.38);
+placeholder-color: rgb(3,149,8,0.8);
+line-height: 10px;
+width: 70vw;
+}
+
+
+.bordered2 {  <!--border for special inputs-->
+border-color: rgb(0,129,6,0.78);
+border-style: solid;
+border-left-width:0px;
+border-right-width:2px;
+border-bottom-width:3.5px;
+border-top-width:0.05px;
+}
+
+.transparented{
+background-color:rgba(0,0,0,0);
+color:rgba(0,0,0,0);
+}
+
+.splitleft {
+width: 46vw;
+padding: 1.5% 0.5%;
+margin: 0.5% 0.1%;
+}
+.splitright {
+width: 46vw;
+padding: 1.5% 0.5%;
+margin: 0.5% 0.1%;
+}
+
+
+#inp {
+outline: none !important;
+caret-color: transparent !important;
+pre: wrap;
+white-space: pre;
+role: textbox;
+padding: 1px 6px;
+display: block;
+top:2%;
+autocomplete: off;
+}
+
+
+#upbtn {
+  display: none;
+  position: fixed;
+  bottom: 15px;
+  right: 20px;
+  z-index: 99;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  padding: 10px;
+  border-radius: 41px;
+}
+
+.ureverb:hover {
+text-decoration: underline;
+cursor: pointer;
+text-shadow: -0.5px -3px 9px rgb(174,246,128,0.39);
+}
+
+.output::-webkit-scrollbar {
+display:none;
+}
+.output{
+-ms-overflow-style:none;
+scrollbar-width: none;
+}
+
+@media screen and (min-width: 8.5in) { <!-- desktop -->
+html {
+font-size: 20px;
+}
+
+#upbtn {
+  font-size: 18px;
+}
+
+
+
+.footer {
+position: absolute;
+bottom: 0;
+align: center;
+text-align: center;
+padding: 0vw 3vw;
+}
+
+
+}
+
+@media screen and (min-width: 6in) and (max-width: 8.5in) { <!--tablet/landscape-->
+html {
+font-size: 18px;
+}
+
+#upbtn {
+  font-size: 15px;
+}
+
+
+.footer {
+position: absolute;
+bottom: 0;
+font-size: 80%;
+}
+
+
+}
+
+
+@media screen and (max-width: 6in) { <!--mobile-->
+html {
+font-size: 12px;
+}
+
+#upbtn {
+  font-size: 12px;
+}
+
+.footer {
+position: absolute;
+bottom: 0;
+}
+
+
+}
+
+
+</style>
+
+<body id="body" class="darkmode" onload="onstart();" style="top:1;left:0;"  onclick="refocus()" autocomplete="off" autocomplete="false">
+<span id='overhead' style='width:98%;align:center;left:0;' align='center'>
+<div align='center' id='topname' ><h1>Terminal.3D</h1></div><hr class='darkmode'>
+</span>
+<div id="screen" style="position:relative;" onclick="refocus()"></br></br>
+<table align='center' style="align:center;width:99vw;position:fixed;scroll:hidden;">
+<tr>
+<td>
+<span id="output" class='output' style="width:49vw;float:left;text-align:left;overflow-y:auto;position:fixed;min-height:15vh;max-height:65vh;" >
+</span>
+</td>
+<td>
+<span id="explorer" class='output' style="width:47.5vw;float:right;text-align:left;overflow-y:auto;position:fixed;min-height:15vh;max-height:65vh;"></span>
+</td>
+</tr>
+</table>
+<table>
+<tr>
+<td>
+<span id="urelay" style="line-height:10px;position:absolute;width:5vw;float:none;top:2%;"><span>
+</td>
+<td autocomplete="off">
+<input id="inp" class="darkmode2" style="position:absolute;top:2%;autocomplete:off;" role="textbox" onfocus="window.scrollTo(0,0);" autocomplete="off" autocomplete="false" autocomplete="none"/>
+</td>
+</table>
+<table>
+<tr>
+<div id="consol" style='width:48vw;left:1vw;padding:2vw;min-height:1vh;max-height:70vh;position:fixed;top:125px;left:47.5%;scroll:auto;overflow-y:auto;margin:1.5vw;'></div>
+</div>
+</tr>
+</table>
+<span id='directory' class='out' style='display:none' onclick="refocus()" ></span>
+<span id="pot" style="display:none;" class="dir" onclick="refocus()" name="potfile"></span>
+<span id="files" style="display:none;" class="dir" onclick="refocus()"></span>
+<span id="awkprof" class="out" style="display:none"></span>
+<span id="theme" style="display:none;">darkmode</span>
+<span id="temp0" class="out" style="display:none;"></span>
+<span id="temp1" class="out" style="display:none;"></span>
+<span id="toggle" name="toggle" style='display:none'>0</span>
+<span id="adverts" name="adverts" style='display:none'></span>
+<span id="dcstore" name="dcstore" style='display:none'></span> <!--used to pull prev answer output for saving or ans in dc -->
+</body>
+<script>
+
+var metahandle = ["Blinky light line.", "Blinky light line on.", "Blinky light line off.", "Blinky light line gone.", "Blinky light lies.", "Bllinky light picks your battles.", "Blinky light wants to fight you.", "Blinky light line...", "Blinky light...", "Blinky...", "_  ", "  "];
+
+var metalen = metahandle.length - 1;
+var datainp = document.getElementById('inp');
+
+var jim1 = 0;
+var jimmed = 0;
+var jimmy = 0;
+var jimmod = 1;
+var serialnum;
+var r,g,b,opa,opa2;
+var r2, g2, b2, wid1, wid2, hei1, hei2, dis1, dis2, opa3, opa4;
+var dcid = '';
+var millr0 = Math.floor(Math.random()*(9-1)+1);
+var millr1 = Math.floor(Math.random()*9);
+var millr = millr0+""+millr1;
+
+var currenttheme = document.getElementById('theme').innerHTML;
+
+var clickclose = "document.getElementById(&#039;consol&#039;).innerHTML=&#039;&#039;;document.getElementById(&#039;consol&#039;).className=&#039;&#039;;";
+
+document.getElementById('adverts').innerHTML = "<span id='exad' name='3Dthe.Ninja' class='exad'  onclick='document.getElementById(&#039;3dad&#039;).style.display=&#039;block&#039;;document.getElementById(&#039;consol&#039;).className=document.getElementById(&#039;theme&#039;).innerHTML;document.getElementById(&#039;consol&#039;).innerHTML=this.innerHTML;this.style.display=&#039;none&#039;;' ><span id='3dad' style='display:none'><h1 align='center' style='align:center;line-height:1.35;'>3Douglas's LSW (Letin Stark Webbplatte)</h1><hr></br><a href='https://3Dthe.Ninja' target='_blank' rel='noopener noreferrer' title='(---&#062;) 3D is The [dot] Ninja, see what he has cookin up today!' class='exad darkmode' onclick='document.getElementById(&#039;3dad&#039;).style=&#039;none&#039;'>&nbsp;&nbsp; &nbsp;&nbsp; 3Douglas is a unique individual with privacy and user control at mind of his digital builds. Visit his website, IPFS hosted, <u style='cursor:pointer;'>3Dthe.<i>Ninja</i></u> and see what 3D has cookin for you to try, buy or listen to!</br><hr></a></br><span id='closebtn' onclick='"+clickclose+"' style='float:right;align:right;bottom:0;'>[<u><b>X</b></u>]</span></span><i></br>3Dthe.Ninja <sup title='...Paid Advert'><sub><sub><b><sub style='font-size:110%;'>Ad</sub></b></sub></sub></sup></i></span>";
+
+
+var qadlist = document.querySelectorAll('.exad');
+
+
+if(currenttheme = "darkmode"){
+//text color
+r = "0";
+g = "129";
+b = "6";
+opa = "0.78";
+opa2 = "0.85";
+
+//text-shadow
+r2 = "194";
+g2 = "246";
+b2 = "158";
+opa3 = "0.89";
+opa4 = "0.80";
+}
+
+
+wid1 = "0px";
+wid2 = "0.1px";
+hei1 = "-3px";
+hei2 = "-2.8px";
+dis1 = "16px";
+dis2 = "18px";
+
+
+
+onstart();
+
+var datain = document.getElementById("inp");
+
+datain.addEventListener("keypress", function(event) {
+ if (event.key === "Enter") {
+  event.preventDefault();
+  document.getElementById('consol').innerHTML = '';
+document.getElementById('consol').className = "transparented";
+
+  
+  var ifprof = document.getElementById('profiles');
+ 
+  if(ifprof.innerHTML.search(/profilename/) >= 1){ recforprofile(); }
+  readdata();
+  }
+});
+ clickclose = "document.getElementById(&#039;consol&#039;).innerHTML=&#039;&#039;;document.getElementById(&#039;consol&#039;).className=&#039;&#039;;";
+
+
+
+
+var fulldirlist = ["<span id='fdlfiles' onclick='hotswapdir1()' >"+"files"+"</span>", "<span id='fdlpot' onclick='hotswapdir2()' >"+"pot"+"</span>", "<span id='fdloutput' onclick='hotswapdir3()' >"+"output"+"</span>"];  
+
+
+  var timers2 = new Date();
+  var years2 = timers2.getFullYear();
+  var uuu = window.location.href;
+  //const mil = timer.getTime();
+  //document.getElementById('temp1').innerHTML = mil;
+  var mills = timers2.getTime();
+  var millslen = mills.toString().length;
+  var pipo = [];
+  var gido = [];
+  var nums = mills.toString().match(/\d/g);
+  do{
+  var undermills = Number(millslen - 1);
+  var undermills2 = Number(millslen - 2);
+  var pipcheck = Number(nums[undermills]) + Number(nums[undermills2]);
+   if(pipcheck.toString().length > 1){
+   gido += (Number(pipcheck.toString()[0]) + Number(pipcheck.toString()[1]));
+   }
+   else{
+   gido += (pipcheck);
+   }
+   pipo = gido.toString().split('').reverse().join('');
+  millslen = millslen - 2;
+ }
+  while(millslen > 1);
+  if(millslen === 1){
+  pipo = nums[0]+""+pipo;
+  serialnum = pipo;
+  }
+  //document.getElementById('temp1').innerHTML = serialnum;
+  clickclose = "document.getElementById(&#039;consol&#039;).innerHTML=&#039;&#039;;document.getElementById(&#039;consol&#039;).className=&#039;&#039;;";
+  
+  
+ document.getElementById('files').innerHTML =  "<span id='profiles' name='un-Profiled' class='out' style='max-width:20vw;min-width:5vw;float:right;align:right;' ></br></br></br></span>" + "<span id='Copyright' name='Copyright' onclick='document.getElementById(&#034;consol&#034;).innerHTML=document.getElementsByName(&#034;Copyright&#034;)[1].innerHTML;document.getElementById(&#034;consol&#034;).className=document.getElementById(&#034;theme&#034;).innerHTML;'><b><span title='Copyright' >Terminal.3D is a trademark of 3Douglas <q>3D</q> Pihl</br>3D's Terminal is a trademark of 3Douglas <q>3D</q> Pihl</br></br>Trademarked (TM) " + years2 + "</br>Decentralized Hosting by IPFS, "+uuu+"</br></br>``3D's Terminal'' may be reporduced and distributed in whole or in part, subject to the following conditions:</br></br></span><i><ul title='Permission Notice'><li>The copyright notice above and this permission notice must be preserved complete on all complete or partial copies.</li></br><li>Any translation of dirivative work of <q>3D's Terminal</q> must be preserved with both the original versoin of this copyright and this permission notice and the translated version on all complete or partial copies.</li></br><li>If you distribute <q>3D's Terminal</q> in part, instructions for obtaining the complete version of <q>3D's Terminal</q> must be included, and a means for obtaning a complete version provided.</li></br><li>Small portions may be reproduced as illustrations for reviews or <u>quotes</u> in other works without this permission notice if proper citation is given.</li></br><li>If you print and distribute <q>3D's Terminal</q>, you may not refer to it as the ``Official Printed Version''.</li></br><li>The GNU Genral Public License referenced below may be reproduced under the conditions given within it.</li></br><li>Streaming and video recordings are allowed of this copyright and this permission notice if verbal reading is accompanied with the recording.</li></ul></i></br></br><span title='Exceptions, License, Verify & Clauses'>Exceptions to these rules maynot be granted even for academic purposes.</br></br>All source code in <q>3D's Terminal</q> is placed under the General Public License. Refer to the original <a href='' rel='noreferrer noopener' target='_blank' title='IPFS://CID' style='text-decoration:none;cursor:pointer;'>IPFS://CID</a> for reference.</br></br>The author is not liable for any damages, direct or indirect, resulting from the use of information provided in this document.</span></b></br></br><span id='closebtn' onclick='"+clickclose+"' style='float:right;align:right;bottom:0;'>[<u><b>X</b></u>]</span></br></br></br></span>" +"<span id='awkversion' name='JSAKver' class='version' onclick='document.getElementById(&#034;consol&#034;).innerHTML=document.getElementsByName(&#034;JSAKver&#034;)[1].innerHTML;document.getElementById(&#034;consol&#034;).className=document.getElementById(&#034;theme&#034;).innerHTML;'><i>Javascript AWK (JSAK)</i> <sup><sub>[ <b>0.1.00</b>]</sub></sup></br></br><span id='closebtn' onclick='"+clickclose+"' style='float:right;align:right;bottom:0;'>[<u><b>X</b></u>]</span></br></br></br></span><span id='"+serialnum+"' name='suID' class='serialio' onclick='document.getElementById(&#034;consol&#034;).innerHTML=&#034;<i><b>S</b>erial <b>U</b>ser <b>ID</b>endtity</i> #<u>&#034; + document.getElementsByName(&#034;suID&#034;)[1].innerHTML + &#034;</u>&#034;;document.getElementById(&#034;consol&#034;).className=document.getElementById(&#034;theme&#034;).innerHTML;document.getElementById(&#034;closebtn&#034;).style.display=&#034;inline-block&#034;;'>"+serialnum+"</br><span id='closebtn' onclick='"+clickclose+"' style='float:right;align:right;bottom:0;'>[<u><b>X</b></u>]</span></br></br></br></span>" + "<span id='awkoptions' name='JSAKoptions' onclick='document.getElementById(&#034;consol&#034;).innerHTML=document.getElementsByName(&#034;JSAKoptions&#034;)[1].innerHTML;document.getElementById(&#034;consol&#034;).className=document.getElementById(&#034;theme&#034;).innerHTML;'>List of <i>JS <b>AWK</b> Options</i>:<ul><li title='program-file' onclick='document.getElementById(&#039;inp&#039;).value=&#039;awk -f &#039;;'>-f <b>[FILE]</b></li></br><li title='program-file' onclick='document.getElementById(&#039;inp&#039;).value=&#039;awk --file &#039;;'>--file <b>[FILE]</b></li></br><li title='fs' onclick='document.getElementById(&#039;inp&#039;).value=&#039;awk -F &#039;;'>-F <b>[FILE]</b></li></br><li title='fs' onclick='document.getElementById(&#039;inp&#039;).value=&#039;awk --field-separator &#039;;'>--field-separator <b>[FILE]</b></li></br><li title='var=val'><span onclick='document.getElementById(&#039;inp&#039;).value=&#039;awk -v &#039;;'>-v <b>[VALUE]</b> <i onclick='document.getElementById(&#039;inp&#039;).value=&#039; @&#039;;'>@<b>[FILE]</b></i></li></br><li title='var=val'><span  onclick='document.getElementById(&#039;inp&#039;).value=&#039;awk --assign &#039;;'>--assign <b>[VALUE]</b></span> <i onclick='document.getElementById(&#039;inp&#039;).value=&#039; @&#039;;'>@<b>[FILE]</b></i></li></br><li title='URI accepted characters' onclick='document.getElementById(&#039;inp&#039;).value=&#039;awk -b &#039;;'>-b <b>[FILE]</b></li></br><li title='URI accepted characters' onclick='document.getElementById(&#039;inp&#039;).value=&#039;awk --characters-as-bytes &#039;;'>--characters-as-bytes <b>[FILE]</b></li></br><li title='copyright' onclick='document.getElementById(&#039;inp&#039;).value=&#039;awk -C &#039;;'>-C <b>[FILE]</b></li></br><li title='copyright' onclick='document.getElementById(&#039;inp&#039;).value=&#039;awk --copyright &#039;;'>--copyright <b>[FILE]</b></li></br><li title='personal input droplogs' onclick='document.getElementById(&#039;inp&#039;).value=&#039;awk -g &#039;;'>-g </li></br><li title='help' onclick='document.getElementById(&#039;inp&#039;).value=&#039;awk -h &#039;;'>-h </li></br><li title='help' onclick='document.getElementById(&#039;inp&#039;).value=&#039;awk --help &#039;;'>--help </li></br><li title='profile' onclick='document.getElementById(&#039;inp&#039;).value=&#039;awk -p &#039;;'>-p <b>::optionals: [NAME] <span  onclick='document.getElementById(&#039;inp&#039;).value=&#039; --sign-out &#039;;'>--sign-out</span> || <span  onclick='document.getElementById(&#039;inp&#039;).value=&#039; -so &#039;;'>-so</span> :end::</b></li></br><li title='profile' onclick='document.getElementById(&#039;inp&#039;).value=&#039;awk --profile &#039;;'>--profile <b>::optionals: [NAME] <span  onclick='document.getElementById(&#039;inp&#039;).value=&#039;awk --sign-out &#039;;'>--sign-out</span> || <span  onclick='document.getElementById(&#039;inp&#039;).value=&#039;awk -so &#039;;'>-so</span> :end::</b></li></br><li title='awk version' onclick='document.getElementById(&#039;inp&#039;).value=&#039;awk -V &#039;;'>-V </li></br><li title='awk version' onclick='document.getElementById(&#039;inp&#039;).value=&#039;awk --version &#039;;'>--version </li></br><li title='change directory' onclick='document.getElementById(&#039;inp&#039;).value=&#039;awk -dir &#039;;'>-dir <b>[DIRECTORY]</b></li></ul></br>&nbsp; No compounded string input, i.e.: <i>awk -f --field-separator <b>[FILE]</b></i>, at this time <b>except for <i>-h</i> or <i>--help</i>, i.e.: <i onclick='document.getElementById(&#039;inp&#039;).value=&#039;awk -f --help&#039;;'>awk -f --help</i> or <i onclick='document.getElementById(&#039;inp&#039;).value=&#039;awk -h --file&#039;;'>awk -h --file</i></b>.&nbsp; </br><span id='closebtn' onclick='"+clickclose+"' style='float:right;align:right;bottom:0;'>[<u><b>X</b></u>]</br></br></span><hr style='visibility:hidden'></br></br></span></br></br></br><hr style='visibility:hidden'></span>" + "<span id='cmpoptions' name='JACPoptions'  onclick='document.getElementById(&#034;consol&#034;).innerHTML=document.getElementsByName(&#034;JACPoptions&#034;)[1].innerHTML;document.getElementById(&#034;consol&#034;).className=document.getElementById(&#034;theme&#034;).innerHTML;'>List of <i>JS <b>CMP</b> Options</i>:<ul><li title='print bytes'><span onclick='document.getElementById(&#039;inp&#039;).value=&#039;cmp -b &#039;;'>-b <b>[FILE1]</b></span> <b onclick='document.getElementById(&#039;inp&#039;).value+=&#039; @&#039;;'>@[FILE2]</b> <b>[NUM1]</b> <b onclick='document.getElementById(&#039;inp&#039;).value+=&#039; -i &#039;;'>-i</b> <b>[NUM2]</b></li></br><li title='print bytes'><span onclick='document.getElementById(&#039;inp&#039;).value=&#039;cmp --print-bytes &#039;;'>--print-bytes <b>[FILE1]</b></span> <b onclick='document.getElementById(&#039;inp&#039;).value+=&#039; @&#039;;'>@[FILE2]</b> <b>[NUM1]</b> <b onclick='document.getElementById(&#039;inp&#039;).value+=&#039; -i &#039;;'>-i</b> <b>[NUM2]</b></li></ul></br>&nbsp; To learn more try <i>-h</i> or <i>--help</i>, i.e.: <i onclick='document.getElementById(&#039;inp&#039;).value=&#039;cmp -b --help&#039;;'>cmp -b --help</i> or <i onclick='document.getElementById(&#039;inp&#039;).value=&#039;cmp --print-bytes -h#039;;'>cmp --print-bytes -h</i>.&nbsp; </br><span id='closebtn' onclick='"+clickclose+"' style='float:right;align:right;bottom:0;'>[<u><b>X</b></u>]</span></br></br></br></span>" + "<span id='dateoptions' name='JSDToptions' onclick='document.getElementById(&#034;consol&#034;).innerHTML=document.getElementsByName(&#034;JSDToptions&#034;)[1].innerHTML;document.getElementById(&#034;consol&#034;).className=document.getElementById(&#034;theme&#034;).innerHTML;'>List of <i>JS <b>DATE</b> Options</i>:<ul><li title='print date'><span onclick='document.getElementById(&#039;inp&#039;).value=&#039;date -d &#039;;'>-d  <span>[YEAR]</span> <span>[MONTH]</span> <span>[DAY]</span> <span>[HOUR]</span> <span>[MINUTE]</span> <span>[SECONDS]</span> <span>[MILLASECONDS]</span></span></li></br><li title='print date'><span onclick='document.getElementById(&#039;inp&#039;).value=&#039;date --date &#039;;'>--date  <span>[YEAR]</span> <span>[MONTH]</span> <span>[DAY]</span> <span>[HOUR]</span> <span>[MINUTE]</span> <span>[SECONDS]</span> <span>[MILLASECONDS]</span></span></li></br><li title='print UTC'><span onclick='document.getElementById(&#039;inp&#039;).value=&#039;date --UTC &#039;;'>--UTC  <span>[YEAR]</span> <span>[MONTH]</span> <span>[DAY]</span> <span>[HOUR]</span> <span>[MINUTE]</span> <span>[SECONDS]</span> <span>[MILLASECONDS]</span></span></li></br><li title='print GMT'><span onclick='document.getElementById(&#039;inp&#039;).value=&#039;date --GMT &#039;;'>--GMT  <span>[YEAR]</span> <span>[MONTH]</span> <span>[DAY]</span> <span>[HOUR]</span> <span>[MINUTE]</span> <span>[SECONDS]</span> <span>[MILLASECONDS]</span></span></li></br><li title='find Time Zone'><span onclick='document.getElementById(&#039;inp&#039;).value=&#039;date -t &#039;;'>-t </span></li></ul></br>&nbsp; To learn more try <i>-h</i> or <i>--help</i>, i.e.: <i onclick='document.getElementById(&#039;inp&#039;).value=&#039;date -d --help&#039;;'>cmp -d --help</i> or <i onclick='document.getElementById(&#039;inp&#039;).value=&#039;date --date -h#039;;'>date --date -h</i>.&nbsp; </br><span id='closebtn' onclick='"+clickclose+"' style='float:right;align:right;bottom:0;'>[<u><b>X</b></u>]</span></br></br></br></span>" + "<span id='dcoptions' name='JSDCoptions' onclick='document.getElementById(&#034;consol&#034;).innerHTML=document.getElementsByName(&#034;JSDCoptions&#034;)[1].innerHTML;document.getElementById(&#034;consol&#034;).className=document.getElementById(&#034;theme&#034;).innerHTML;'>List of <i>JS <b>Desk Calculator</b> Options</i>:<ul><li title='do maths'><span onclick='document.getElementById(&#039;inp&#039;).value=&#039;dc &#039;;'><span>[EQUATION]</span></span></li></br><li title='use previous answer'><span onclick='document.getElementById(&#039;inp&#039;).value=&#039;dc -ans &#039;;'>-ans  <span>[ADDITIONAL MATHS]</span></span></li></br><li title='use previous answer'><span onclick='document.getElementById(&#039;inp&#039;).value=&#039;dc --answer &#039;;'>--answer  <span>[ADDITIONAL MATHS]</span></span></li></br><li title='save result'><span onclick='document.getElementById(&#039;inp&#039;).value=&#039;dc --save &#039;;'>--save </span></li></br><li title='about dc'><span onclick='document.getElementById(&#039;inp&#039;).value=&#039;dc --about&#039;;'>--about</span></li></ul></br>&nbsp; To learn more try <i>-h</i> or <i>--help</i>, i.e.: <i onclick='document.getElementById(&#039;inp&#039;).value=&#039;dc -ans --help&#039;;'>dc -ans --help</i> or <i onclick='document.getElementById(&#039;inp&#039;).value=&#039;dc --answer -h&#039;;'>dc --answer -h</i>.&nbsp; </br><span id='closebtn' onclick='"+clickclose+"' style='float:right;align:right;bottom:0;'>[<u><b>X</b></u>]</span></br></br></br></span>" + "<span id='buglog0' name='KnownBugs' onclick='document.getElementById(&#034;consol&#034;).innerHTML=document.getElementsByName(&#034;KnownBugs&#034;)[1].innerHTML;document.getElementById(&#034;consol&#034;).className=document.getElementById(&#034;theme&#034;).innerHTML;'><h3>Bug Log (0) [Release Bugs]<hr></h3></br><div id='erlist0' ><ol id='er00' name='0' >Desk Calculator &#060;dc&#062;<hr><li id='er001' >Two or more algerbriac modifiers in same section of equation may confuse Order of Operations (<i>O3</i>) <i>ie: <b>3+ 3 + (5*5+3) + 2^3</b></i> - Left <i>O3</i> Right.</br><sub>--Output: <i><b>Error</b></i> <<b>er-<i>00</i></b>>--</sub></li><li id='er002' >Excess number of Spaces between any two objects in the equation may confuse <i>O3</i>.</br><sub>--Output: <i><b>Error</b> </i>or<i> <b>incorrect output</b></i> <<b>er-<i>00.2</i></b>>--</sub></li><li id='er003' >Excess number of alphabet-variables in the equation may confuse <i>O3</i>.</br><sub>--Output: <i><b>Error</b> </i>or<i> <b>incorrect output</b></i> <<b>er-<i>00.3</i></b>>--</sub></li><li id='er004' >Multi Length digit inputs are not always caught.</br><sub>--Output: <i><b>Error</b></i> <<b>er-<i>00.4</i></b>>--</sub></li></ol></div></br><div id='erlist1' ><ol id='er01' name='1' >Date &#060;date&#062;<hr><li id='er004' >Inputting a sub-date command without specifing a date can cause an &#034;undefined&#034; output.</br><sub>--Output: <i><b>Error</b></i> <<b>er-<i>01</i></b>>--</sub></li><li id='er005' >Using a different order of date can cause confusion with the date code or cause an &#034;Invalid Date&#034; output.</br><sub>--Output: <i><b>Error</b> </i>or<i> <b>incorrect output</b></i> <<b>er-<i>01.2</i></b>>--</sub></li></ol></div></br></br><hr> </br><span id='closebtn' onclick='"+clickclose+"' style='float:right;align:right;bottom:0;'>[<u><b>X</b></u>]</span></br></br></br></span>";
+ 
+ var error00count = 5; //error 00 num of specific errors
+ var error01count = 1; //error 01 num of specific errors
+ var errorcount = 2;   //listed errors
+ 
+//errors go into id('erlist0') <command>  //a div element
+   // errors go into id('er###') ## === error number (last # is the specific error id [1-9,a-z]) //a ol element
+     //spcific errors go into their er### listing //a li element
+	 
+	 
+document.getElementById('directory').innerHTML = "files";
+var directory = document.getElementById('directory').innerHTML;
+var dirlist = document.querySelectorAll('#'+directory+'>span');
+var findad = document.querySelectorAll('#exad');
+var addir = findad.length - 1;
+var i = 0;
+var su = document.querySelectorAll('.serialio')[0].getAttribute('id');
+document.getElementById('explorer').innerHTML = "<span id='dir' style='width:50%;align:right;align-text:right;'><hr><i>"+directory+"</i><b>//:</b><span id='suID' style='margin-left:43%;margin-right:1%;' name="+su+"><b>"+su+"</b></span></span></br><span id='ads' style='text-decoration:none;float:right;margin-right:15%;margin-top:-2vw;'></span>";
+
+document.getElementById('explorer').innerHTML += "<span id='dirlisted'></br>";
+do{
+
+if(i <= addir){
+document.getElementById('ads').innerHTML += "<span id="+findad[i].getAttribute('id') +" name="+findad[i].getAttribute('name') +" onclick="+findad[i].getAttribute('onclick') +" class='darkmode'>"+document.getElementById(findad[i].getAttribute('id')).innerHTML+"</span>";
+}
+
+document.getElementById('explorer').innerHTML += "<span  id="+ dirlist[i].getAttribute('id') + " name="+ dirlist[i].getAttribute('name') + " onclick='"+ dirlist[i].getAttribute('onclick') + "' ><b>" + dirlist[i].getAttribute('name') + "</b></span>";
+document.getElementById('explorer').innerHTML += "</br>";
+i = i + 1;
+}
+while(i < dirlist.length);
+document.getElementById('explorer').innerHTML += "</span>";
+document.getElementById('explorer').innerHTML += "<hr><span id='fulldirlist'>dir\:: &nbsp; ";
+
+var e = 0;
+do{
+document.getElementById('explorer').innerHTML += "&#092;" +fulldirlist[e] + "&#092;&nbsp;&nbsp;";
+e = e + 1;
+}
+while(e < fulldirlist.length);
+
+
+function onstart() {
+  var timer = new Date();
+  var year = timer.getFullYear();
+  var years;
+  if(year <= "2022"){
+  years = "2022";
+  }
+  
+  else {
+  years = "2022 - " + year;
+  }
+  
+  //document.getElementById('overhead').innerHTML = "<div align='center' id='topname'><h1>Terminal.3D</h1></div><hr class='darkmode'>";
+  
+document.getElementById('inp').focus();
+
+var metanum = Math.round((Math.random() * (metalen)));
+
+var meta = document.getElementsByName('description');
+meta[0].content = metahandle[metanum];
+
+
+
+window.setInterval("timer()", 1);
+  }
+  
+function timer() {
+var timer = new Date();
+var tick = timer.getSeconds();
+var tock = timer.getMinutes();
+var year = timer.getFullYear();
+
+if(tick%2 == 0){
+ document.getElementById('inp').placeholder = "__";
+ document.getElementById('topname').style = "color:rgba("+r+","+g+","+b+","+opa+");text-shadow:"+wid1+" "+hei1+" "+dis1+" rgba("+r2+","+g2+","+b2+","+opa3+");";
+ }
+ else{
+ document.getElementById('inp').placeholder = "  ";
+ document.getElementById('topname').style = "color:rgba("+r+","+g+","+b+","+opa2+");text-shadow:"+wid2+" "+hei2+" "+dis2+" rgba("+r2+","+g2+","+b2+","+opa4+");";
+ }
+}
+
+function refocus(){
+document.getElementById('inp').focus();
+}
+
+function readdata() {
+
+var datainp = document.getElementById('inp');
+
+if(datainp.value != 0){
+
+commands();
+
+
+ usualin();
+}
+
+}
+
+
+//hotswap directories 1=files 2=pot 3=output
+function hotswapdir1(){
+var dataname = "files"; 
+ var dataput = dataname;
+ var tempdir = directory;
+ var findad = document.querySelectorAll('#exad');
+ var addir = findad.length - 1;
+ document.getElementById('directory').innerHTML = dataput;
+ directory = dataput;
+ 
+document.getElementById('ads').innerHTML = '&nbsp;';
+
+var dirlist = document.querySelectorAll('#'+directory+'>span');
+
+
+var i = 0;
+var su = document.querySelectorAll('.serialio')[0].getAttribute('id');
+document.getElementById('explorer').innerHTML = "<span id='dir' style='width:50%;align:right;align-text:right;'><hr><i>"+directory+"</i><b>//:</b><span id='suID' style='margin-left:43%;margin-right:1%;' name="+su+"><b>"+su+"</b></span></span></br><span id='ads' style='text-decoration:none;float:right;margin-right:15%;margin-top:-2vw;' class='darkmode'></span>";
+var adi = 0;
+
+do{
+
+document.getElementById('ads').innerHTML += "<span id="+findad[adi].getAttribute('id') +" name="+findad[adi].getAttribute('name') +" onclick="+findad[adi].getAttribute('onclick') +" class='darkmode'>"+document.getElementById(findad[adi].getAttribute('id')).innerHTML+"</span>";
+
+}
+while(adi >= addir);
+
+
+
+document.getElementById('explorer').innerHTML += "<span id='dirlisted'></br>";
+do{
+
+if(dirlist.length > 0){
+
+if(dirlist[i].getAttribute('id') == "profiles"){
+
+if(dirlist[i].getAttribute('name') != "un-Profiled"){
+ var isnameis = dirlist[i].getAttribute('name');
+
+document.getElementById('explorer').innerHTML += "<span id="+ dirlist[i].getAttribute('id') + " name="+ dirlist[i].getAttribute('name') +  "' ><b>"+ document.getElementById(isnameis).innerHTML + "</b></span>";
+}
+else {
+
+document.getElementById('explorer').innerHTML += "<span id="+ dirlist[i].getAttribute('id') + " name="+ dirlist[i].getAttribute('name') +  "' ><b>"+ dirlist[i].getAttribute('name') + "</b></span>";
+}
+}
+
+else{
+document.getElementById('explorer').innerHTML += "<span id="+ dirlist[i].getAttribute('id') + " name="+ dirlist[i].getAttribute('name') + "  onclick='"+ dirlist[i].getAttribute('onclick') + "' ><b>"+ dirlist[i].getAttribute('name') + "</b></span>";
+}
+
+document.getElementById('explorer').innerHTML += "</br>";
+}
+
+i = i + 1;
+}
+while(i < dirlist.length);
+
+
+document.getElementById('explorer').innerHTML += "</span>";
+document.getElementById('explorer').innerHTML += "<hr><span id='fulldirlist'>dir\:: &nbsp; ";
+
+var e = 0;
+do{
+document.getElementById('explorer').innerHTML += "&#092;";
+document.getElementById('explorer').innerHTML += fulldirlist[e] + "&#092;&nbsp;&nbsp;";
+e = e + 1;
+}
+while(e < fulldirlist.length);
+
+ 
+document.getElementById('consol').innerHTML = "<span title='the directory is now "+dataput+"'><strike>"+tempdir+"</strike> --> " + directory + ". " + "</br><span id='closebtn' onclick='"+clickclose+"' style='float:right;align:right;bottom:0;'>[<u><b>X</b></u>]</span>";
+document.getElementById('consol').className= currenttheme;
+
+}
+function hotswapdir2(){
+var dataname = "pot"; 
+ var dataput = dataname;
+ var tempdir = directory;
+ var findad = document.querySelectorAll('#exad');
+ var addir = findad.length - 1;
+ document.getElementById('directory').innerHTML = dataput;
+ directory = dataput;
+ 
+document.getElementById('ads').innerHTML = '&nbsp;';
+
+var dirlist = document.querySelectorAll('#'+directory+'>span');
+
+
+var i = 0;
+var su = document.querySelectorAll('.serialio')[0].getAttribute('id');
+document.getElementById('explorer').innerHTML = "<span id='dir' style='width:50%;align:right;align-text:right;'><hr><i>"+directory+"</i><b>//:</b><span id='suID' style='margin-left:43%;margin-right:1%;' name="+su+"><b>"+su+"</b></span></span></br><span id='ads' style='text-decoration:none;float:right;margin-right:15%;margin-top:-2vw;' class='darkmode'></span>";
+var adi = 0;
+
+do{
+
+document.getElementById('ads').innerHTML += "<span id="+findad[adi].getAttribute('id') +" name="+findad[adi].getAttribute('name') +" onclick="+findad[adi].getAttribute('onclick') +" class='darkmode'>"+document.getElementById(findad[adi].getAttribute('id')).innerHTML+"</span>";
+
+}
+while(adi >= addir);
+
+
+
+document.getElementById('explorer').innerHTML += "<span id='dirlisted'></br>";
+do{
+
+if(dirlist.length > 0){
+
+if(dirlist[i].getAttribute('id') == "profiles"){
+
+if(dirlist[i].getAttribute('name') != "un-Profiled"){
+ var isnameis = dirlist[i].getAttribute('name');
+
+document.getElementById('explorer').innerHTML += "<span id="+ dirlist[i].getAttribute('id') + " name="+ dirlist[i].getAttribute('name') +  "' ><b>"+ document.getElementById(isnameis).innerHTML + "</b></span>";
+}
+else {
+
+document.getElementById('explorer').innerHTML += "<span id="+ dirlist[i].getAttribute('id') + " name="+ dirlist[i].getAttribute('name') +  "' ><b>"+ dirlist[i].getAttribute('name') + "</b></span>";
+}
+}
+
+else{
+document.getElementById('explorer').innerHTML += "<span id="+ dirlist[i].getAttribute('id') + " name="+ dirlist[i].getAttribute('name') + "  onclick='"+ dirlist[i].getAttribute('onclick') + "' ><b>"+ dirlist[i].getAttribute('name') + "</b></span>";
+}
+
+document.getElementById('explorer').innerHTML += "</br>";
+}
+
+i = i + 1;
+}
+while(i < dirlist.length);
+
+
+document.getElementById('explorer').innerHTML += "</span>";
+document.getElementById('explorer').innerHTML += "<hr><span id='fulldirlist'>dir\:: &nbsp; ";
+
+var e = 0;
+do{
+document.getElementById('explorer').innerHTML += "&#092;";
+document.getElementById('explorer').innerHTML += fulldirlist[e] + "&#092;&nbsp;&nbsp;";
+e = e + 1;
+}
+while(e < fulldirlist.length);
+
+ 
+document.getElementById('consol').innerHTML = "<span title='the directory is now "+dataput+"'><strike>"+tempdir+"</strike> --> " + directory + ". " + "</br><span id='closebtn' onclick='"+clickclose+"' style='float:right;align:right;bottom:0;'>[<u><b>X</b></u>]</span>";
+document.getElementById('consol').className= currenttheme;
+
+}
+function hotswapdir3(){
+var dataname = "output"; 
+ var dataput = dataname;
+ var tempdir = directory;
+ var findad = document.querySelectorAll('#exad');
+ var addir = findad.length - 1;
+ document.getElementById('directory').innerHTML = dataput;
+ directory = dataput;
+ 
+document.getElementById('ads').innerHTML = '&nbsp;';
+
+var dirlist = document.querySelectorAll('#'+directory+'>span');
+
+
+var i = 0;
+var su = document.querySelectorAll('.serialio')[0].getAttribute('id');
+document.getElementById('explorer').innerHTML = "<span id='dir' style='width:50%;align:right;align-text:right;'><hr><i>"+directory+"</i><b>//:</b><span id='suID' style='margin-left:43%;margin-right:1%;' name="+su+"><b>"+su+"</b></span></span></br><span id='ads' style='text-decoration:none;float:right;margin-right:15%;margin-top:-2vw;' class='darkmode'></span>";
+var adi = 0;
+
+do{
+
+document.getElementById('ads').innerHTML += "<span id="+findad[adi].getAttribute('id') +" name="+findad[adi].getAttribute('name') +" onclick="+findad[adi].getAttribute('onclick') +" class='darkmode'>"+document.getElementById(findad[adi].getAttribute('id')).innerHTML+"</span>";
+
+}
+while(adi >= addir);
+
+
+
+document.getElementById('explorer').innerHTML += "<span id='dirlisted'></br>";
+do{
+
+if(dirlist.length > 0){
+
+if(dirlist[i].getAttribute('id') == "profiles"){
+
+if(dirlist[i].getAttribute('name') != "un-Profiled"){
+ var isnameis = dirlist[i].getAttribute('name');
+
+document.getElementById('explorer').innerHTML += "<span id="+ dirlist[i].getAttribute('id') + " name="+ dirlist[i].getAttribute('name') +  "' ><b>"+ document.getElementById(isnameis).innerHTML + "</b></span>";
+}
+else {
+
+document.getElementById('explorer').innerHTML += "<span id="+ dirlist[i].getAttribute('id') + " name="+ dirlist[i].getAttribute('name') +  "' ><b>"+ dirlist[i].getAttribute('name') + "</b></span>";
+}
+}
+
+else{
+document.getElementById('explorer').innerHTML += "<span id="+ dirlist[i].getAttribute('id') + " name="+ dirlist[i].getAttribute('name') + "  onclick='"+ dirlist[i].getAttribute('onclick') + "' ><b>"+ dirlist[i].getAttribute('name') + "</b></span>";
+}
+
+document.getElementById('explorer').innerHTML += "</br>";
+}
+
+i = i + 1;
+}
+while(i < dirlist.length);
+
+
+document.getElementById('explorer').innerHTML += "</span>";
+document.getElementById('explorer').innerHTML += "<hr><span id='fulldirlist'>dir\:: &nbsp; ";
+
+var e = 0;
+do{
+document.getElementById('explorer').innerHTML += "&#092;";
+document.getElementById('explorer').innerHTML += fulldirlist[e] + "&#092;&nbsp;&nbsp;";
+e = e + 1;
+}
+while(e < fulldirlist.length);
+
+ 
+document.getElementById('consol').innerHTML = "<span title='the directory is now "+dataput+"'><strike>"+tempdir+"</strike> --> " + directory + ". " + "</br><span id='closebtn' onclick='"+clickclose+"' style='float:right;align:right;bottom:0;'>[<u><b>X</b></u>]</span>";
+document.getElementById('consol').className= currenttheme;
+
+}
+
+
+//store input to awk profile
+function recforprofile(){
+var timers2 = new Date();
+var millys = timers2.getTime();
+
+ var count = document.getElementById('inpcount').innerHTML;
+ var restcount = Number(count) + 1;
+  document.getElementById('inpcount').innerHTML = Number(restcount);
+ var storeinp = "(" + restcount + ") " + document.getElementById('inp').value + " <" + millys + "> </br>";
+  document.getElementById('inptext').innerHTML = storeinp + document.getElementById('inptext').innerHTML ;
+ 
+}
+
+
+
+
+function usualin(){
+
+var datainp = document.getElementById('inp');
+var clickedit = 'document.getElementById("inp").value += document.getElementById("inp'+jim1+'").innerHTML;document.getElementById("inp").focus();';
+
+document.getElementById('output').innerHTML = "<span id='line" + jim1 + "' onclick='" + clickedit + "' class='ureverb' name='" + datainp.value + "' title='Click to add to user interfacing field'>" +  datainp.value + "</span></br></br>" + document.getElementById('output').innerHTML;
+
+document.getElementById('pot').innerHTML += "</br><span id='inp"+jim1+"' class='uinp' name='" + datainp.value + "' style='disyplay:none;'>" + datainp.value + "</span></br>";
+
+
+jim1 = jim1 + 1;
+datainp.value = "";
+
+}
+
+
+function commands(){
+var datainp = document.getElementById('inp');
+  if(datainp.value.search(/awk/i) >= 0){
+ awk();
+ }
+ else if(datainp.value.search(/clear/i) >= 0){
+ clear();
+ }
+ else if(datainp.value.search(/cmp/i) >= 0){
+ cmp();
+ }
+ else if(datainp.value.search(/date/i) >= 0){
+ datestuff();
+ }
+ else if(datainp.value.search(/dc/i) >= 0){
+ deskcalc();
+ }
+ else if(datainp.value.search(/--about/i) >= 0){
+ about();
+ }
+ 
+ 
+ 
+}
+
+
+//terminal actions
+function awk() {
+var datainp = document.getElementById('inp');
+
+if(datainp.value.search(/ -f/) >= 0 || datainp.value.search(/ --file/i) >= 0){
+
+if(datainp.value.search(/ -f/) >= 0 && datainp.value.search(/-h/) >= 0){
+document.getElementById('consol').innerHTML = "<span><i><span title='the anchor command'>command</span> <span title='the action command'>action</span> <span title='the object to be checked'>object</span></i>: </br></br>&nbsp;&nbsp;&nbsp;<i onclick='document.getElementById(&#039;inp&#039;).value=&#039;awk -f &#039;;'><span title='anchor command'>awk</span> <span title='action command'>-f</span> <b title='usable object type(s)'>[FILE]</b></i></span></br><span id='closebtn' onclick='"+clickclose+"' style='float:right;align:right;bottom:0;'>[<u><b>X</b></u>]</span>";
+document.getElementById('consol').className= currenttheme;
+}
+else if(datainp.value.search(/ --file/i) >= 0 && datainp.value.search(/-h/) >= 0){
+document.getElementById('consol').innerHTML = "<span><i><span title='the anchor command'>command</span> <span title='the action command'>action</span> <span title='the object to be checked'>object</span></i>: </br></br>&nbsp;&nbsp;&nbsp;<i  onclick='document.getElementById(&#039;inp&#039;).value=&#039;awk --file &#039;;'><span title='anchor command'>awk</span> <span title='action command'>--file</span> <b title='usable object type(s)'>[FILE]</b></i></span></br><span id='closebtn' onclick='"+clickclose+"' style='float:right;align:right;bottom:0;'>[<u><b>X</b></u>]</span>";
+document.getElementById('consol').className= currenttheme;
+}
+else{
+awkf();
+}
+
+}
+
+
+
+
+if(datainp.value.search(/ -F/) >= 0 || datainp.value.search(/ --field-separator/i) >= 0 ){
+
+if(datainp.value.search(/ -F/) >= 0 && datainp.value.search(/-h/) >= 0){
+document.getElementById('consol').innerHTML = "<span><i><span title='the anchor command'>command</span> <span title='the action command'>action</span> <span title='the object to be checked'>object</span></i>: </br></br>&nbsp;&nbsp;&nbsp;<i onclick='document.getElementById(&#039;inp&#039;).value=&#039;awk -F &#039;;'><span title='anchor command'>awk</span> <span title='action command'>-F</span> <b title='usable object type(s)'>[FILE]</b></i></span></br><span id='closebtn' onclick='"+clickclose+"' style='float:right;align:right;bottom:0;'>[<u><b>X</b></u>]</span>";
+document.getElementById('consol').className= currenttheme;
+}
+
+else if(datainp.value.search(/ --field-separator/i) >= 0 && datainp.value.search(/-h/) >= 0){
+document.getElementById('consol').innerHTML = "<span><i><span title='the anchor command'>command</span> <span title='the action command'>action</span> <span title='the object to be checked'>object</span></i>: </br></br>&nbsp;&nbsp;&nbsp;<i onclick='document.getElementById(&#039;inp&#039;).value=&#039;awk --field-separator &#039;;'><span title='anchor command'>awk</span> <span title='action command'>--field-separator</span> <b title='usable object type(s)'>[FILE]</b></i></span></br><span id='closebtn' onclick='"+clickclose+"' style='float:right;align:right;bottom:0;'>[<u><b>X</b></u>]</span>";
+document.getElementById('consol').className= currenttheme;
+}
+
+else{
+awkfs();
+}
+}
+
+
+if(datainp.value.search(/(awk|Awk|aWk|AWK|AWk|aWK|awK|AwK) -v/) >= 0 || datainp.value.search(/ --assign/i) >= 0){
+if(datainp.value.search(/ -v/) >= 0 && datainp.value.search(/-v\s(?=-h)/) >= 0 || datainp.value.search(/-v\s(?=--help)/i) >= 0){
+document.getElementById('consol').innerHTML = "<span><i><span title='the anchor command'>command</span> <span title='the action command'>action</span> <span title='the value'>value</span> @<span title='the object to be checked'>object</span></i>: </br></br>&nbsp;&nbsp;&nbsp;<i onclick='document.getElementById(&#039;inp&#039;).value=&#039;awk -v &#039;;'><span title='anchor command'>awk</span> <span title='action command'>-v</span> <span title='value'><b>[VALUE]</b></i> <i onclick='document.getElementById(&#039;inp&#039;).value+=&#039; @&#039;;'>@<b title='usable object type(s)'>[FILE]</b></i></span></br><span id='closebtn' onclick='"+clickclose+"' style='float:right;align:right;bottom:0;'>[<u><b>X</b></u>]</span>";
+document.getElementById('consol').className= currenttheme;
+}
+if(datainp.value.search(/ --assign/i) >= 0 && datainp.value.search(/-h/) >= 0){
+document.getElementById('consol').innerHTML = "<span><i><span title='the anchor command'>command</span> <span title='the action command'>action</span> <span title='the value'>value</span> @<span title='the object to be checked'>object</span></i>: </br></br>&nbsp;&nbsp;&nbsp;<i onclick='document.getElementById(&#039;inp&#039;).value=&#039;awk --assign &#039;;'><span title='anchor command'>awk</span> <span title='action command'>--assign</span> <span title='value'><b>[VALUE]</b></i> <i onclick='document.getElementById(&#039;inp&#039;).value+=&#039; @&#039;;'>@<b title='usable object type(s)'>[FILE]</b></i></span></br><span id='closebtn' onclick='"+clickclose+"' style='float:right;align:right;bottom:0;'>[<u><b>X</b></u>]</span>";
+document.getElementById('consol').className= currenttheme;
+}
+
+else{
+awkvs();
+}
+}
+
+
+
+if(datainp.value.search(/ -b/) >= 0 || datainp.value.search(/ --characters-as-bytes/) >= 0){
+
+if(datainp.value.search(/ -b/) >= 0 && datainp.value.search(/-h/) >= 0){
+document.getElementById('consol').innerHTML = "<span><i><span title='the anchor command'>command</span> <span title='the action command'>action</span> <span title='the object to be checked'>object</span></i>: </br></br>&nbsp;&nbsp;&nbsp;<i onclick='document.getElementById(&#039;inp&#039;).value+=&#039;awk -b &#039;;'><span title='anchor command'>awk</span> <span title='action command'>-b</span> <b title='usable object type(s)'>[FILE]</b></i></span></br><span id='closebtn' onclick='"+clickclose+"' style='float:right;align:right;bottom:0;'>[<u><b>X</b></u>]</span>";
+document.getElementById('consol').className= currenttheme;
+}
+else if(datainp.value.search(/ --characters-as-bytes/i) >= 0 && datainp.value.search(/-h/) >= 0){
+document.getElementById('consol').innerHTML = "<span><i><span title='the anchor command'>command</span> <span title='the action command'>action</span> <span title='the object to be checked'>object</span></i>: </br></br>&nbsp;&nbsp;&nbsp;<i onclick='document.getElementById(&#039;inp&#039;).value+=&#039;awk --characters-as-bytes &#039;;'><span title='anchor command'>awk</span> <span title='action command'>--characters-as-bytes</span> <b title='usable object type(s)'>[FILE]</b></i></span></br><span id='closebtn' onclick='"+clickclose+"' style='float:right;align:right;bottom:0;'>[<u><b>X</b></u>]</span>";
+document.getElementById('consol').className= currenttheme;
+}
+
+else {
+awkbcb();
+}
+}
+
+
+
+if(datainp.value.search(/ -C/) >= 0 || datainp.value.search(/ --copyright/i) >= 0){
+if(datainp.value.search(/ -C/) >= 0 && datainp.value.search(/-h/) >= 0){
+document.getElementById('consol').innerHTML = "<span><i><span title='the anchor command'>command</span> <span title='the action command'>action</span>: </br></br>&nbsp;&nbsp;&nbsp;<i onclick='document.getElementById(&#039;inp&#039;).value+=&#039;awk -C&#039;;'><span title='anchor command'>awk</span> <span title='action command'>-C</span></i></span></br><span id='closebtn' onclick='"+clickclose+"' style='float:right;align:right;bottom:0;'>[<u><b>X</b></u>]</span>";
+document.getElementById('consol').className= currenttheme;
+}
+else if(datainp.value.search(/ --copyright/i) >= 0 && datainp.value.search(/-h/) >= 0){
+document.getElementById('consol').innerHTML = "<span><i><span title='the anchor command'>command</span> <span title='the action command'>action</span>: </br></br>&nbsp;&nbsp;&nbsp;<i onclick='document.getElementById(&#039;inp&#039;).value+=&#039;awk --copyright&#039;;'><span title='anchor command'>awk</span> <span title='action command'>--copyright</span></i></span></br><span id='closebtn' onclick='"+clickclose+"' style='float:right;align:right;bottom:0;'>[<u><b>X</b></u>]</span>";
+document.getElementById('consol').className= currenttheme;
+}
+else{
+var cright = document.querySelectorAll('#Copyright')[1];
+ document.getElementById('consol').innerHTML = cright.innerHTML + "</br><span id='closebtn' onclick='"+clickclose+"' style='float:right;align:right;bottom:0;'>[<u><b>X</b></u>]</span>";
+document.getElementById('consol').className= currenttheme;
+ }
+}
+
+
+
+
+if(datainp.value.search(/ -g/) >= 0){
+
+if(datainp.value.search(/ -g/) >= 0 && datainp.value.search(/-h/) >= 0){
+document.getElementById('consol').innerHTML = "<span><i><span title='the anchor command'>command</span> <span title='the action command'>action</span></i>: </br></br>&nbsp;&nbsp;&nbsp;<i onclick='document.getElementById(&#039;inp&#039;).value+=&#039;awk -g&#039;;'><span title='anchor command'>awk</span> <span title='action command'>-g</span></i></span></br><span id='closebtn' onclick='"+clickclose+"' style='float:right;align:right;bottom:0;'>[<u><b>X</b></u>]</span>";
+document.getElementById('consol').className= currenttheme;
+}
+
+else{
+var thisdirectory = document.getElementById('files').innerHTML;
+ if(thisdirectory.search(/pot/i) != 0){
+ 
+document.getElementById('files').innerHTML += "<span id='movedpot' name='movedpot"+jimmy+"' onclick='document.getElementById(&#034;consol&#034;).innerHTML=document.getElementsByName(&#034;movedpot"+jimmy+"&#034;)[1].innerHTML;document.getElementById(&#034;consol&#034;).className=document.getElementById(&#034;theme&#034;).innerHTML;'>"+document.getElementById('pot').innerHTML+"</span>";
+
+if(directory === 'files'){
+document.getElementById('dirlisted').innerHTML += "<span ><b>movedpot <i>(+)</i></b></span></br>";
+}
+
+document.getElementById('consol').innerHTML += "<span title='Result Inform Statement'>File ID <b><i>pot</i></b> created in <i>files</i> Directory.</span> </br><span id='closebtn' onclick='"+clickclose+"' style='float:right;align:right;bottom:0;'>[<u><b>X</b></u>]</span>";
+document.getElementById('consol').className= currenttheme;
+}
+
+document.getElementsByName('potfile')[0].innerHTML = '';
+jimmy = jimmy + 1;
+}
+
+}
+
+
+
+if(datainp.value.search(/(awk|Awk|aWk|AWK|AWk|aWK|awK|AwK) -h/) >= 0 || datainp.value.search(/(awk|Awk|aWk|AWK|AWk|aWK|awK|AwK) --help/i) >= 0){
+var helpfinder = datainp.value.split(/-h/);
+
+
+if(helpfinder[1].search(/\s-f/) >= 0) {
+document.getElementById('consol').innerHTML = "<span style='align:center'><h4><i>-f</i> is a command to find the length of a file or prevous input.</br><sup><i>-f</i> is <b>shorthand for <u>--file</u></b>.</br></sup></h4><hr></br>&nbsp;&nbsp;&nbsp;How to use <i>file command</i>:</br><i><ul><li><span title='the anchor command'>command</span> <span title='the action command'>action</span> <span title='the object to be checked'>object</span></li></ul></i> </br></br>&nbsp;&nbsp;&nbsp;<i onclick='document.getElementById(&#039;inp&#039;).value=&#039;awk -f &#039;;'><span title='anchor command'>awk</span> <span title='action command'>-f</span> <b title='usable object type(s)'>[FILE]</b></i></span></br><span id='closebtn' onclick='"+clickclose+"' style='float:right;align:right;bottom:0;'>[<u><b>X</b></u>]</span>";
+document.getElementById('consol').className= currenttheme;
+}
+
+ 
+else if(helpfinder[1].search(/\s--file/i) >= 0){
+document.getElementById('consol').innerHTML = "<span style='align:center'><h4><i>--file</i> is a command to find the length of a file or prevous input.</br><sup><i>--file</i> is <b>longform for <u>-f</u></b>.</br></sup></h4><hr></br>&nbsp;&nbsp;&nbsp;How to use <i>file command</i>:</br><i><ul><li><span title='the anchor command'>command</span> <span title='the action command'>action</span> <span title='the object to be checked'>object</span></li></ul></i></br></br>&nbsp;&nbsp;&nbsp;<i  onclick='document.getElementById(&#039;inp&#039;).value=&#039;awk --file &#039;;'><span title='anchor command'>awk</span> <span title='action command'>--file</span> <b title='usable object type(s)'>[FILE]</b></i></span></br><span id='closebtn' onclick='"+clickclose+"' style='float:right;align:right;bottom:0;'>[<u><b>X</b></u>]</span>";
+document.getElementById('consol').className= currenttheme;
+}
+
+else if(helpfinder[1].search(/\s-F/) >= 0){
+document.getElementById('consol').innerHTML = "<span><h4><i>-F</i> is a command to find the number of spaces in a file or prevous input.</br><sup><i>-F</i> is <b>shorthand for <u>--field-separator</u></b>.</br></sup></h4><hr></br>&nbsp;&nbsp;&nbsp;How to use <i>field separator command</i>:</br><i><ul><li><span title='the anchor command'>command</span> <span title='the action command'>action</span> <span title='the object to be checked'>object</span></i></li></ul></br></br>&nbsp;&nbsp;&nbsp;<i onclick='document.getElementById(&#039;inp&#039;).value=&#039;awk -F &#039;;'><span title='anchor command'>awk</span> <span title='action command'>-F</span> <b title='usable object type(s)'>[FILE]</b></i></span></br><span id='closebtn' onclick='"+clickclose+"' style='float:right;align:right;bottom:0;'>[<u><b>X</b></u>]</span>";
+document.getElementById('consol').className= currenttheme;
+}
+
+else if(helpfinder[1].search(/\s--field-separator/i) >= 0){
+document.getElementById('consol').innerHTML = "<span><h4><i>--field-separator</i> is a command to find the number of spaces in a file or prevous input.</br><sup><i>--field-separator</i> is <b>longform for <u>-F</u></b>.</br></sup></h4><hr></br>&nbsp;&nbsp;&nbsp;How to use <i>field separator command</i>:</br><i><ul><li><span title='the anchor command'>command</span> <span title='the action command'>action</span> <span title='the object to be checked'>object</span></i></li></ul></br></br>&nbsp;&nbsp;&nbsp;<i onclick='document.getElementById(&#039;inp&#039;).value=&#039;awk --field-separator &#039;;'><span title='anchor command'>awk</span> <span title='action command'>--field-separator</span> <b title='usable object type(s)'>[FILE]</b></i></span></br><span id='closebtn' onclick='"+clickclose+"' style='float:right;align:right;bottom:0;'>[<u><b>X</b></u>]</span>";
+document.getElementById('consol').className= currenttheme;
+}
+
+else if(helpfinder[1].search(/\s-v/) >= 0){
+document.getElementById('consol').innerHTML = "<span><h4><i>-v</i> is a command to swap data in a file or prevous input.</br><sup><i>-v</i> is <b>shorthand for <u>--assign</u></b>.</br></sup></h4><hr></br>&nbsp;&nbsp;&nbsp;How to use <i>assign (or swap) command</i>:</br><ul><li><i><span title='the anchor command'>command</span> <span title='the action command'>action</span> <span title='the value'>value</span> @<span title='the object to be checked'>object</span></i></li></ul></br></br>&nbsp;&nbsp;&nbsp;<i onclick='document.getElementById(&#039;inp&#039;).value=&#039;awk -v &#039;;'><span title='anchor command'>awk</span> <span title='action command'>-v</span> <span title='value'><b>[VALUE]</b></i> <i onclick='document.getElementById(&#039;inp&#039;).value+=&#039; @&#039;;'>@<b title='usable object type(s)'>[FILE]</b></i></span></br><span id='closebtn' onclick='"+clickclose+"' style='float:right;align:right;bottom:0;'>[<u><b>X</b></u>]</span>";
+document.getElementById('consol').className= currenttheme;
+}
+
+else if(helpfinder[1].search(/\s--assign/i) >= 0){
+document.getElementById('consol').innerHTML = "<span><h4><i>--assign</i> is a command to swap data in a file or prevous input.</br><sup><i>--assign</i> is <b>longform for <u>-v</u></b>.</br></sup></h4><hr></br>&nbsp;&nbsp;&nbsp;How to use <i>assign (or swap) command</i>:</br><ul><li><i><span title='the anchor command'>command</span> <span title='the action command'>action</span> <span title='the value'>value</span> @<span title='the object to be checked'>object</span></i></li></ul></br></br>&nbsp;&nbsp;&nbsp;<i onclick='document.getElementById(&#039;inp&#039;).value=&#039;awk --assign &#039;;'><span title='anchor command'>awk</span> <span title='action command'>--assign</span> <span title='value'><b>[VALUE]</b></i> <i onclick='document.getElementById(&#039;inp&#039;).value+=&#039; @&#039;;'>@<b title='usable object type(s)'>[FILE]</b></i></span></br><span id='closebtn' onclick='"+clickclose+"' style='float:right;align:right;bottom:0;'>[<u><b>X</b></u>]</span>";
+document.getElementById('consol').className= currenttheme;
+}
+
+
+else if(helpfinder[1].search(/\s-b/) >= 0){
+document.getElementById('consol').innerHTML = "<span><h4><i>-b</i> is a command to prep data in a file or prevous input to be used as an URI or web link.</br><sup><i>-b</i> is <b>shorthand for <u>--characters-as-bytes</u></b>.</br></sup></h4><hr></br>&nbsp;&nbsp;&nbsp;How to use <i>URI encoder command</i>:</br><ul><li><i><span title='the anchor command'>command</span> <span title='the action command'>action</span> <span title='the object to be checked'>object</span></i></li></ul></br></br>&nbsp;&nbsp;&nbsp;<i onclick='document.getElementById(&#039;inp&#039;).value+=&#039;awk -b &#039;;'><span title='anchor command'>awk</span> <span title='action command'>-b</span> <b title='usable object type(s)'>[FILE]</b></i></span></br><span id='closebtn' onclick='"+clickclose+"' style='float:right;align:right;bottom:0;'>[<u><b>X</b></u>]</span>";
+document.getElementById('consol').className= currenttheme;
+}
+else if(helpfinder[1].search(/ --characters-as-bytes/i) >= 0){
+document.getElementById('consol').innerHTML = "<span><h4><i>--characters-as-bytes</i> is a command to prep data in a file or prevous input to be used as an URI or web link.</br><sup><i>--characters-as-bytes</i> is <b>longform for <u>-b</u></b>.</br></sup></h4><hr></br>&nbsp;&nbsp;&nbsp;How to use <i>URI encoder command</i>:</br><ul><li><i><span title='the anchor command'>command</span> <span title='the action command'>action</span> <span title='the object to be checked'>object</span></i></li></ul></br></br>&nbsp;&nbsp;&nbsp;<i onclick='document.getElementById(&#039;inp&#039;).value+=&#039;awk --characters-as-bytes &#039;;'><span title='anchor command'>awk</span> <span title='action command'>--characters-as-bytes</span> <b title='usable object type(s)'>[FILE]</b></i></span></br><span id='closebtn' onclick='"+clickclose+"' style='float:right;align:right;bottom:0;'>[<u><b>X</b></u>]</span>";
+document.getElementById('consol').className= currenttheme;
+}
+
+else if(helpfinder[1].search(/ -C/) >= 0){
+document.getElementById('consol').innerHTML = "<span><h4><i>-C</i> is a command to view Terminal.3D's partial Copyright, Permission Agreement, License & Verify file.</br><sup><i>-C</i> is <b>shorthand for <u>--copyright</u></b>.</br></sup></h4><hr></br>&nbsp;&nbsp;&nbsp;How to use <i>Copyright command</i>:</br><ul><li><i><span title='the anchor command'>command</span> <span title='the action command'>action</span></li></ul></br></br>&nbsp;&nbsp;&nbsp;<i onclick='document.getElementById(&#039;inp&#039;).value+=&#039;awk -C&#039;;'><span title='anchor command'>awk</span> <span title='action command'>-C</span></i></span></br><span id='closebtn' onclick='"+clickclose+"' style='float:right;align:right;bottom:0;'>[<u><b>X</b></u>]</span>";
+document.getElementById('consol').className= currenttheme;
+}
+
+else if(helpfinder[1].search(/ --copyright/i) >= 0){
+document.getElementById('consol').innerHTML = "<span><h4><i>--copyright</i> is a command to view Terminal.3D's partial Copyright, Permission Agreement, License & Verify file.</br><sup><i>--copyright</i> is <b>longform for <u>-C</u></b>.</br></sup></h4><hr></br>&nbsp;&nbsp;&nbsp;How to use <i>Copyright command</i>:</br><ul><li><i><span title='the anchor command'>command</span> <span title='the action command'>action</span></li></ul></br></br>&nbsp;&nbsp;&nbsp;<i onclick='document.getElementById(&#039;inp&#039;).value+=&#039;awk --copyright&#039;;'><span title='anchor command'>awk</span> <span title='action command'>--copyright</span></i></span></br><span id='closebtn' onclick='"+clickclose+"' style='float:right;align:right;bottom:0;'>[<u><b>X</b></u>]</span>";
+document.getElementById('consol').className= currenttheme;
+}
+
+else if(helpfinder[1].search(/\s-V/) >= 0){
+document.getElementById('consol').innerHTML = "<span><h4><i>-V</i> is a command to view the current Javascript AWK version.</br><sup><i>-V</i> is <b>shorthand for <u>--version</u></b>.</br></sup></h4><hr></br>&nbsp;&nbsp;&nbsp;How to use <i>version check command</i>:</br><ul><li><i><span title='the anchor command'>command</span> <span title='the action command'>action</span></i></li></ul></br></br>&nbsp;&nbsp;&nbsp;<i onclick='document.getElementById(&#039;inp&#039;).value=&#039;awk -V&#039;;'><span title='anchor command'>awk</span> <span title='action command'>-V</span></i></span></br><span id='closebtn' onclick='"+clickclose+"' style='float:right;align:right;bottom:0;'>[<u><b>X</b></u>]</span>";
+document.getElementById('consol').className= currenttheme;
+}
+
+
+else if(helpfinder[1].search(/\s--version/i) >= 0){
+document.getElementById('consol').innerHTML = "<span><h4><i>--version</i> is a command to view the current Javascript AWK version.</br><sup><i>--version</i> is <b>longform for <u>-V</u></b>.</br></sup></h4><hr></br>&nbsp;&nbsp;&nbsp;How to use <i>version check command</i>:</br><ul><li><i><span title='the anchor command'>command</span> <span title='the action command'>action</span></i></li></ul></br></br>&nbsp;&nbsp;&nbsp;<i onclick='document.getElementById(&#039;inp&#039;).value=&#039;awk -V&#039;;'><span title='anchor command'>awk</span> <span title='action command'>-V</span></i></span></br><span id='closebtn' onclick='"+clickclose+"' style='float:right;align:right;bottom:0;'>[<u><b>X</b></u>]</span>";
+document.getElementById('consol').className= currenttheme;
+}
+
+
+else if(helpfinder[1].search(/ -g/) >= 0){
+document.getElementById('consol').innerHTML = "<span><h4><i>-g</i> is a command to store your Personal Object Information (pot) as Personal Input Droplogs (pod).</br></sup></h4><hr></br>&nbsp;&nbsp;&nbsp;How to use <i>POT command</i>:</br><ul><li><i><span title='the anchor command'>command</span> <span title='the action command'>action</span></i></li></ul></br></br>&nbsp;&nbsp;&nbsp;<i onclick='document.getElementById(&#039;inp&#039;).value+=&#039;awk -g&#039;;'><span title='anchor command'>awk</span> <span title='action command'>-g</span></i></span></br><span id='closebtn' onclick='"+clickclose+"' style='float:right;align:right;bottom:0;'>[<u><b>X</b></u>]</span>";
+document.getElementById('consol').className= currenttheme;
+}
+
+else if(helpfinder[1].search(/ -p/) >= 0){
+document.getElementById('consol').innerHTML = "<span><h4><i>-p</i> is a command to create and/or use an JSAK (Javascript AWK) Profile. This can store command data, number of times inserted & last action factor to either a unique time-stamp id or a hand picked user-name id.</br><sup><i>-p</i> is <b>shorthand for <u>--profile</u></b></br></sup></h4><hr></br>&nbsp;&nbsp;&nbsp;How to use <i>Profile command</i>:</br><ul><li><i><span title='the anchor command'>command</span> <span title='the action command'>action</span> <span title='the optional name for object'>object</span> <span title='the optional sub-command'>sub-command</span></i></li></ul></br></br>&nbsp;&nbsp;&nbsp;<i onclick='document.getElementById(&#039;inp&#039;).value+=&#039;awk -p&#039;;'><span title='anchor command'>awk</span> <span title='action command'>-p</span> </i><b title='optional object information' onclick='document.getElementById(&#039;inp&#039;).value+=&#039; &#039;;'>[NAME]</b> <i onclick='document.getElementById(&#039;inp&#039;).value+=&#039; --sign-out&#039;;'><b title='optional sub-command'>--sign-out</b></i></span></br><span id='closebtn' onclick='"+clickclose+"' style='float:right;align:right;bottom:0;'>[<u><b>X</b></u>]</span>";
+document.getElementById('consol').className= currenttheme;
+}
+
+else if(helpfinder[1].search(/ --profile/i) >= 0){
+document.getElementById('consol').innerHTML = "<span><h4><i>-p</i> is a command to create and/or use an JSAK (Javascript AWK) Profile. This can store command data, number of times inserted & last action factor to either a unique time-stamp id or a hand picked user-name id.</br><sup><i>--profile</i> is <b>longform for <u>-p</u></b></br></sup></h4><hr></br>&nbsp;&nbsp;&nbsp;How to use <i>Profile command</i>:</br><ul><li><i><span title='the anchor command'>command</span> <span title='the action command'>action</span> <span title='the optional name for object'>object</span> <span title='the optional sub-command'>sub-command</span></i></li></ul></br></br>&nbsp;&nbsp;&nbsp;<i onclick='document.getElementById(&#039;inp&#039;).value+=&#039;awk --profile&#039;;'><span title='anchor command'>awk</span> <span title='action command'>--profile</span> </i><b title='optional object information' onclick='document.getElementById(&#039;inp&#039;).value+=&#039; &#039;;'>[NAME]</b> <i onclick='document.getElementById(&#039;inp&#039;).value+=&#039; -so&#039;;'><b title='optional sub-command'>-so</b></i></span></br><span id='closebtn' onclick='"+clickclose+"' style='float:right;align:right;bottom:0;'>[<u><b>X</b></u>]</span>";
+document.getElementById('consol').className= currenttheme;
+}
+
+else if(helpfinder[1].search(/ -so/i) >= 0){
+document.getElementById('consol').innerHTML = "<span><h4><i>-so</i> is a sub-command to sign out of an JSAK (Javascript AWK) Profile. This must be used with onoe of the <i>Profile Commands</i>.</br><sup><i>-so</i> is <b>shorthand for <u>--sign-out</u></b></br></sup></h4><hr></br>&nbsp;&nbsp;&nbsp;How to use <i>Profile sub-command</i>:</br><ul><li><i><span title='the anchor command'>command</span> <span title='the action command'>action</span> <span title='the optional name for object'>object</span> <span title='the optional sub-command'>sub-command</span></i></li></ul></br></br>&nbsp;&nbsp;&nbsp;<i onclick='document.getElementById(&#039;inp&#039;).value+=&#039;awk --profile&#039;;'><span title='anchor command'>awk</span> <span title='action command'>--profile</span> </i><b title='optional object information' onclick='document.getElementById(&#039;inp&#039;).value+=&#039; &#039;;'>[NAME]</b> <i onclick='document.getElementById(&#039;inp&#039;).value+=&#039; -so&#039;;'><b title='optional sub-command'>-so</b></i></span></br><span id='closebtn' onclick='"+clickclose+"' style='float:right;align:right;bottom:0;'>[<u><b>X</b></u>]</span>";
+document.getElementById('consol').className= currenttheme;
+}
+
+else if(helpfinder[1].search(/ --sign-out/i) >= 0){
+document.getElementById('consol').innerHTML = "<span><h4><i>--sign-out</i> is a sub-command to sign out of an JSAK (Javascript AWK) Profile. This must be used with onoe of the <i>Profile Commands</i>.</br><sup><i>--sign-out</i> is <b>longform for <u>-so</u></b></br></sup></h4><hr></br>&nbsp;&nbsp;&nbsp;How to use <i>Profile sub-command</i>:</br><ul><li><i><span title='the anchor command'>command</span> <span title='the action command'>action</span> <span title='the optional name for object'>object</span>  <span title='the optional sub-command'>sub-command</span></i></li></ul></br></br>&nbsp;&nbsp;&nbsp;<i onclick='document.getElementById(&#039;inp&#039;).value+=&#039;awk --profile&#039;;'><span title='anchor command'>awk</span> <span title='action command'>--profile</span> </i><b title='optional object information' onclick='document.getElementById(&#039;inp&#039;).value+=&#039; &#039;;'>[NAME]</b> <i onclick='document.getElementById(&#039;inp&#039;).value+=&#039; --sign-out&#039;;'><b title='optional sub-command'>--sign-out</b></i></span></br><span id='closebtn' onclick='"+clickclose+"' style='float:right;align:right;bottom:0;'>[<u><b>X</b></u>]</span>";
+document.getElementById('consol').className= currenttheme;
+}
+
+
+
+else {
+var thisoption = document.querySelectorAll('#awkoptions')[1];
+document.getElementById('consol').innerHTML = thisoption.innerHTML;
+document.getElementById('consol').className= currenttheme;
+}
+}
+
+
+
+if(datainp.value.search(/(awk|Awk|aWk|AWK|AWk|aWK|awK|AwK) -p/) >= 0 || datainp.value.search(/ --profile/i) >= 0){
+if(datainp.value.search(/ -p/) >= 0 && datainp.value.search(/-h/) >= 0){
+document.getElementById('consol').innerHTML = "<span><i><span title='the anchor command'>command</span> <span title='the action command'>action</span> <span title='the optional name for object'>object</span></i>: </br></br>&nbsp;&nbsp;&nbsp;<i onclick='document.getElementById(&#039;inp&#039;).value+=&#039;awk -p&#039;;'><span title='anchor command'>awk</span> <span title='action command'>-p</span> </i><b title='optional object information' onclick='document.getElementById(&#039;inp&#039;).value+=&#039; &#039;;'>[NAME]</b> <i><b title='optional sub-command' onclick='document.getElementById(&#039;inp&#039;).value+=&#039; --sign-out&#039;;'>--sign-out</b></i></span></br><span id='closebtn' onclick='"+clickclose+"' style='float:right;align:right;bottom:0;'>[<u><b>X</b></u>]</span>";
+document.getElementById('consol').className= currenttheme;
+}
+else if(datainp.value.search(/ --profile/i) >= 0 && datainp.value.search(/-h/) >= 0){
+document.getElementById('consol').innerHTML = "<span><i><span title='the anchor command'>command</span> <span title='the action command'>action</span> <span title='the optional name for object'>object</span></i>: </br></br>&nbsp;&nbsp;&nbsp;<i onclick='document.getElementById(&#039;inp&#039;).value+=&#039;awk --profile&#039;;'><span title='anchor command'>awk</span> <span title='action command'>--profile</span> </i><b title='optional object information' onclick='document.getElementById(&#039;inp&#039;).value+=&#039; &#039;;'>[NAME]</b> <i><b title='optional sub-command' onclick='document.getElementById(&#039;inp&#039;).value+=&#039; -so&#039;;'>-so</b></i></span></br><span id='closebtn' onclick='"+clickclose+"' style='float:right;align:right;bottom:0;'>[<u><b>X</b></u>]</span>";
+document.getElementById('consol').className= currenttheme;
+}
+
+else{
+awkprofile();
+}
+
+}
+
+
+if(datainp.value.search(/ -V/) >= 0 || datainp.value.search(/ --version/i) >= 0){
+
+if(datainp.value.search(/-V (?=-h)/) >= 0 || datainp.value.search(/-V (?=--help)/i) >= 0){
+document.getElementById('consol').innerHTML = "<span><i><span title='the anchor command'>command</span> <span title='the action command'>action</span></i>: </br></br>&nbsp;&nbsp;&nbsp;<i onclick='document.getElementById(&#039;inp&#039;).value+=&#039;awk -V&#039;;'><span title='anchor command'>awk</span> <span title='action command'>-V</span> </i></span></br><span id='closebtn' onclick='"+clickclose+"' style='float:right;align:right;bottom:0;'>[<u><b>X</b></u>]</span>";
+document.getElementById('consol').className= currenttheme;
+}
+else if(datainp.value.search(/--version (?=-h)/) >= 0 || datainp.value.search(/--version (?=--help)/i) >= 0){
+document.getElementById('consol').innerHTML = "<span><i><span title='the anchor command'>command</span> <span title='the action command'>action</span></i>: </br></br>&nbsp;&nbsp;&nbsp;<i onclick='document.getElementById(&#039;inp&#039;).value=&#039;awk --version&#039;;'><span title='anchor command'>awk</span> <span title='action command'>--version</span> </i></span></br><span id='closebtn' onclick='"+clickclose+"' style='float:right;align:right;bottom:0;'>[<u><b>X</b></u>]</span>";
+document.getElementById('consol').className= currenttheme;
+}
+
+else{
+var awkv = document.querySelectorAll('#awkversion');
+document.getElementById('consol').innerHTML = awkv[1].innerHTML + "</br><span id='closebtn' onclick='"+clickclose+"' style='float:right;align:right;bottom:0;'>[<u><b>X</b></u>]</span>";
+document.getElementById('consol').className= currenttheme;
+}
+}
+
+
+
+
+if(datainp.value.search(/ -dir/i) >= 0){
+
+if(datainp.value.search(/ -h/g) >= 0 || datainp.value.search(/ --help/g) >= 0){
+document.getElementById('consol').innerHTML = "<span><i><span title='the anchor command'>command</span> <span title='the action command'>action</span> <span title='the change object'>object</span></i>: </br></br>&nbsp;&nbsp;&nbsp;<i><span title='anchor command'>awk</span> <span title='action command'>-dir</span> <span title='the change object'>[DIRECTORY]</span></i></span>";
+document.getElementById('consol').className= currenttheme;
+}
+
+ var dataname = document.getElementById('inp').value.split(/ -dir\s/i); 
+ var dataput = dataname[1];
+ var tempdir = directory;
+ var findad = document.querySelectorAll('#exad');
+ var addir = findad.length - 1;
+ document.getElementById('directory').innerHTML = dataput;
+ directory = dataput;
+ 
+document.getElementById('ads').innerHTML = '&nbsp;';
+
+var dirlist = document.querySelectorAll('#'+directory+'>span');
+
+
+var i = 0;
+var su = document.querySelectorAll('.serialio')[0].getAttribute('id');
+document.getElementById('explorer').innerHTML = "<span id='dir' style='width:50%;align:right;align-text:right;'><hr><i>"+directory+"</i><b>//:</b><span id='suID' style='margin-left:43%;margin-right:1%;' name="+su+"><b>"+su+"</b></span></span></br><span id='ads' style='text-decoration:none;float:right;margin-right:15%;margin-top:-2vw;' class='darkmode'></span>";
+var adi = 0;
+
+do{
+
+document.getElementById('ads').innerHTML += "<span id="+findad[adi].getAttribute('id') +" name="+findad[adi].getAttribute('name') +" onclick="+findad[adi].getAttribute('onclick') +" class='darkmode'>"+document.getElementById(findad[adi].getAttribute('id')).innerHTML+"</span>";
+
+}
+while(adi >= addir);
+
+
+
+document.getElementById('explorer').innerHTML += "<span id='dirlisted'></br>";
+do{
+
+if(dirlist.length > 0){
+
+if(dirlist[i].getAttribute('id') == "profiles"){
+
+if(dirlist[i].getAttribute('name') != "un-Profiled"){
+ var isnameis = dirlist[i].getAttribute('name');
+
+document.getElementById('explorer').innerHTML += "<span id="+ dirlist[i].getAttribute('id') + " name="+ dirlist[i].getAttribute('name') +  "' ><b>"+ document.getElementById(isnameis).innerHTML + "</b></span>";
+}
+else {
+
+document.getElementById('explorer').innerHTML += "<span id="+ dirlist[i].getAttribute('id') + " name="+ dirlist[i].getAttribute('name') +  "' ><b>"+ dirlist[i].getAttribute('name') + "</b></span>";
+}
+}
+
+else{
+document.getElementById('explorer').innerHTML += "<span id="+ dirlist[i].getAttribute('id') + " name="+ dirlist[i].getAttribute('name') + "  onclick='"+ dirlist[i].getAttribute('onclick') + "' ><b>"+ dirlist[i].getAttribute('name') + "</b></span>";
+}
+
+document.getElementById('explorer').innerHTML += "</br>";
+}
+
+i = i + 1;
+}
+while(i < dirlist.length);
+
+
+document.getElementById('explorer').innerHTML += "</span>";
+document.getElementById('explorer').innerHTML += "<hr><span id='fulldirlist'>dir\:: &nbsp; ";
+
+var e = 0;
+do{
+document.getElementById('explorer').innerHTML += "&#092;";
+document.getElementById('explorer').innerHTML += fulldirlist[e] + "&#092;&nbsp;&nbsp;";
+e = e + 1;
+}
+while(e < fulldirlist.length);
+
+ 
+document.getElementById('consol').innerHTML = "<span title='the directory is now "+dataput+"'><strike>"+tempdir+"</strike> --> " + directory + ". " + "</br><span id='closebtn' onclick='"+clickclose+"' style='float:right;align:right;bottom:0;'>[<u><b>X</b></u>]</span>";
+document.getElementById('consol').className= currenttheme;
+
+}
+
+
+
+
+//just awk inputted
+if(datainp.value.search(/ -/) < 0) {
+ document.getElementById('consol').innerHTML = jim1 + 1 + "</br><span id='closebtn' onclick='"+clickclose+"' style='float:right;align:right;bottom:0;'>[<u><b>X</b></u>]</span>";
+document.getElementById('consol').className= currenttheme;
+}
+
+
+}
+
+
+
+
+function awkf(){
+
+ var dataname;
+
+  if(datainp.value.search(/ -f/) >= 0){
+  dataname = document.getElementById('inp').value.split(/ -f\s/);
+}
+  if(datainp.value.search(/ --file/i) >= 0){
+  dataname = document.getElementById('inp').value.split(/ --file\s/i); 
+ 
+ }
+ var dataput = dataname[1];
+ 
+ if(dataname.length > 1){
+ var datafile = document.getElementsByName(dataput)[0];
+ var databack = datafile.innerHTML;
+ 
+ document.getElementById('consol').innerHTML = databack.length + "</br><span id='closebtn' onclick='"+clickclose+"' style='float:right;align:right;bottom:0;'>[<u><b>X</b></u>]</span>";
+document.getElementById('consol').className= currenttheme;
+}
+
+else{
+  if(datainp.value.search(/ -f/) >= 0){
+document.getElementById('consol').innerHTML = "<span title='Missing Argument Error'><i>Missing Argument</i>!</br></br>&nbsp;&nbsp;&nbsp;<i onclick='document.getElementById(&#039;inp&#039;).value=&#039;awk -f &#039;;'>awk -f <b>[FILE]</b></i></br></br>Try <i onclick='document.getElementById(&#039;inp&#039;).value=&#039;awk -f --help&#039;;'>awk -f --help</i> for help.</span></br><span id='closebtn' onclick='"+clickclose+"' style='float:right;align:right;bottom:0;'>[<u><b>X</b></u>]</span>";
+document.getElementById('consol').className= currenttheme;
+}
+  if(datainp.value.search(/ --file/i) >= 0){
+document.getElementById('consol').innerHTML = "<span title='Missing Argument Error'><i>Missing Argument</i>!</br></br>&nbsp;&nbsp;&nbsp;<i onclick='document.getElementById(&#039;inp&#039;).value=&#039;awk --file &#039;;'>awk --file <b>[FILE]</b></i></br></br>Try <i onclick='document.getElementById(&#039;inp&#039;).value=&#039;awk --file --help&#039;;'>awk --file --help</i> for help.</span></br><span id='closebtn' onclick='"+clickclose+"' style='float:right;align:right;bottom:0;'>[<u><b>X</b></u>]</span>";
+document.getElementById('consol').className= currenttheme;
+  }
+  }
+
+
+}
+
+function awkfs() {
+ var dataname;
+
+  if(datainp.value.search(/ -F/) >= 0){
+ dataname = document.getElementById('inp').value.split(/ -F /); 
+ }
+  if(datainp.value.search(/ --field-separator/i) >= 0){
+ dataname = document.getElementById('inp').value.split(/--field-separator /i); 
+ }
+ 
+ var dataput = dataname[1];
+ 
+ if(dataname.length > 1){
+ var datafile = document.getElementsByName(dataput)[0];
+ var datafind = datafile.innerHTML;
+ if(datafind.search(/\s/) >= 0) {
+ var databack = datafind.match(/\s/g);
+ document.getElementById('consol').innerHTML = databack.length + "</br><span id='closebtn' onclick='"+clickclose+"' style='float:right;align:right;bottom:0;'>[<u><b>X</b></u>]</span>";
+document.getElementById('consol').className= currenttheme;
+ }
+ if(datafind.search(/\s/) < 0){
+document.getElementById('consol').innerHTML = "0</br><span id='closebtn' onclick='"+clickclose+"' style='float:right;align:right;bottom:0;'>[<u><b>X</b></u>]</span>";
+document.getElementById('consol').className= currenttheme;
+ }
+ }
+ 
+if(dataname.length === 1 && datainp.value.search(/ -F/) >= 0){
+document.getElementById('consol').innerHTML = "<span title='Missing Argument Error'><i>Missing Argument</i>!</br></br>&nbsp;&nbsp;&nbsp;<i onclick='document.getElementById(&#039;inp&#039;).value=&#039;awk -F &#039;;'>awk -F <b>[FILE]</b></i></br></br>Try <i onclick='document.getElementById(&#039;inp&#039;).value=&#039;awk --F --help&#039;;'>awk --F --help</i> for help.</span></br><span id='closebtn' onclick='"+clickclose+"' style='float:right;align:right;bottom:0;'>[<u><b>X</b></u>]</span>";
+document.getElementById('consol').className= currenttheme;
+}
+
+if(dataname.length === 1 && datainp.value.search(/ --field-separator/i) >= 0){
+document.getElementById('consol').innerHTML = "<span title='Missing Argument Error'><i>Missing Argument</i>!</br></br>&nbsp;&nbsp;&nbsp;<i onclick='document.getElementById(&#039;inp&#039;).value=&#039;awk --field-separator &#039;;'>awk --field-separator <b>[FILE]</b></i></br></br>Try <i onclick='document.getElementById(&#039;inp&#039;).value=&#039;awk --field-separator --help&#039;;'>awk --field-separator --help</i> for help.</span></br><span id='closebtn' onclick='"+clickclose+"' style='float:right;align:right;bottom:0;'>[<u><b>X</b></u>]</span>";
+document.getElementById('consol').className= currenttheme;
+}
+}
+
+function awkvs() {
+
+ var dataname;
+
+  if(datainp.value.search(/ -v/) >= 0){
+   dataname = document.getElementById('inp').value.split(/-v\s/); 
+   }
+  if(datainp.value.search(/ --assign/i) >= 0){
+   dataname = document.getElementById('inp').value.split(/--assign\s/i); 
+   }
+   
+ var dataput = dataname[1];
+ 
+ var datashiftput = dataput.split(/@/);
+ 
+ if(dataname.length > 1 && datashiftput.length > 1){
+ 
+ var datashift0 = datashiftput[0].split(" ")[0]; //data to place 
+ var datashift1 = datashiftput[1].split(" ")[0]; //data to replace
+ 
+ 
+ do { 
+ var datafile = document.getElementsByName(datashift1)[0];
+ 
+ datafile.innerHTML = datashift0;
+ datafile.setAttribute("name", datashift0); 
+ }
+ while (document.getElementsByName(datashift1).length > 0);
+
+ document.getElementById('consol').innerHTML = "<span title='var "+datashift1+" now equals "+datashift0+", aka var=val'><strike>" + datashift1 + "</strike> --> " + datashift0 + "</span></br><span id='closebtn' onclick='"+clickclose+"' style='float:right;align:right;bottom:0;'>[<u><b>X</b></u>]</span>";
+document.getElementById('consol').className= currenttheme;
+  }
+ 
+
+if(dataname.length === 1 && datainp.value.search(/ -v/) >= 0){
+document.getElementById('consol').innerHTML = "<span title='Missing Argument Error'><i>Missing Argument</i>!</br></br>&nbsp;&nbsp;&nbsp;<i onclick='document.getElementById(&#039;inp&#039;).value=&#039;awk -v &#039;;'>awk -v <b>[VALUE]</b></i> <i onclick='document.getElementById(&#039;inp&#039;).value=&#039; @&#039;;'>@<b>[FILE]</b></i></br></br>Try <i onclick='document.getElementById(&#039;inp&#039;).value=&#039;awk -v --help&#039;;'>awk -v --help</i> for help.</span></br><span id='closebtn' onclick='"+clickclose+"' style='float:right;align:right;bottom:0;'>[<u><b>X</b></u>]</span>";
+document.getElementById('consol').className= currenttheme;
+}
+
+if(dataname.length === 1 && datainp.value.search(/ --assign/i) >= 0){
+document.getElementById('consol').innerHTML = "<span title='Missing Argument Error'><i>Missing Argument</i>!</br></br>&nbsp;&nbsp;&nbsp;<i onclick='document.getElementById(&#039;inp&#039;).value=&#039;awk --assign &#039;;'>awk --assign <b>[VALUE]</b></i> <i onclick='document.getElementById(&#039;inp&#039;).value=&#039; @&#039;;'>@<b>[FILE]</b></i></br></br>Try <i onclick='document.getElementById(&#039;inp&#039;).value=&#039;awk --assign --help&#039;;'>awk --assign --help</i> for help.</span></br><span id='closebtn' onclick='"+clickclose+"' style='float:right;align:right;bottom:0;'>[<u><b>X</b></u>]</span>";
+document.getElementById('consol').className= currenttheme;
+}
+
+}
+
+
+function awkbcb(){
+
+ var dataname;
+ 
+if(datainp.value.search(/ -b/) >= 0){
+ dataname = document.getElementById('inp').value.split(/ -b\s/); 
+ }
+if(datainp.value.search(/ --characters-as-bytes/i) >= 0){
+ dataname = document.getElementById('inp').value.split(/ --characters-as-bytes\s/i); 
+ }
+ var dataput = dataname[1];
+ 
+ if(dataname.length > 1){
+ var datafile = document.getElementsByName(dataput)[0];
+ var datastore = document.getElementsByName(dataput)[1];
+ var databack = datafile.innerHTML;
+ var dataend = encodeURI(databack);
+ 
+ datastore.innerHTML = dataend; 
+ 
+ document.getElementById('consol').innerHTML = "<span title='"+databack+" is now "+dataend+"'><strike>" + databack + "</strike> --> " + dataend + "</span></br><span id='closebtn' onclick='"+clickclose+"' style='float:right;align:right;bottom:0;'>[<u><b>X</b></u>]</span>";
+document.getElementById('consol').className= currenttheme;
+ }
+ 
+if(dataname.length === 1 && datainp.value.search(/ -b/) >= 0){
+document.getElementById('consol').innerHTML = "<span title='Missing Argument Error'><i>Missing Argument</i>!</br></br>&nbsp;&nbsp;&nbsp;<i onclick='document.getElementById(&#039;inp&#039;).value=&#039;awk -b &#039;;'>awk -b <b>[VALUE]</b></i></br></br>Try <i onclick='document.getElementById(&#039;inp&#039;).value=&#039;awk -b --help&#039;;'>awk -b --help</i> for help.</span></br><span id='closebtn' onclick='"+clickclose+"' style='float:right;align:right;bottom:0;'>[<u><b>X</b></u>]</span>";
+document.getElementById('consol').className= currenttheme;
+}
+
+if(dataname.length === 1 && datainp.value.search(/ --characters-as-bytes/i) >= 0){
+document.getElementById('consol').innerHTML = "<span title='Missing Argument Error'><i>Missing Argument</i>!</br></br>&nbsp;&nbsp;&nbsp;<i onclick='document.getElementById(&#039;inp&#039;).value=&#039;awk --characters-as-bytes &#039;;'>awk --characters-as-bytes <b>[VALUE]</b></i></br></br>Try <i onclick='document.getElementById(&#039;inp&#039;).value=&#039;awk --characters-as-bytes --help&#039;;'>awk --characters-as-bytes --help</i> for help.</span></br><span id='closebtn' onclick='"+clickclose+"' style='float:right;align:right;bottom:0;'>[<u><b>X</b></u>]</span>";
+document.getElementById('consol').className= currenttheme;
+}
+}
+
+
+function awkprofile() {
+
+ var dataname;
+ 
+if(datainp.value.search(/ --sign-out/i) >= 0 || datainp.value.search(/-so/i) >= 0){
+var oldid = document.getElementById('profiles').innerHTML.split('profilename">')[1].split('</span>')[0];
+   document.getElementById(oldid).innerHTML = document.getElementById('profiles').innerHTML;
+   document.getElementById('profiles').innerHTML = "un-Profiled";
+   document.getElementsByClassName('out')[1].setAttribute('name','un-Profiled');
+document.getElementById('consol').innerHTML = "<u>" + oldid + "</u> signed out.</br>&nbsp;&nbsp;|</br>&nbsp;&nbsp;|---<i>so!</i>---></br><span id='closebtn' onclick='"+clickclose+"' style='float:right;align:right;bottom:0;'>[<u><b>X</b></u>]</span>";
+document.getElementById('consol').className= currenttheme;
+}
+
+else{
+ var d = new Date();
+ var dated = d.getTime();
+ 
+ 
+if(datainp.value.search(/\s-p/) >= 0){
+ dataname = document.getElementById('inp').value.split(/ -p\s/); 
+ }
+ 
+if(datainp.value.search(/\s--profile/i) >= 0){
+ dataname = document.getElementById('inp').value.split(/ --profile\s/i); 
+}
+ var dataput = dataname[1];
+ var awkout = document.getElementById('awkprof');
+ var profcheck = document.querySelector('#profiles');
+ 
+
+  if(awkout.innerHTML.search(dataput) > 1){//if already exisits
+  var profawk = document.getElementById(dataput);
+  
+   if(profcheck.childNodes.length > 1){//save old in files
+   var oldid = document.getElementById('profiles').innerHTML.split('profilename">')[1].split('</span>')[0];
+   document.getElementById(oldid).innerHTML = document.getElementById('profiles').innerHTML;
+   }
+   
+   document.getElementById('profiles').innerHTML = profawk.innerHTML;
+   document.getElementsByClassName('out')[1].innerHTML=profawk.innerHTML;
+   document.getElementsByClassName('out')[1].setAttribute("name",dataname[1]);
+  
+   document.getElementById('consol').innerHTML = "Profile set to " + dataput + ". </br><span id='closebtn' onclick='"+clickclose+"' style='float:right;align:right;bottom:0;'>[<u><b>X</b></u>]</span>" ;
+document.getElementById('consol').className= currenttheme;
+  }
+ 
+ 
+ else{
+ var proid = dated;
+ 
+ if(dataname.length > 1){ //has name but new
+ 
+ clickclose = "document.getElementById(&#039;consol&#039;).innerHTML=&#039;&#039;;document.getElementById(&#039;consol&#039;).className=&#039;&#039;;";
+ 
+ var clickupdate = "document.getElementsByName(&#034;awkprof"+jimmed+"&#034;)[0].innerHTML=document.getElementById(&#034;profiles&#034;).innerHTML;document.getElementById(&#034;consol&#034;).innerHTML=&#034;"+dataput+" Profile Updated!</br><span id=&#039;closebtn&#039; onclick=&#039;"+clickclose+"&#039; style=&#039;display:none;&#039; style=&#039;float:right;align:right;bottom:0;&#039;>[<u><b>X</b></u>]&nbsp;</span>&#034;;document.getElementById(&#034;consol&#034;).className=document.getElementById(&#034;theme&#034;).innerHTML;document.getElementsByClassName(&#034;out&#034;)[1].innerHTML=document.getElementById(&#034;profiles&#034;).innerHTML;document.getElementsByClassName(&#034;out&#034;)[1].setAttribute(&#034;name&#034;,&#034;"+dataname[1]+"&#034;);";
+   
+ var clickso = "document.getElementsByName(&#034;awkprof"+jimmed+"&#034;)[0].innerHTML=document.getElementById(&#034;profiles&#034;).innerHTML;document.getElementById(&#034;profiles&#034;).innerHTML=&#034;un-Profiled&#034;;document.getElementsByClassName(&#039;out&#039;)[1].setAttribute(&#034;name&#034;,&#034;un-Profiled&#034;);document.getElementById(&#039;consol&#039;).className=document.getElementById(&#034;theme&#034;).innerHTML;document.getElementById(&#039;consol&#039;).innerHTML=&#034;<u>"+dataput+"</u></br>&nbsp;&nbsp;|--<i>so!</i>--></br><span id=&#039;closebtn&#039; onclick=&#039;"+clickclose+"&#039; style=&#039;display:none;&#039; style=&#039;float:right;align:right;bottom:0;&#039;>[<u><b>X</b></u>]&nbsp;</span>&#034;;document.getElementsByClassName(&#034;out&#034;)[1].innerHTML=&#034;un-Profiled&#034;;";
+ 
+ 
+ awkout.innerHTML += "<div id='" + dataput + "' name='awkprof" + jimmed + "' class='profile' ><span onclick='document.getElementById(&#039;consol&#039;).className=document.getElementById(&#034;theme&#034;).innerHTML;document.getElementById(&#039;consol&#039;).innerHTML=document.getElementById(&#039;"+dataput+"&#039;).innerHTML;document.getElementById(&#039;closebtn&#039;).style.display=&#034;inline-block&#034;;'><hr><span id='profilename'>"+ dataput + "</span> &nbsp; <span id='inpcount'>0</span> &nbsp; </span><span id='birth' style='display:none;'>Created:"+dated+"</span></br><span id='updatebtn' onclick='"+clickupdate+"'>[<u>Update</u>]</span> <span id='updatebtn' onclick='"+clickso+"'>[<u>|-so!-></u>]</span></br><span id='inptext' style='display:none;'></span><hr><span id='closebtn' style='display:none;' onclick='"+clickclose+"' style='display:none;' style='float:right;align:right;bottom:0;'>[<u><b>X</b></u>]</span></div>";
+ var profready = document.getElementById(dataput);
+ 
+   if(profcheck.childNodes.length > 1){//save old to files
+   var oldid = document.getElementById('profiles').innerHTML.split('profilename">')[1].split('</span>')[0];
+   document.getElementById(oldid).innerHTML = document.getElementById('profiles').innerHTML;
+   }
+   
+ document.getElementById('profiles').innerHTML = profready.innerHTML;
+ document.getElementsByClassName('out')[1].innerHTML=profready.innerHTML;
+   document.getElementsByClassName('out')[1].setAttribute("name",dataname[1]);
+ 
+document.getElementById('consol').innerHTML = "Profile set to " + dataput + ". </br><span id='closebtn' onclick='"+clickclose+"' style='float:right;align:right;bottom:0;'>[<u><b>X</b></u>]</span>";
+document.getElementById('consol').className= currenttheme;
+ }
+ 
+ else{ //no name (anon profiles)
+ 
+ var proid = dated;
+ 
+ clickclose = "document.getElementById(&#039;consol&#039;).innerHTML=&#039;&#039;;document.getElementById(&#039;consol&#039;).className=&#039;&#039;;";
+ 
+ var clickupdate = "document.getElementsByName(&#039;awkprof"+jimmed+"&#039;)[0].innerHTML=document.getElementById(&#039;profiles&#039;).innerHTML;document.getElementById(&#034;consol&#034;).innerHTML=&#034;"+proid+" Profile Updated!</br><span id=&#039;closebtn&#039; onclick=&#039;"+clickclose+"&#039; style=&#039;display:none;&#039; style=&#039;float:right;align:right;bottom:0;&#039;>[<u><b>X</b></u>]&nbsp;</span>&#034;;document.getElementById(&#034;consol&#034;).className=document.getElementById(&#034;theme&#034;).innerHTML;document.getElementsByClassName(&#034;out&#034;)[1].innerHTML=document.getElementById(&#034;profiles&#034;).innerHTML;document.getElementsByClassName(&#034;out&#034;)[1].setAttribute(&#034;name&#034;,&#034;"+proid+"&#034;);";
+   
+ var clickso = "document.getElementsByName(&#039;awkprof"+jimmed+"&#039;)[0].innerHTML=document.getElementById(&#039;profiles&#039;).innerHTML;document.getElementById(&#039;profiles&#039;).innerHTML=&#034;un-Profiled&#034;;document.getElementsByClassName(&#039;out&#039;)[1].setAttribute(&#034;name&#034;,&#034;un-Profiled&#034;);document.getElementById(&#039;consol&#039;).innerHTML=&#034;<u>"+proid+"</u></br>&nbsp;&nbsp;|--<i>so!</i>--></br><span id=&#039;closebtn&#039; onclick=&#039;"+clickclose+"&#039; style=&#039;display:none;&#039; style=&#039;float:right;align:right;bottom:0;&#039;>[<u><b>X</b></u>]&nbsp;</span>&#034;;document.getElementsByClassName(&#034;out&#034;)[1].innerHTML=&#034;un-Profiled&#034;;";
+ 
+ awkout.innerHTML += "<div id='" + proid + "' name='awkprof" + jimmed + "' class='profile'><span onclick='document.getElementById(&#039;consol&#039;).className=document.getElementById(&#034;theme&#034;).innerHTML;document.getElementById(&#039;consol&#039;).innerHTML=document.getElementById(&#039;"+proid+"&#039;).innerHTML;document.getElementById(&#039;closebtn&#039;).style.display=&#034;inline-block&#034;'><hr><span id='profilename'>"+ proid + "</span> &nbsp; <span id='inpcount'>0</span> &nbsp; </span><span id='birth' style='display:none;'>Created:"+dated+"</span><span id='updatebtn' onclick='"+clickupdate+"'>[<u>Update</u>]</span> <span id='updatebtn' onclick='"+clickso+"'>[<u>|-so!-></u>]</span></br><span id='inptext' style='display:none;'></span><hr><span id='closebtn' onclick='"+clickclose+"' style='display:none;' style='float:right;align:right;bottom:0;'>[<u><b>X</b></u>]</span></div>";
+ 
+   if(profcheck.childNodes.length > 1){//save old to files
+   var oldid = document.getElementById('profiles').innerHTML.split('profilename">')[1].split('</span>')[0];
+   document.getElementById(oldid).innerHTML = document.getElementById('profiles').innerHTML;
+   }
+   
+ document.getElementById('profiles').innerHTML = document.getElementById(proid).innerHTML;
+ document.getElementsByClassName('out')[1].innerHTML=document.getElementById(proid).innerHTML;
+   document.getElementsByClassName('out')[1].setAttribute("name",proid);
+ 
+document.getElementById('consol').innerHTML = "Profile set to " + proid + ". </br><span id='closebtn' onclick='"+clickclose+"' style='float:right;align:right;bottom:0;'>[<u><b>X</b></u>]</span>" ;
+document.getElementById('consol').className= currenttheme;
+ }
+ 
+ }
+ 
+jimmed = jimmed + 1;
+
+}
+
+}
+
+
+function clear() {
+var datainp = document.getElementById('inp');
+
+//just clear inputted
+if(datainp.value.search(/ -/) < 0) {
+  document.getElementById('output').innerHTML = '';
+  document.getElementById('pot').innerHTML = '';
+  document.getElementById('consol').innerHTML = '';
+  document.getElementById('consol').className = '';
+}
+datainp.value = '';
+}
+
+
+
+function cmp(){
+var datainp = document.getElementById('inp');
+
+if(datainp.value.search(/(cmp|CmP|cMP|CMP|CMp|cMP|cmP|CmP) -b/) >= 0 || datainp.value.search(/(cmp|CmP|cMP|CMP|CMp|cMP|cmP|CmP) --print-bytes/) >= 0){
+
+if(datainp.value.search(/-b\s/) >= 0 && datainp.value.search(/-h/) >= 0){
+document.getElementById('consol').innerHTML = "<span><i><span title='the anchor command'>command</span> <span title='the action command'>action</span> <span title='the object to be checked'>object</span> @<span title='the 2cd object to be checked'>2cd object</span></i>: </br></br>&nbsp;&nbsp;&nbsp;<i onclick='document.getElementById(&#039;inp&#039;).value=&#039;cmp -b &#039;;'><span title='anchor command'>cmp</span> <span title='action command'>-b</span></i> <i><b title='1st file'>[FILE1]</b></i> <i><b title='2cd file'>@[FILE2]</b></i></i> <b title='optional skip number'>[NUM1] <i onclick='document.getElementById(&#039;inp&#039;).value=&#039; -i &#039;;' title='optional skip initializer'>-i </i> <b title='2cd optional skip number'>[NUM2]</b></span></br><span id='closebtn' onclick='"+clickclose+"' style='float:right;align:right;bottom:0;'>[<u><b>X</b></u>]</span>";
+document.getElementById('consol').className= currenttheme;
+}
+else if(datainp.value.search(/--print-bytes\s/i) >= 0 && datainp.value.search(/-h/) >= 0){
+document.getElementById('consol').innerHTML = "<span><i><span title='the anchor command'>command</span> <span title='the action command'>action</span> <span title='the object to be checked'>object</span> @<span title='the 2cd object to be checked'>2cd object</span></i>: </br></br>&nbsp;&nbsp;&nbsp;<i onclick='document.getElementById(&#039;inp&#039;).value=&#039;cmp --print-bytes &#039;;'><span title='anchor command'>cmp</span> <span title='action command'>--print-bytes</span></i> <i><b title='1st file'>[FILE1]</b></i> <i><b title='2cd file'>@[FILE2]</b></i></i> <b title='optional skip number'>[NUM1] <i onclick='document.getElementById(&#039;inp&#039;).value=&#039; -i &#039;;' title='optional skip initializer'>-i </i> <b title='2cd optional skip number'>[NUM2]</b></span></br><span id='closebtn' onclick='"+clickclose+"' style='float:right;align:right;bottom:0;'>[<u><b>X</b></u>]</span>";
+document.getElementById('consol').className= currenttheme;
+}
+else{
+cmppb();
+}
+
+}
+
+
+if(datainp.value.search(/(cmp|CmP|cMP|CMP|CMp|cMP|cmP|CmP) -h/) >= 0 || datainp.value.search(/(cmp|CmP|cMP|CMP|CMp|cMP|cmP|CmP) --help/) >= 0){
+var helpfinder = datainp.value.split(/-h/);
+
+if(helpfinder[1].search(/\s-b/) >= 0){
+document.getElementById('consol').innerHTML = "<span><h4><i>-b</i> is a command to compare byte sizes for up to two files or prevous inputs.</br><sup><i>-b</i> is <b>shorthand for <u>--print-bytes</u></b>, specifically <q>bytes</q>.</br></sup></h4><hr></br>&nbsp;&nbsp;&nbsp;How to use <i>compare bytes command</i>:</br><ul><li><i><span title='the anchor command'>command</span> <span title='the action command'>action</span> <span title='the object to be compared'>object</span> @<span title='the 2cd object to be compared'>object</span></i> <span title='optional skip placement'>number</span> <span title='skip initializer'>-i</span> <span title='optional 2cd skip placement'>number</span></i></li></ul></br></br>&nbsp;&nbsp;&nbsp;<i onclick='document.getElementById(&#039;inp&#039;).value=&#039;cmp -b &#039;;'><span title='anchor command'>cmp</span> <span title='action command'>-b</span></i>  <span title='the object to be compared'>[FILE1]</span> <i onclick='document.getElementById(&#039;inp&#039;).value=&#039; @&#039;;'>@<span title='the 2cd object to be compared'>[FILE2]</span></i> <b title='optional skip number'>[NUM1] <i onclick='document.getElementById(&#039;inp&#039;).value=&#039; -i &#039;;' title='optional skip initializer'>-i </i> <b title='2cd optional skip number'>[NUM2]</b></span></br><span id='closebtn' onclick='"+clickclose+"' style='float:right;align:right;bottom:0;'>[<u><b>X</b></u>]</span>";
+document.getElementById('consol').className= currenttheme;
+}
+else if(helpfinder[1].search(/\s--print-bytes/i) >= 0){
+document.getElementById('consol').innerHTML = "<span><h4><i>--print-bytes</i> is a command to compare byte sizes for up to two files or prevous inputs.</br><sup><i>--print-bytes</i> is <b>longform for <u>-b</u></b>, specifically explaining what's to be outputted.</br></sup></h4><hr></br>&nbsp;&nbsp;&nbsp;How to use <i>compare bytes command</i>:</br><ul><li><i><span title='the anchor command'>command</span> <span title='the action command'>action</span> <span title='the object to be compared'>object</span> @<span title='the 2cd object to be compared'>object</span> <span title='optional skip placement'>number</span> <span title='skip initializer'>-i</span> <span title='optional 2cd skip placement'>number</span></i></li></ul></br></br>&nbsp;&nbsp;&nbsp;<i onclick='document.getElementById(&#039;inp&#039;).value=&#039;cmp --print-bytes &#039;;'><span title='anchor command'>cmp</span> <span title='action command'>--print-bytes</span></i>  <span title='the object to be compared'>[FILE1]</span> <i onclick='document.getElementById(&#039;inp&#039;).value=&#039; @&#039;;'>@<span title='the 2cd object to be compared'>[FILE2]</span></i> <b title='optional skip number'>[NUM1] <i onclick='document.getElementById(&#039;inp&#039;).value=&#039; -i &#039;;' title='optional skip initializer'>-i </i> <b title='2cd optional skip number'>[NUM2]</b></span></br><span id='closebtn' onclick='"+clickclose+"' style='float:right;align:right;bottom:0;'>[<u><b>X</b></u>]</span>";
+document.getElementById('consol').className= currenttheme;
+}
+
+
+else if(helpfinder[1].search(/\s-i/) >= 0){
+document.getElementById('consol').innerHTML = "<span><h4><i>-i</i> is a command to initialize a skip location when comparing byte sizes for up to two files or prevous inputs.  If there is only 1 number (before the <i>-i</i>, then both files will be skipped to this position before comparing but if there are a number before and after the <i>-i</i>, then the 1st number will skip in the 1st object the second for the second.</br><sup></br></sup></h4><hr></br>&nbsp;&nbsp;&nbsp;How to use <i>compare bytes command</i>:</br><ul><li><i><span title='the anchor command'>command</span> <span title='the action command'>action</span> <span title='the object to be compared'>object</span> @<span title='the 2cd object to be compared'>object</span> <span title='optional skip placement'>number</span> <span title='skip initializer'>-i</span> <span title='optional 2cd skip placement'>number</span></i></li></ul></br></br>&nbsp;&nbsp;&nbsp;<i onclick='document.getElementById(&#039;inp&#039;).value=&#039;cmp --print-bytes &#039;;'><span title='anchor command'>cmp</span> <span title='action command'>--print-bytes or -b</span></i>  <span title='the object to be compared'>[FILE1]</span> <i onclick='document.getElementById(&#039;inp&#039;).value=&#039; @&#039;;'>@<span title='the 2cd object to be compared'>[FILE2]</span></i> <b title='optional skip number'>[NUM1] <i onclick='document.getElementById(&#039;inp&#039;).value+=&#039; -i &#039;;' title='optional skip initializer'>-i </i> <b title='2cd optional skip number'>[NUM2]</b></span></br><span id='closebtn' onclick='"+clickclose+"' style='float:right;align:right;bottom:0;'>[<u><b>X</b></u>]</span>";
+document.getElementById('consol').className= currenttheme;
+}
+
+else{
+var thisoption = document.querySelectorAll('#cmpoptions')[1];
+document.getElementById('consol').innerHTML = thisoption.innerHTML;
+document.getElementById('consol').className= currenttheme;
+}
+
+}
+
+//just cmp inputted
+if(datainp.value.search(/-/) < 0) {
+ document.getElementById('consol').innerHTML = "Try <i>cmp -h for comparing options</i></br><span id='closebtn' onclick='"+clickclose+"' style='float:right;align:right;bottom:0;'>[<u><b>X</b></u>]</span>";
+document.getElementById('consol').className= currenttheme;
+}
+
+
+
+}
+
+
+
+var jeff1 = 0;
+
+function cmppb(){
+
+ var dataname;
+
+  if(datainp.value.search(/ -b/) >= 0){
+  dataname = document.getElementById('inp').value.split(/ -b\s/);
+  
+  if(datainp.value.search(/[\w]/g) < 1){
+document.getElementById('consol').innerHTML = "<span title='Missing Argument Error'><i>Missing Argument</i>!</br></br>&nbsp;&nbsp;&nbsp;<i onclick='document.getElementById(&#039;inp&#039;).value=&#039;cmp -b &#039;;'>cmp -b <b>[FILE]</b></i> <i onclick='document.getElementById(&#039;inp&#039;).value+=&#039; @&#039;;'>@<b>[FILE]</b></i> <i><b>[NUM1]</b></i> <b onclick='document.getElementById(&#039;inp&#039;).value+=&#039; -i @&#039;;'> -i <i><b>[NUM2]</b></i></br></br>Try <i onclick='document.getElementById(&#039;inp&#039;).value=&#039;cmp -b --help&#039;;'>cmp -b --help</i> for help.</span></br><span id='closebtn' onclick='"+clickclose+"' style='float:right;align:right;bottom:0;'>[<u><b>X</b></u>]</span>";
+document.getElementById('consol').className= currenttheme;
+}
+}
+  if(datainp.value.search(/ --print-bytes/i) >= 0){
+  dataname = document.getElementById('inp').value.split(/ --print-bytes\s/i); 
+  
+  if(datainp.value.search(/[\w]/g) < 1){
+document.getElementById('consol').innerHTML = "<span title='Missing Argument Error'><i>Missing Argument</i>!</br></br>&nbsp;&nbsp;&nbsp;<i onclick='document.getElementById(&#039;inp&#039;).value=&#039;cmp --print-bytes &#039;;'>cmp --print-bytes <b>[FILE]</b></i> <i onclick='document.getElementById(&#039;inp&#039;).value+=&#039; @&#039;;'>@<b>[FILE]</b></i> <i><b>[NUM1]</b></i> <b onclick='document.getElementById(&#039;inp&#039;).value+=&#039; -i @&#039;;'> -i <i><b>[NUM2]</b></i></br></br>Try <i onclick='document.getElementById(&#039;inp&#039;).value=&#039;cmp --print-bytes --help&#039;;'>cmp --print-bytes -h</i> for help.</span></br><span id='closebtn' onclick='"+clickclose+"' style='float:right;align:right;bottom:0;'>[<u><b>X</b></u>]</span>";
+document.getElementById('consol').className= currenttheme;
+}
+
+ }
+ 
+ var dataput = dataname[1];
+ 
+ var datashiftput = dataput.split(/@/);
+ 
+ if(dataname.length > 1 && datashiftput.length > 1){
+ 
+ var datashift0 = datashiftput[0]; //data to place 
+ var datais1 = document.getElementsByName(datashift0.trim())[1].outerHTML;
+ var datashift1 = datashiftput[1]; //data to compare
+ 
+ var dataskip1 = 0, dataskip2 = 0, extrashift;
+ 
+ if(datashift1.search(/-i/) >= 0){
+ //datashift1 = datashift1.split(" ")[0];
+ dataskip1 = datashift1.split(/-i/)[0];
+ dataskip1 = dataskip1.split(" ")[1];
+ extrashift = datashift1.split(/-i/)[1];
+ datashift1 = datashift1.split(" ")[0];
+ 
+ if(extrashift.search(/[\w][\d]/) >= 0){
+ dataskip2 = extrashift;
+ }
+ else {
+ dataskip2 = dataskip1;
+ }
+ }
+ 
+ var datais2 = document.getElementsByName(datashift1.trim())[1].outerHTML;
+ 
+ 
+ 
+ const byteSize = str => (new Blob([str])).size;
+ 
+ var file1bs = byteSize(datais1.slice(dataskip1,datais1.length));
+ var file2bs = byteSize(datais2.slice(dataskip2,datais2.length));
+ 
+ var diff = Number(file1bs) - Number(file2bs);
+ if(diff.toString().search(/-/) >= 0) {
+ diff = diff.toString().split(/-/)[1];
+ }
+document.getElementById("inp").value = "<span id=&#034;cmp"+jeff1+"&#034; ></br>&nbsp;[" + file1bs + "]&nbsp;:(+/- "+diff+"):&nbsp;[" + file2bs + "]";
+document.getElementById("consol").innerHTML = "";
+
+
+jeff1 = jeff1 + 1;
+}
+
+}
+
+function datestuff() {
+
+var dd = new Date();
+
+
+if(datainp.value.search(/-d/) >= 0 || datainp.value.search(/--date/i) >= 0){
+
+if(datainp.value.search(/ -d/) >= 0 && datainp.value.search(/-h/) >= 0){
+document.getElementById('consol').innerHTML = "<span><i><span title='the anchor command'>command</span> <span title='the action command'>action</span> <span title='the time to ouput'>date string</span></i>: </br></br>&nbsp;&nbsp;&nbsp;<i onclick='document.getElementById(&#039;inp&#039;).value=&#039;date -d &#039;;'><span title='anchor command'>date</span> <span title='action command'>-d</span> <b title='date string'>[DATE]</b></i></span></br><span id='closebtn' onclick='"+clickclose+"' style='float:right;align:right;bottom:0;'>[<u><b>X</b></u>]</span>";
+document.getElementById('consol').className= currenttheme;
+}
+else if(datainp.value.search(/ --date/i) >= 0 && datainp.value.search(/-h/) >= 0){
+document.getElementById('consol').innerHTML = "<span><i><span title='the anchor command'>command</span> <span title='the action command'>action</span> <span title='the object to be checked'>object</span></i>: </br></br>&nbsp;&nbsp;&nbsp;<i  onclick='document.getElementById(&#039;inp&#039;).value=&#039;date --date &#039;;'><span title='anchor command'>date</span> <span title='action command'>--date</span> <b title='usable object type(s)'>[DATE]</b></i></span></br><span id='closebtn' onclick='"+clickclose+"' style='float:right;align:right;bottom:0;'>[<u><b>X</b></u>]</span>";
+document.getElementById('consol').className= currenttheme;
+}
+else{
+dateds();
+}
+
+
+}
+
+
+
+if(datainp.value.search(/--UTC/i) >= 0 || datainp.value.search(/-u/) >= 0 || datainp.value.search(/--GMT/i) >= 0 || datainp.value.search(/-g/) >= 0){
+
+if(datainp.value.search(/--UTC/i) >= 0 && datainp.value.search(/-h/) >= 0){
+document.getElementById('consol').innerHTML = "<span><i><span title='the anchor command'>command</span> <span title='the action command'>action</span></i>: </br></br>&nbsp;&nbsp;&nbsp;<i  onclick='document.getElementById(&#039;inp&#039;).value=&#039;date --UTC&#039;;'><span title='anchor command'>date</span> <span title='action command'>--UTC</span></i></span></br><span id='closebtn' onclick='"+clickclose+"' style='float:right;align:right;bottom:0;'>[<u><b>X</b></u>]</span>";
+document.getElementById('consol').className= currenttheme;
+}
+
+else if(datainp.value.search(/--GMT/i) >= 0 && datainp.value.search(/-h/) >= 0){
+document.getElementById('consol').innerHTML = "<span><i><span title='the anchor command'>command</span> <span title='the action command'>action</span></i>: </br></br>&nbsp;&nbsp;&nbsp;<i  onclick='document.getElementById(&#039;inp&#039;).value=&#039;date --GMT&#039;;'><span title='anchor command'>date</span> <span title='action command'>--GMT</span></i></span></br><span id='closebtn' onclick='"+clickclose+"' style='float:right;align:right;bottom:0;'>[<u><b>X</b></u>]</span>";
+document.getElementById('consol').className= currenttheme;
+}
+
+if(datainp.value.search(/-u/) >= 0 && datainp.value.search(/-h/) >= 0){
+document.getElementById('consol').innerHTML = "<span><i><span title='the anchor command'>command</span> <span title='the action command'>action</span></i>: </br></br>&nbsp;&nbsp;&nbsp;<i  onclick='document.getElementById(&#039;inp&#039;).value=&#039;date -u&#039;;'><span title='anchor command'>date</span> <span title='action command'>-u</span></i></span></br><span id='closebtn' onclick='"+clickclose+"' style='float:right;align:right;bottom:0;'>[<u><b>X</b></u>]</span>";
+document.getElementById('consol').className= currenttheme;
+}
+
+else if(datainp.value.search(/-g/) >= 0 && datainp.value.search(/-h/) >= 0){
+document.getElementById('consol').innerHTML = "<span><i><span title='the anchor command'>command</span> <span title='the action command'>action</span></i>: </br></br>&nbsp;&nbsp;&nbsp;<i  onclick='document.getElementById(&#039;inp&#039;).value=&#039;date -g&#039;;'><span title='anchor command'>date</span> <span title='action command'>-g</span></i></span></br><span id='closebtn' onclick='"+clickclose+"' style='float:right;align:right;bottom:0;'>[<u><b>X</b></u>]</span>";
+document.getElementById('consol').className= currenttheme;
+}
+
+
+else{
+dateds();
+}
+
+}
+
+
+if(datainp.value.search(/-t/) >= 0){
+
+if(datainp.value.search(/-t/) >= 0 && datainp.value.search(/-h/) >= 0){
+document.getElementById('consol').innerHTML = "<span><i><span title='the anchor command'>command</span> <span title='the action command'>action</span></i>: </br></br>&nbsp;&nbsp;&nbsp;<i  onclick='document.getElementById(&#039;inp&#039;).value=&#039;date -t&#039;;'><span title='anchor command'>date</span> <span title='action command'>-t</span></i></span></br><span id='closebtn' onclick='"+clickclose+"' style='float:right;align:right;bottom:0;'>[<u><b>X</b></u>]</span>";
+document.getElementById('consol').className= currenttheme;
+}
+
+else{
+document.getElementById('consol').innerHTML=dd.toString().split(" ")[5] + "</br><span id='closebtn' onclick='"+clickclose+"' style='float:right;align:right;bottom:0;'>[<u><b>X</b></u>]</span>";
+document.getElementById('consol').className= currenttheme;
+}
+
+}
+
+if(datainp.value.search(/date -h/) >= 0 || datainp.value.search(/(date|DaTe|dATe|DATe|DAte|dATe|daTe|DaTe|daTe|datE|DaTE|DatE|DAtE|dAtE|dATE|daTE|DaTE|DATE|) --help/i) >= 0){
+var dataiss = datainp.value.split(/-h/);
+
+if(dataiss[1].search(/ -d/) >= 0){
+document.getElementById('consol').innerHTML = "<span><h4><i>-d</i> is a command to see a readable date script from you input. What data is displayed is based on the amount of date data you give. Start with year, and work down toward millaseconds. Millaseconds don't always show. <sub>There is overflow glitch so if your input causes a date rollover ona final day of the month, a invaled date error may display.</br><sup></br></sup></h4><hr></br>&nbsp;&nbsp;&nbsp;How to use <i>date command</i>:</br><ul><li><i><span title='the anchor command'>command</span> <span title='the action command'>action</span> <span title='the year date object'>[YEAR]</span> <span title='the month date object'>[MONTH]</span> <span title='the day date object'>[DAY]</span> <span title='the hour date object'>[HOUR]</span> <span title='the minute date object'>[MINUTE]</span> <span title='the seconds date object'>[SECONDS]</span> <span title='the millaseconds date object'>[MILLASECONDS]</span> </i></li></ul></br></br>&nbsp;&nbsp;&nbsp;<i onclick='document.getElementById(&#039;inp&#039;).value=&#039;date -d &#039;;'><span title='anchor command'>date</span> <span title='action command'>-d</span></i>  <span title='the year date object'>[YYY]</span> <span title='the month date object'>[MM]</span> <span title='the day date object'>[DD]</span> <span title='the hour date object'>[HH]</span> <span title='the minute date object'>[MM]</span> <span title='the seconds date object'>[SS]</span> <span title='the millaseconds date object'>[MMM]</span></span></br><span id='closebtn' onclick='"+clickclose+"' style='float:right;align:right;bottom:0;'>[<u><b>X</b></u>]</span>";
+document.getElementById('consol').className= currenttheme;
+}
+else if(dataiss[1].search(/ --date/i) >= 0){
+document.getElementById('consol').innerHTML = "<span><h4><i>--date</i> is a command to see a readable date script from you input. What data is displayed is based on the amount of date data you give. Start with year, and work down toward millaseconds. Millaseconds don't always show. <sub>There is overflow glitch so if your input causes a date rollover ona final day of the month, a invaled date error may display.</br><sup></br></sup></h4><hr></br>&nbsp;&nbsp;&nbsp;How to use <i>date command</i>:</br><ul><li><i><span title='the anchor command'>command</span> <span title='the action command'>action</span> <span title='the year date object'>[YEAR]</span> <span title='the month date object'>[MONTH]</span> <span title='the day date object'>[DAY]</span> <span title='the hour date object'>[HOUR]</span> <span title='the minute date object'>[MINUTE]</span> <span title='the seconds date object'>[SECONDS]</span> <span title='the millaseconds date object'>[MILLASECONDS]</span> </i></li></ul></br></br>&nbsp;&nbsp;&nbsp;<i onclick='document.getElementById(&#039;inp&#039;).value=&#039;date --date &#039;;'><span title='anchor command'>date</span> <span title='action command'>--date</span></i>  <span title='the year date object'>[YYY]</span> <span title='the month date object'>[MM]</span> <span title='the day date object'>[DD]</span> <span title='the hour date object'>[HH]</span> <span title='the minute date object'>[MM]</span> <span title='the seconds date object'>[SS]</span> <span title='the millaseconds date object'>[MMM]</span></span></br><span id='closebtn' onclick='"+clickclose+"' style='float:right;align:right;bottom:0;'>[<u><b>X</b></u>]</span>";
+document.getElementById('consol').className= currenttheme;
+}
+else if(dataiss[1].search(/--UTC/i) >= 0){
+document.getElementById('consol').innerHTML = "<span><h4><i>--UTC</i> is a command to see date script from you input. What data is displayed is based on the amount of date data you give. Start with year, and work down toward millaseconds. Millaseconds don't always show. <sub>There is overflow glitch so if your input causes a date rollover ona final day of the month, a invaled date error may display.</br><sup></br></sup></h4><hr></br>&nbsp;&nbsp;&nbsp;How to use <i>date command</i>:</br><ul><li><i><span title='the anchor command'>command</span> <span title='the action command'>action</span> <span title='the year date object'>[YEAR]</span> <span title='the month date object'>[MONTH]</span> <span title='the day date object'>[DAY]</span> <span title='the hour date object'>[HOUR]</span> <span title='the minute date object'>[MINUTE]</span> <span title='the seconds date object'>[SECONDS]</span> <span title='the millaseconds date object'>[MILLASECONDS]</span> </i></li></ul></br></br>&nbsp;&nbsp;&nbsp;<i onclick='document.getElementById(&#039;inp&#039;).value=&#039;date --UTC &#039;;'><span title='anchor command'>date</span> <span title='action command'>--UTC</span></i>  <span title='the year date object'>[YYY]</span> <span title='the month date object'>[MM]</span> <span title='the day date object'>[DD]</span> <span title='the hour date object'>[HH]</span> <span title='the minute date object'>[MM]</span> <span title='the seconds date object'>[SS]</span> <span title='the millaseconds date object'>[MMM]</span></span></br><span id='closebtn' onclick='"+clickclose+"' style='float:right;align:right;bottom:0;'>[<u><b>X</b></u>]</span>";
+document.getElementById('consol').className= currenttheme;
+}
+if(datainp.value.search(/-u/) >= 0){
+document.getElementById('consol').innerHTML = "<span><h4><i>-u</i> is a command to see date script from you input. What data is displayed is based on the amount of date data you give. Start with year, and work down toward millaseconds. Millaseconds don't always show. <sub>There is overflow glitch so if your input causes a date rollover ona final day of the month, a invaled date error may display.</br><sup></br></sup></h4><hr></br>&nbsp;&nbsp;&nbsp;How to use <i>date command</i>:</br><ul><li><i><span title='the anchor command'>command</span> <span title='the action command'>action</span> <span title='the year date object'>[YEAR]</span> <span title='the month date object'>[MONTH]</span> <span title='the day date object'>[DAY]</span> <span title='the hour date object'>[HOUR]</span> <span title='the minute date object'>[MINUTE]</span> <span title='the seconds date object'>[SECONDS]</span> <span title='the millaseconds date object'>[MILLASECONDS]</span> </i></li></ul></br></br>&nbsp;&nbsp;&nbsp;<i onclick='document.getElementById(&#039;inp&#039;).value=&#039;date -u &#039;;'><span title='anchor command'>date</span> <span title='action command'>-u</span></i>  <span title='the year date object'>[YYY]</span> <span title='the month date object'>[MM]</span> <span title='the day date object'>[DD]</span> <span title='the hour date object'>[HH]</span> <span title='the minute date object'>[MM]</span> <span title='the seconds date object'>[SS]</span> <span title='the millaseconds date object'>[MMM]</span></span></br><span id='closebtn' onclick='"+clickclose+"' style='float:right;align:right;bottom:0;'>[<u><b>X</b></u>]</span>";
+document.getElementById('consol').className= currenttheme;
+}
+
+else if(dataiss[1].search(/--GMT/i) >= 0){
+document.getElementById('consol').innerHTML = "<span><h4><i>--GMT</i> is a command to see date script from you input. What data is displayed is based on the amount of date data you give. Start with year, and work down toward millaseconds. Millaseconds don't always show. <sub>There is overflow glitch so if your input causes a date rollover ona final day of the month, a invaled date error may display.</br><sup></br></sup></h4><hr></br>&nbsp;&nbsp;&nbsp;How to use <i>date command</i>:</br><ul><li><i><span title='the anchor command'>command</span> <span title='the action command'>action</span> <span title='the year date object'>[YEAR]</span> <span title='the month date object'>[MONTH]</span> <span title='the day date object'>[DAY]</span> <span title='the hour date object'>[HOUR]</span> <span title='the minute date object'>[MINUTE]</span> <span title='the seconds date object'>[SECONDS]</span> <span title='the millaseconds date object'>[MILLASECONDS]</span> </i></li></ul></br></br>&nbsp;&nbsp;&nbsp;<i onclick='document.getElementById(&#039;inp&#039;).value=&#039;date --GMT &#039;;'><span title='anchor command'>date</span> <span title='action command'>--GMT</span></i>  <span title='the year date object'>[YYY]</span> <span title='the month date object'>[MM]</span> <span title='the day date object'>[DD]</span> <span title='the hour date object'>[HH]</span> <span title='the minute date object'>[MM]</span> <span title='the seconds date object'>[SS]</span> <span title='the millaseconds date object'>[MMM]</span></span></br><span id='closebtn' onclick='"+clickclose+"' style='float:right;align:right;bottom:0;'>[<u><b>X</b></u>]</span>";
+document.getElementById('consol').className= currenttheme;
+}
+else if(datainp.value.search(/-g/) >= 0 && datainp.value.search(/-h/) >= 0){
+document.getElementById('consol').innerHTML = "<span><h4><i>-g</i> is a command to see date script from you input. What data is displayed is based on the amount of date data you give. Start with year, and work down toward millaseconds. Millaseconds don't always show. <sub>There is overflow glitch so if your input causes a date rollover ona final day of the month, a invaled date error may display.</br><sup></br></sup></h4><hr></br>&nbsp;&nbsp;&nbsp;How to use <i>date command</i>:</br><ul><li><i><span title='the anchor command'>command</span> <span title='the action command'>action</span> <span title='the year date object'>[YEAR]</span> <span title='the month date object'>[MONTH]</span> <span title='the day date object'>[DAY]</span> <span title='the hour date object'>[HOUR]</span> <span title='the minute date object'>[MINUTE]</span> <span title='the seconds date object'>[SECONDS]</span> <span title='the millaseconds date object'>[MILLASECONDS]</span> </i></li></ul></br></br>&nbsp;&nbsp;&nbsp;<i onclick='document.getElementById(&#039;inp&#039;).value=&#039;date -g &#039;;'><span title='anchor command'>date</span> <span title='action command'>-g</span></i>  <span title='the year date object'>[YYY]</span> <span title='the month date object'>[MM]</span> <span title='the day date object'>[DD]</span> <span title='the hour date object'>[HH]</span> <span title='the minute date object'>[MM]</span> <span title='the seconds date object'>[SS]</span> <span title='the millaseconds date object'>[MMM]</span></span></br><span id='closebtn' onclick='"+clickclose+"' style='float:right;align:right;bottom:0;'>[<u><b>X</b></u>]</span>";
+document.getElementById('consol').className= currenttheme;
+}
+else if(dataiss[1].search(/-t/) >= 0){
+document.getElementById('consol').innerHTML = "<span><h4><i>-t</i> is a command to see your local Time-Zone.</br><sup></br></sup></h4><hr></br>&nbsp;&nbsp;&nbsp;How to use <i>date command</i>:</br><ul><li><i><span title='the anchor command'>command</span> <span title='the action command'>action</span> </i></li></ul></br></br>&nbsp;&nbsp;&nbsp;<i onclick='document.getElementById(&#039;inp&#039;).value=&#039;date -t &#039;;'><span title='anchor command'>date</span> <span title='action command'>-t</span></i></span></br><span id='closebtn' onclick='"+clickclose+"' style='float:right;align:right;bottom:0;'>[<u><b>X</b></u>]</span>";
+document.getElementById('consol').className= currenttheme;
+}
+
+else {
+var thisoption = document.querySelectorAll('#dateoptions')[1];
+document.getElementById('consol').innerHTML = thisoption.innerHTML;
+document.getElementById('consol').className= currenttheme;
+}
+
+
+}
+
+
+
+//just date inputted
+if(datainp.value.search(/-/) < 0) {
+var thidd = dd.toString().split("GMT")[0].split(" ");
+ document.getElementById('consol').innerHTML = thidd[0] +" "+ thidd[1] +" "+ thidd[2]+" "+ thidd[3]+"</br></br><span id='closebtn' onclick='"+clickclose+"' style='float:right;align:right;bottom:0;'>[<u><b>X</b></u>]</span>";
+document.getElementById('consol').className= currenttheme;
+}
+
+
+}
+
+
+
+var temp1 = [], dateoutput, temp3, temp4, temp5, temp2, hrs, min, sec, day, year, month, millsec, mer, huh;
+
+
+function dateds(){
+temp3 = '';
+dateoutput = '';
+document.getElementById('consol').innerHTML = '';
+
+  huh = datainp.value;
+  
+if(datainp.value.search(/\d{1,4}/) >= 0){
+
+if(datainp.value.search(/-d/) >= 0){
+  temp1 = datainp.value.split(/-d/)[1].split(/\s/g);
+  }
+  
+if(datainp.value.search(/--date/i) >= 0){
+  temp1 = datainp.value.split(/--date/i)[1].split(/\s/g);
+  }
+  
+if(datainp.value.search(/--UTC/i) >= 0){
+  temp1 = datainp.value.split(/--UTC/i)[1].split(/\s/g);
+  }
+  if(datainp.value.search(/-u/) >= 0){
+  temp1 = datainp.value.split(/-u/)[1].split(/\s/g);
+  }
+if(datainp.value.search(/--GMT/i) >= 0){
+  temp1 = datainp.value.split(/--GMTi/)[1].split(/\s/g);
+  }
+  
+  if(datainp.value.search(/-g/) >= 0){
+  temp1 = datainp.value.split(/-g/)[1].split(/\s/g);
+  }
+  
+  
+  if(temp1.length >= 5){
+   year = temp1[1];
+   month = temp1[2];
+   day = temp1[3];
+   
+   hrs = temp1[4];
+   
+   if(Number(hrs) > 24){
+   do{
+   hrs = Number(hrs) - 24;
+   day = Number(day) + 1;
+   }
+   while(Number(hrs) > 24);
+   }
+   if(Number(hrs) >= 12 && Number(hrs) < 24){
+   hrs = Number(hrs) - 12;
+   if(Number(hrs) === 0){
+   hrs = 1;
+   }
+   mer = "PM";
+   }
+   if(Number(hrs) < 12 || Number(hrs) === 24){
+   if(Number(hrs) === 0){
+   hrs = 1;
+   }
+   mer = "AM";
+   }
+   
+	
+   if(Number(month) === /12/){
+    if(Number(day) > 31){
+	do{
+	day = Number(day) - 31;
+	month = Number(month) + 1;
+	year = Number(year) + 1;
+	if(Number(month) != /12/){
+	break;
+	}
+	}
+	while(day > 31);
+	} }
+    if(Number(month) === /(01|1|03|3|05|5|07|7|08|8|10)/){
+    if(Number(day) > 31){
+	do{
+	day = Number(day) - 31;
+	month = Number(month) + 1;
+	if(Number(month) != /(01|1|03|3|05|5|07|7|08|8|10)/){
+	break;
+	}
+	}
+	while(day > 31);
+	} }
+	if(Number(month) === /(04|4|06|6|09|9|11)/){
+	if(Number(day) > 30){
+	do{
+	day = Number(day) - 31;
+	month = Number(month) + 1;
+	if(Number(month) != /(04|4|06|6|09|9|11)/){
+	break;
+	}
+	}
+	while(day > 30);
+	} }
+	if(Number(month) === /(02|2)/){
+	if(Number.isInteger(Number(year) % 4) != 'ture'){
+	if(Number(day) > 28){
+	do{
+	day = Number(day) - 28;
+	month = Number(month) + 1;
+	if(Number(month) != /(02|2)/){
+	break;
+	}
+	}
+	while(day > 28);
+	} }
+	else{
+	if(Number(day) > 29){
+	do{
+	day = Number(day) - 29;
+	month = Number(month) + 1;
+	if(Number(month) != /(02|2)/){
+	break;
+	}
+	}
+	while(day > 29);
+	} } }
+ 
+   
+   if(temp1.length >= 6){
+     min = temp1[5];
+	 if(Number(min) < 10){
+	 min = "0" + "" + min;
+	 }
+	 if(Number(min) > 60){
+	 do{
+	 min = Number(min) - 60;
+	 hrs = Number(hrs) + 1;
+	 }
+	 while(Number(min) > 60);
+	 }
+   
+   if(temp1.length >= 7){
+   sec = temp1[6];
+   
+	 if(Number(sec) > 60){
+	 do{
+	 sec = Number(sec) - 60;
+	 min = Number(min) + 1;
+	 }
+	 while(Number(min) > 60);
+	 }
+  
+   if(temp1.length === 8){
+   millsec = temp1[7];
+   if(Number(millsec) > 999){
+	 do{
+	 millsec = Number(millsec) - 999;
+	 sec = Number(sec) + 1;
+	 }
+	 while(Number(millsec) > 999);
+	 }
+	 
+   millsec = Number(millsec);
+ temp3 = " [" + millsec + "]";
+   }
+   
+  sec = ";" + sec;
+ temp3 = sec + temp3; //error (double output for this)
+ }
+	 min = ":" + min;
+    temp3 =  min + temp3;
+	}
+	
+    if(huh.search(/--UTC/i) >= 0 || huh.search(/-u/) >= 0 || huh.search(/--GMT/i) >= 0 || huh.search(/-g/) >= 0){
+  temp4 = new Date(year+" "+month+" "+day).getTimezoneOffset();
+  
+   if(temp4 > 0){
+   var utz = Number(temp4)/60;
+   }
+   if(temp4 <= 0){
+   utz = Number(temp4);
+   }
+   hrs = hrs - utz;
+   
+   if(hrs.toString().search(/-/) >= 0){
+   hrs = hrs.toString().split(/-/)[1];
+   }
+   }
+   
+   hrs = " @ " + hrs;
+   temp3 = hrs + temp3;
+	
+	year = Number(year);
+	month = Number(month);
+	day = Number(day);
+	
+	//hour --> day --> month --> year (overflows don't work)
+	
+   if(huh.search(/--UTC/i) >= 0 || huh.search(/-u/) >= 0){
+  temp2 = new Date(year+" "+month+" "+day).toUTCString().split(/\d\w\d/)[0] + " " + temp3 + " " + mer + " UTC";
+  }
+ 
+  if(huh.search(/--GMT/i) >= 0 || huh.search(/-g/) >= 0){
+  temp2 = new Date(year+" "+month+" "+day).toGMTString().split(/\d\w\d/)[0] + " " + temp3 + " " + mer + " GMT (" + temp4 + ")";
+  }
+ 
+  if(huh.search(/-d/) >= 0 || datainp.value.search(/--date/i) >= 0){
+  temp2 = new Date(year+","+month+","+day).toDateString() + " " + temp3 + " " + mer;
+   } 
+   
+ }
+   
+  else {//3 or less entry
+  
+  if(huh.search(/--GMT/i) >= 0 || huh.search(/-g/) >= 0){
+   temp2 = new Date(temp1[1]).toGMTString().split(/\d\w\d/)[0] + " GMT";
+   }
+  
+  if(huh.search(/--UTC/i) >= 0 || huh.search(/-u/) >= 0){
+   temp2 = new Date(temp1[1]).toUTCString().split(/\d\w\d/)[0] + " UTC";
+  }
+  if(huh.search(/-d/) >= 0 || datainp.value.search(/--date/i) >= 0){
+   temp2 = new Date(temp1[1]).toDateString();
+  }
+
+
+  if(temp1[1].length <= 1) {
+   if(huh.search(/--UTC/i) >= 0 || huh.search(/-u/) >= 0){
+  temp2 = new Date().toUTCString().split(/\d\w\d/)[0] + " UTC";
+  }
+ 
+  if(huh.search(/--GMT/i) >= 0 || huh.search(/-g/) >= 0){
+  temp2 = new Date().toGMTString().split(/\d\w\d/)[0] + " GMT";
+  }
+ 
+  if(huh.search(/-d/) >= 0 || datainp.value.search(/--date/i) >= 0){
+  temp2 = new Date().toDateString() + mer;
+   } 
+  
+  }  
+  }
+
+
+
+
+}
+
+else {
+   if(huh.search(/--UTC/i) >= 0 || huh.search(/-u/) >= 0){
+ temp2 = new Date().toUTCString().split(/\d\w\d/)[0] + " UTC";
+  }
+ 
+  if(huh.search(/--GMT/i) >= 0 || huh.search(/-g/) >= 0){
+  temp2 = new Date().toGMTString().split(/\d\w\d/)[0] + " GMT";
+  }
+ 
+  if(huh.search(/-d/) >= 0 || datainp.value.search(/--date/i) >= 0){
+  temp2 = new Date().toDateString() + mer;
+  }
+}
+
+//document.getElementById('consol').className = currenttheme; //degugger
+//document.getElementById('consol').innerHTML = temp2; //debugger
+
+document.getElementById('output').innerHTML += temp2 + "</br>"; //normal output
+document.getElementById('consol').className = ''; 
+
+}
+
+
+
+function about() {
+var datainp = document.getElementById('inp');
+
+document.getElementById('consol').innerHTML= '';
+document.getElementById('consol').className= 'transparented';
+
+if(datainp.value.search(/--about/i) != 0){
+
+document.getElementById('consol').innerHTML = "<span><i><span title='the anchor command'>command</span></i>: </br></br>&nbsp;&nbsp;&nbsp;<i onclick='document.getElementById(&#039;inp&#039;).value=&#039;--about&#039;;'><span title='anchor command'><b>--about</b></span></i></span></br><span id='closebtn' onclick='"+clickclose+"' style='float:right;align:right;bottom:0;'>[<u><b>X</b></u>]</span>";
+document.getElementById('consol').className= currenttheme;
+}
+
+
+else{
+document.getElementById('consol').innerHTML = "<span><i><h2 style='align:center;' align='center'>About Terminal.3D</h2></hr></br><p align='left' style='align:left'>&nbsp;&nbsp; &nbsp;&nbsp; Terminal.3D is a Javascript based terminal designed to mimic a Debian Linux Terminal but with an embedded explorer and windowed details, files (open) & pop-ups. This terminal was invented to show the minimum usable specs that a Metaverse, dApp, Webware (Web-based Software) & new age websites can be and still have full functionality if not more so.</br>&nbsp; &nbsp;&nbsp; &nbsp;For years people turned off javascript for a safer, faster website loading but now, you'll need to rely on Javascript to access the newer any-web-access software. With this design, each user gets a personal experience while each user having the same options at hand. Without targeting ads, we can embed ads into any file, explorer node, screen, button. Although, the standard may not use all these possible options for displaying data, ads, etc the options are there.</br>&nbsp;&nbsp; &nbsp;&nbsp; Since this webware is stored on decentralized storage and potentially blockchains as well, forking it can be as simple as change data with inspect, fork and republish but yet, the original webware will remain unchanged and original. Static websites and software are a way to get around complicated hacks and digital attacks. This webware can be updated on the fly and delievered to all new-entering users without interruption to any currently viewing user</br>&nbsp; &nbsp;&nbsp; &nbsp;Since this webware is stored as a single file, it can be downloaded and ran offline and locally without worry. Only internet based data (clicks and such) will be disrupted. This allows for uniquely secure usage of a Metatarsal Website let alone this Metatarsal Website Javascript Terminal Webware!</i></span></br><span id='closebtn' onclick='"+clickclose+"' style='float:right;align:right;bottom:0;'>[<u><b>X</b></u>]</span>";
+document.getElementById('consol').className= currenttheme;
+
+}
+
+}
+
+var mathsreturn, mathsend, tempmath1 = '', tempmath2 = '', templayer = [], tempmaths0 = [], tempmaths1 = [], tempmaths2 = [], mathshold = '';
+var inps = [];
+var swimswam = '';
+var swimswn = '';
+var natural = '', naturalpost = '', naturalsub = '', ransack = '';
+var uhpm, omph, dmph, meoi = '';
+
+
+function deskcalc(){ 
+
+if(datainp.value.split(/dc/i)[1].search(/-h/i) >= 0 || datainp.value.split(/dc/i)[1].search(/-help/i) >= 0){
+document.getElementById('consol').innerHTML = "<span><i><span title='the anchor command'>command</span> <span title='the equation'>equation</span></i>: </br></br>&nbsp;&nbsp;&nbsp;<i onclick='document.getElementById(&#039;inp&#039;).value=&#039;dc &#039;;'><span title='anchor command'>dc</span> <span title='equation command'>[EQUATION:: LEFT CENTER RIGHT]</span></br><span id='closebtn' onclick='"+clickclose+"' style='float:right;align:right;bottom:0;'>[<u><b>X</b></u>]</span>";
+document.getElementById('consol').className= currenttheme;
+}
+
+
+if(datainp.value.search(/ -ans/i) >= 0 || datainp.value.search(/ --answer/i) >= 0){
+
+if(datainp.value.search(/ -ans/i) >= 0 && datainp.value.search(/-h/i) >= 0){
+document.getElementById('consol').innerHTML = "<span><i><span title='the anchor command'>command</span> <span title='the action command'>action</span></i>: </br></br>&nbsp;&nbsp;&nbsp;<i onclick='document.getElementById(&#039;inp&#039;).value=&#039;dc -ans &#039;;'><span title='anchor command'>dc</span> <span title='action command'>-ans</span> <b title='Additional Maths'>[MATHS]</b></i></span></br><span id='closebtn' onclick='"+clickclose+"' style='float:right;align:right;bottom:0;'>[<u><b>X</b></u>]</span>";
+document.getElementById('consol').className= currenttheme;
+}
+else if(datainp.value.search(/ --answer/i) >= 0 && datainp.value.search(/-h/i) >= 0){
+document.getElementById('consol').innerHTML = "<span><i><span title='the anchor command'>command</span> <span title='the action command'>action</span></i>: </br></br>&nbsp;&nbsp;&nbsp;<i onclick='document.getElementById(&#039;inp&#039;).value=&#039;dc --answer &#039;;'><span title='anchor command'>dc</span> <span title='action command'>--answer</span> <b title='Additional Maths'>[MATHS]</b></i></span></br><span id='closebtn' onclick='"+clickclose+"' style='float:right;align:right;bottom:0;'>[<u><b>X</b></u>]</span>";
+document.getElementById('consol').className= currenttheme;
+}
+else{
+answermath();
+}
+}
+
+
+//if(datainp.value.search(/ -s/i) >= 0 || datainp.value.search(/ --save/i) >= 0){   
+if(datainp.value.search(/ --save/i) >= 0){   
+
+//if(datainp.value.search(/ -s/i) >= 0 && datainp.value.search(/-h/i) >= 0){
+//document.getElementById('consol').innerHTML = "<span><i><span title='the anchor command'>command</span></i>: </br></br>&nbsp;&nbsp;&nbsp;<i onclick='document.getElementById(&#039;inp&#039;).value=&#039;dc -s &#039;;'><span title='anchor command'>dc</span> <span title='action command'>-s</span> </i></span></br><span id='closebtn' onclick='"+clickclose+"' style='float:right;align:right;bottom:0;'>[<u><b>X</b></u>]</span>";
+//document.getElementById('consol').className= currenttheme;
+//}
+
+if(datainp.value.search(/ --save/i) >= 0 && datainp.value.search(/-h/i) >= 0){
+document.getElementById('consol').innerHTML = "<span><i><span title='the anchor command'>command</span></i>: </br></br>&nbsp;&nbsp;&nbsp;<i onclick='document.getElementById(&#039;inp&#039;).value=&#039;dc -save &#039;;'><span title='anchor command'>dc</span> <span title='action command'>--save</span> </i></span></br><span id='closebtn' onclick='"+clickclose+"' style='float:right;align:right;bottom:0;'>[<u><b>X</b></u>]</span>";
+document.getElementById('consol').className= currenttheme;
+}
+
+else{
+storeans();
+}
+}
+
+
+if(datainp.value.search(/ --about/i) >= 0 || datainp.value.search(/ -a/i) >= 0){
+
+if(datainp.value.search(/ -a/i) >= 0){
+document.getElementById('consol').innerHTML = "<span><i>The Desk Calculator is to calculate general maths for using in files or just for quick guestimation of answers.</i></br></br>&nbsp; &nbsp; The Desk Calculator follows the Order of Operations the best it can.</span></br><span id='closebtn' onclick='"+clickclose+"' style='float:right;align:right;bottom:0;'>[<u><b>X</b></u>]</span>";
+document.getElementById('consol').className= currenttheme;
+}
+else if(datainp.value.search(/ --about/i) >= 0){
+document.getElementById('consol').innerHTML = "<span><i>The Desk Calculator is to calculate general maths for using in files or just for quick guestimation of answers.</i></br></br>&nbsp; &nbsp; The Desk Calculator follows the Order of Operations the best it can.</span></br><span id='closebtn' onclick='"+clickclose+"' style='float:right;align:right;bottom:0;'>[<u><b>X</b></u>]</span>";
+document.getElementById('consol').className= currenttheme;
+}
+}
+
+
+
+
+
+
+else{
+
+
+//---non-maths above this
+//--maths below this
+
+//sanitize data --------
+mathsreturn = '';
+tempmath1 = '';
+tempmath2 = '';
+mathsend = ''; 
+templayer = '';
+templayer = [];
+tempmaths0 = ''; 
+tempmaths0 = [];
+tempmathsb0 = ''; 
+tempmathsb0 = [];
+tempmathsc0 = ''; 
+tempmathsc0 = [];
+tempmathsb1 = ''; 
+tempmathsb1 = [];
+tempmathsc1 = ''; 
+tempmathsc1 = [];
+tempmathsb2 = ''; 
+tempmathsb2 = [];
+tempmathsc2 = ''; 
+tempmathsc2 = [];
+tempmaths1 = '';
+tempmaths1 = [];
+tempmaths2 = '';
+tempmaths2 = [];
+whatiftheysay = '';
+whatifsay = '';
+mathshold = '';
+natural = '';
+naturalsub = '';
+naturalpost = '';
+meoi = '';
+swimswam = '';
+swimswn = '';
+ransack = '';
+//------------------------
+
+dmph = datainp.value.split(/dc/i);
+umph = datainp.value.split(/dc/i);
+omph = datainp.value.split(/dc/i);
+
+
+// testing -->   dc 5505+55 -33 = 3+ 0 a+b start
+// 2cd testing --> dc 5505+55 (33-3) = 2+ 1 - 9 a/b start
+// 3rd testubg --> dc 15+5 (5+5) -5 + 9
+// 4th teting --> dc 15*2 (5+5) 2+3 = a
+
+
+// to output test at work points add    + "</br>|>>" + umph + "<<|</br>"   before ;
+
+
+var ee = 1;
+var ef = ee + 1;
+
+var eg = '', eg2 = '', eg3 = '';
+
+
+var eh = 0;
+var ed = 0;
+var er = 0;
+var mh = 0;
+
+umph = datainp.value.split(/dc/i);
+
+//find a ()
+if(umph[1].search(/\(/) >= 0){
+eg = omph[1].match(/\(/g).toString().replace(/[\,\s]/g, "").length;
+ransack = "(";
+
+natural = "*";
+naturalsub = "+";
+naturalpost = '*';
+
+tempmaths0.push(dmph[1].split(/\(/)[1].split(/\)/)[0]);  //data inside ()  pullable by number of solve 0 ++  (front to end)
+
+//document.getElementById('output').innerHTML += "</br>1a) " + tempmaths0[ed];
+
+if(dmph[1].split(/\(/)[0].length > 1){
+templayer.push(dmph[1].split(/\(/)[0]);  //data before ()  pullable by number of solve equal to () (so if 3 here, the () after this is also 3)
+
+//document.getElementById('output').innerHTML += "</br>2a) " + dmph[1].split(/\(/)[1].split(/\)/)[1].length;
+}
+
+if(dmph[1].split(/\(/)[1].split(/\)/)[1].length > 0){
+tempmaths1.push(dmph[1].split(/\(/)[1].split(/\)/)[1].split(/\(/)[0]);  //data after ()
+
+//document.getElementById('output').innerHTML += "</br>3a) " + dmph[1].split(/\(/)[1].split(/\)/)[1].length;
+}
+
+if(umph[1].split(/\(/)[ee].search(/\(/) >= 0 || dmph[1].split(/\(/)[ee].split(/\)/)[1].search(/\(/) >= 0 || dmph[1].split(/\(/)[ee].split(/\)/)[1].search(/\(/) >= 0){
+
+do{  //find all data inside () after first
+if(umph[1].split(/\(/)[ee].search(/\(/) >= 0){
+tempmaths0.push(dmph[1].split(/\(/)[ee].split(/\(/)[1].split(/\)/)[0]);  //() data
+
+//document.getElementById('output').innerHTML += "</br>1b) " + tempmaths0[ee];
+
+templayer.push(dmph[1].split(/\(/)[ee].split(/\)/)[1].split(/\(/)[0]);  //data before ()
+
+//document.getElementById('output').innerHTML += "</br>2b) " + templayer[tll];
+
+if(dmph[1].split(/\(/)[ee].split(/\)/)[1].length > 0){
+tempmaths1.push(dmph[1].split(/\(/)[ee].split(/\)/)[1].split(/\(/)[0]);  //data after ()
+
+//document.getElementById('output').innerHTML += "</br>3b) " + tempmaths1[ee];
+}
+
+//if templayer === tempmaths1 only use templayer   if different use tempmaths1
+}
+
+ee = ee + 1;
+}  //do loop (end of do)
+while(eg > ee);  //when ee = eg, breaks loop
+
+}
+
+<!--  tempmaths0 is the (data) 
+   <!-- templayer is the data()
+     <!-- tempmaths1 is the ()data
+	 
+	  <!-- if layer & mahts1 equal, layer  if not maths1 
+	  <!-- layer === mahs1 :: layer   &&   layer != maths1 :: maths1
+<!-- ee is the tracker for data
+<!-- use ee end total for a cap system for finding data
+}
+
+//find exponents
+else if(umph[1].search(/\^/) >= 0 || umph[1].search(/ex/i) >= 0){
+eg2 = omph[1].match(/(\^)/ig).toString().replace(/[\,\s]/g, "").length;
+natural = "^";
+naturalsub = "^";
+naturalpost = '^';
+
+do{  //find all data for ^ first
+var uhhu = dmph[1].split(/(\^)/i)[0].length - 1;
+tempmathsc0.push(dmph[1].split(/(\^)/i)[0]);  //data ^ 
+tempmathsb0.push(dmph[1].split(/(\^)/i)[2]);  // ^ data  
+var temptemp = tempmathsc0 + "^" + tempmathsb0; //data^data
+tempmaths0.push(temptemp);
+
+
+//document.getElementById('output').innerHTML += "</br>1a) " + dmph[1].split(/(\^|exp|exponent)/i)[2];
+
+if(dmph[1].split(/(\^)/i)[0].split(tempmathsc0)[0].replace(/[\s]/g, "").length > 0){
+templayer.push(dmph[1].split(/(\^|ex)/i)[0].split(tempmathsc0)[0]);  //data before data^
+
+
+
+//document.getElementById('output').innerHTML += "</br>2a) " + templayer;
+}
+
+//document.getElementById('output').innerHTML += "</br>2a) >>" + dmph[1].split(/(\^|exp|exponent)/i)[2] + "<< | >>" + tempmathsb0 + "<< ";
+//var jjss = dmph[1].split(/(\^|exp|exponent)/i)[2];
+//if(jjss.length > 1){
+if(dmph[1].split(/(\^)/i)[2].split(tempmathsb0)[1].replace(/[\s]/g, "").length > 0){
+tempmaths1.push(dmph[1].split(/(\^)/i)[2].split(tempmathsb0)[1]);  //data after ^data
+
+
+//document.getElementById('output').innerHTML += "</br>3a) " + tempmaths1[ed];
+}
+//}
+//else {
+//tempmaths1.push(tempmathsb0);  //data after ^data
+//}
+ee = ee + 1;
+}  //do loop (end of do)
+while(eg2 > ee);  //when ee = eg, breaks loop
+
+
+<!--  tempmaths0 is the data^data 
+   <!-- templayer is the data before data^
+     <!-- tempmaths1 is the data after ^data
+	 
+	  <!-- if layer & mahts1 equal, layer  if not maths1 
+	  <!-- layer === mahs1 :: layer   &&   layer != maths1 :: maths1
+	  
+<!-- ee is the tracker for data
+<!-- use ee end total for a cap system for finding data
+}
+
+
+//find multiplication
+//else if(umph[1].search(/\*/) >= 0 || umph[1].search(/x/i) >= 0 || umph[1].search(/\&/) >= 0 || umph[1].search(/times/i) >= 0 || umph[1].search(/mult/i) >= 0 || umph[1].search(/multiplication/i) >= 0){
+else if(umph[1].search(/(\*|x|by|\&)/i) >= 0){
+eg3 = omph[1].match(/(\*|x|by|\&)/ig).toString().replace(/[\,\s]/g, "").length;
+natural = "*";
+naturalsub = "*";
+naturalpost = '*';
+
+do{  //find all data for * first
+var uhhu = dmph[1].split(/(\*|\x|by|\&)/i)[0].length - 1;
+tempmathsc0.push(dmph[1].split(/(\*|x|by|\&)/i)[0]);  //data *
+tempmathsb0.push(dmph[1].split(/(\*|x|by|\&)/i)[2]);  // * data  
+var temptemp = tempmathsc0 + "*" + tempmathsb0; //data*data
+tempmaths0.push(temptemp);
+
+
+//document.getElementById('output').innerHTML += "</br>1a) " + tempmaths0;
+if(tempmathsc0 != /(\*|x|by|\&)/i){
+if(dmph[1].split(/(\*|x|by|\&)/i)[0].split(tempmathsc0)[0].replace(/[\s]/g, "").length > 0){
+templayer.push(dmph[1].split(/(\*|x|by|\&)/i)[0].split(tempmathsc0)[0]);  //data before data*
+}
+else{
+templayer.push(tempmathsc0);
+}
+
+
+//document.getElementById('output').innerHTML += "</br>2a) " + templayer;
+}
+
+//document.getElementById('output').innerHTML += "</br>2a) >>" + templayer + "<< | >>" + tempmathsb0 + "<< ";
+
+
+if(dmph[1].split(/(\*|x|by|\&)/i)[2].split(tempmathsb0)[1].replace(/[\s]/g, "").length > 0){
+tempmaths1.push(dmph[1].split(/(\*|x|by|\&)/i)[2].split(tempmathsb0)[1]);  //data after *data
+
+
+//document.getElementById('output').innerHTML += "</br>3a) " + tempmaths1[ed];
+}
+ee = ee + 1;
+}  //do loop (end of do)
+while(eg3 > ee);  //when ee = eg, breaks loop
+
+
+//document.getElementById('output').innerHTML += "</br>4ag) " + tempmaths0[ed] + "< >" +templayer[ed] + "< >" + tempmaths1;
+
+<!--  tempmaths0 is the data*data 
+   <!-- templayer is the data before data*
+     <!-- tempmaths1 is the data after *data
+	 
+	  <!-- if layer & mahts1 equal, layer  if not maths1 
+	  <!-- layer === mahs1 :: layer   &&   layer != maths1 :: maths1
+	  
+<!-- ee is the tracker for data
+<!-- use ee end total for a cap system for finding data
+}
+
+
+
+//find division
+else if(umph[1].search(/\//) >= 0 || umph[1].search(/\÷/) >= 0 || umph[1].search(/\\/) >= 0){
+eg3 = omph[1].match(/(\/|\\|\÷)/ig).toString().replace(/[\,\s]/g, "").length;
+natural = "/";
+naturalsub = "/";
+naturalpost = '/';
+
+do{  //find all data for * first
+var uhhu = dmph[1].split(/(\/|\\|\÷)/i)[0].length - 1;
+tempmathsc0.push(dmph[1].split(/(\/|\\|\÷)/i)[0]);  //data *
+tempmathsb0.push(dmph[1].split(/(\/|\\|\÷)/i)[2]);  // * data  
+var temptemp = tempmathsc0 + "/" + tempmathsb0; //data*data
+tempmaths0.push(temptemp);
+
+
+//document.getElementById('output').innerHTML += "</br>1a) " + eg;
+
+if(dmph[1].split(/(\/|\\|\÷)/i)[0].split(tempmathsc0)[0].replace(/[\s]/g, "").length > 0){
+templayer.push(dmph[1].split(/(\/|\\|\÷)/i)[0].split(tempmathsc0)[0]);  //data before data*
+
+
+
+//document.getElementById('output').innerHTML += "</br>2a) " + templayer;
+}
+
+//document.getElementById('output').innerHTML += "</br>2a) >>" + dmph[1].split(/(\/|\\|\÷)/i)[2].split(tempmathsb0)[1] + "<< | >>" + tempmathsb0 + "<< ";
+
+
+if(dmph[1].split(/(\/|\\|\÷)/i)[2].split(tempmathsb0)[1].replace(/[\s]/g, "").length > 0){
+tempmaths1.push(dmph[1].split(/(\/|\\|\÷)/i)[2].split(tempmathsb0)[1]);  //data after *data
+
+
+//document.getElementById('output').innerHTML += "</br>3a) " + tempmaths1[ed];
+}
+
+ee = ee + 1;
+}  //do loop (end of do)
+while(eg3 > ee);  //when ee = eg, breaks loop
+
+
+<!--  tempmaths0 is the data*data 
+   <!-- templayer is the data before data*
+     <!-- tempmaths1 is the data after *data
+	 
+	  <!-- if layer & mahts1 equal, layer  if not maths1 
+	  <!-- layer === mahs1 :: layer   &&   layer != maths1 :: maths1
+	  
+<!-- ee is the tracker for data
+<!-- use ee end total for a cap system for finding data
+}
+
+
+
+//find addition
+else if(umph[1].search(/\+/) >= 0 || umph[1].search(/add/i) >= 0){
+eg3 = omph[1].match(/(\+|add)/ig).length;
+natural = "+";
+naturalsub = "+";
+naturalpost = '+';
+
+do{  //find all data for * first
+var uhhu = dmph[1].split(/(\+|add)/i)[0].length - 1;
+tempmathsc0.push(dmph[1].split(/(\+|add)/i)[0]);  //data *
+tempmathsb0.push(dmph[1].split(/(\+|add)/i)[2]);  // * data  
+var temptemp = tempmathsc0 + "+" + tempmathsb0; //data*data
+tempmaths0.push(temptemp);
+
+
+//document.getElementById('output').innerHTML += "</br>1a) " + eg;
+
+if(dmph[1].split(/(\+|add)/i)[0].split(tempmathsc0)[0].replace(/[\s]/g, "").length > 0){
+templayer.push(dmph[1].split(/(\+|add)/i)[0].split(tempmathsc0)[0]);  //data before data*
+
+
+
+//document.getElementById('output').innerHTML += "</br>2a) " + templayer;
+}
+
+//document.getElementById('output').innerHTML += "</br>2a) >>" + dmph[1].split(/(\*|x|by|\&)/i)[0].split(tempmathsc0)[0] + "<< | >>" + tempmathsc0 + "<< ";
+
+
+if(dmph[1].split(/(\+|add)/i)[2].split(tempmathsb0)[1].replace(/[\s]/g, "").length > 0){
+tempmaths1.push(dmph[1].split(/(\+|add)/i)[2].split(tempmathsb0)[1]);  //data after *data
+
+
+//document.getElementById('output').innerHTML += "</br>3a) " + tempmaths1[ed];
+}
+ee = ee + 1;
+}  //do loop (end of do)
+while(eg3 > ee);  //when ee = eg, breaks loop
+
+
+<!--  tempmaths0 is the data*data 
+   <!-- templayer is the data before data*
+     <!-- tempmaths1 is the data after *data
+	 
+	  <!-- if layer & mahts1 equal, layer  if not maths1 
+	  <!-- layer === mahs1 :: layer   &&   layer != maths1 :: maths1
+	  
+<!-- ee is the tracker for data
+<!-- use ee end total for a cap system for finding data
+}
+
+
+
+
+//find subtraction
+else if(umph[1].search(/\-/) >= 0){
+eg3 = omph[1].match(/(\-)/ig).toString().replace(/[\,\s]/g, "").length;
+natural = "-";
+naturalsub = "-";
+naturalpost = '-';
+
+do{  //find all data for * first
+var uhhu = dmph[1].split(/(\-)/i)[0].length - 1;
+tempmathsc0.push(dmph[1].split(/(\-)/i)[0]);  //data *
+tempmathsb0.push(dmph[1].split(/(\-)/i)[2]);  // * data  
+var temptemp = tempmathsc0 + "-" + tempmathsb0; //data*data
+tempmaths0.push(temptemp);
+
+
+//document.getElementById('output').innerHTML += "</br>1a) " + tempmaths0;
+
+if(dmph[1].split(/(\-)/i)[0].split(tempmathsc0)[0].replace(/[\s]/g, "").length > 0){
+templayer.push(dmph[1].split(/(\-)/i)[0].split(tempmathsc0)[0]);  //data before data*
+
+
+
+//document.getElementById('output').innerHTML += "</br>2a) " + templayer;
+}
+
+//document.getElementById('output').innerHTML += "</br>2a) >>" + dmph[1].split(/(\*|x|by|\&)/i)[0].split(tempmathsc0)[0] + "<< | >>" + tempmathsc0 + "<< ";
+
+//if(dmph[1].split(/(\-)/i)[2].split(tempmathsb0)[1] !== ""){
+
+<!-- dc --save is breaking here. -->
+if(dmph[1].split(/(\-)/i)[2].split(tempmathsb0)[1].replace(/[\s]/g, "").length > 0){
+tempmaths1.push(dmph[1].split(/(\-)/i)[2].split(tempmathsb0)[1]);  //data after *data
+
+
+//document.getElementById('output').innerHTML += "</br>3a) " + tempmaths1[ed];
+}
+
+//}
+
+ee = ee + 1;
+}  //do loop (end of do)
+while(eg3 > ee);  //when ee = eg, breaks loop
+
+
+<!--  tempmaths0 is the data*data 
+   <!-- templayer is the data before data*
+     <!-- tempmaths1 is the data after *data
+	 
+	  <!-- if layer & mahts1 equal, layer  if not maths1 
+	  <!-- layer === mahs1 :: layer   &&   layer != maths1 :: maths1
+	  
+<!-- ee is the tracker for data
+<!-- use ee end total for a cap system for finding data
+}
+
+
+<!-- before        is         after
+<!-- templayer tempmaths0 tempmaths1
+
+ed = 0;
+var end1 = tempmaths0.length;
+var topaz = 0;
+
+var rr = 0;
+
+do{  //(data)   //1st sent to maths
+umph = tempmaths0[ed];
+
+
+//do loop to do left-2-right math for this block of data if larger than 2 algebraic modifiers (may need new maths-funciton)
+
+
+//document.getElementById('output').innerHTML += "</br>1c) " + tempmaths0[ed] + "</br>";
+//document.getElementById('output').innerHTML += "</br>2c) " + umph;
+maths();
+ if(tempmath2 != ""){
+ tempmaths2 = tempmaths2 + tempmath2.replace(/(NaN|undefined)/ig, "").split(/(=|equal|equals)/i)[0] + " = " + tempmath2.replace(/(NaN|undefined)/ig, "").split(/(=|equal|equals)/i)[2] ;
+ }
+ 
+ else{
+tempmaths2 = tempmaths2 + mathsreturn;
+//document.getElementById('output').innerHTML += "</br>1cde) " + tempmaths2 + "</br>";
+}
+
+
+ed = ed + 1;
+
+}
+while(end1 > ed);
+
+ed = 0;
+eh = 0;
+var end2 = templayer.length;
+
+if(templayer.length > 0){ //if there's a before the foudn obj
+
+do{  //data() //2cd sent to maths
+umph = templayer[ed];
+
+//checking for a num modifier then nothing to add in the enclosed answer (tempmaths2)
+var gooder = umph.length;
+var good = gooder - 1;
+
+//document.getElementById('output').innerHTML += "</br>2c-0) >" + templayer[ed] + "~_~" + umph.toString().match(/\s/g) + "<</br>";
+var spacecheck = umph.toString().match(/\s/g).length;
+
+if(umph.toString().search(/\s/g) >= 0){
+do{
+var gg = umph.toString().replace(/\s/g, '');
+spacecheck = spacecheck - 1;
+umph = gg;
+}
+ while(spacecheck > 0);
+gooder = umph.length;
+ good = gooder - 1;
+
+
+//document.getElementById('output').innerHTML += "</br>2c) >" + umph[good] + "~_~" + umph + "<</br>";
+}
+
+
+meoi = 1;
+
+if(umph[good] === /\^/ || umph[good] === /pi/i || umph[good] === /\π/ || umph[good] === /phi/i || umph[good] === /\φ/ || umph[good] === /T/i || umph[good] === /\𝜏/ || umph[good] === /tau/i || umph[good] === /\√/ || umph[good] === /sqrt/i || umph[good] === /\%/ || umph[good] === /\*/ || umph[good] === /\x/ || umph[good] === /\// || umph[good] === /\÷/ || umph[good] === /\+/ || umph[good] === /\&/ || umph[good] === /\-/ || umph[good] === /by/i || umph[good] === /\\/ || umph[good] === /\%/){
+
+meoi = 0;
+
+//do loop to do left-2-right math for this block of data if larger than 2 algebraic modifiers will need new maths-funciton
+
+
+umph = umph + tempmaths2;
+//tempmaths2 = umph;
+//document.getElementById('dcstore').innerHTML += umph;
+}
+
+//document.getElementById('output').innerHTML += "</br>2c) >" + tempmaths2 + "~_~" + tempmaths1 + "<</br>";
+if(tempmaths2 != '' && tempmaths1 != ''){
+
+//document.getElementById('output').innerHTML += "</br>2ca) >" + tempmaths2 + "~_~" + meoi + "<</br>";
+maths();
+}
+//document.getElementById('output').innerHTML += "</br>2ca) >" + tempmaths2 + "~_~" + meoi + "<</br>";
+
+ if(tempmath2 != ""){
+ tempmaths2 = tempmaths2 * tempmath2.replace(/(NaN|undefined)/ig, "").split(/(=|equal|equals)/i)[0] + " = " + tempmath2.replace(/(NaN|undefined)/ig, "").split(/(=|equal|equals)/i)[2] ;
+ }
+ 
+ else{
+ if(meoi === 1){
+ tempmaths2 = mathsreturn;
+ }
+ else{
+tempmaths2 = tempmaths2 * mathsreturn;
+}
+
+
+}
+
+ed = ed + 1;
+}
+while(end2 > ed);
+}
+
+
+ed = 0;
+eh = 0;
+var end3 = tempmaths1.length;
+
+
+do{   //()data  //3rd sent to maths
+
+//document.getElementById('output').innerHTML += "</br>3c) " + tempmaths1[ed] + "</br>" + templayer[ed];
+
+if(tempmaths1.length > 0 && templayer.length > 0){
+if(tempmaths1[ed] != templayer[ed]){
+umph = tempmaths1[ed];
+//document.getElementById('output').innerHTML += "</br> ~" + tempmaths1.length + "~ " +tempmaths1[ed];
+
+
+var gooder = 0;
+var good = 0;
+
+if(umph.search(/\s/g) >= 0){
+var spacecheck = umph.match(/\s/g).length;
+
+
+if(umph.search(/\s/g) >= 0){
+do{
+var gg = umph.replace(/\s/g, '');
+spacecheck = spacecheck - 1;
+umph = gg;
+}
+ while(spacecheck > 0);
+
+}
+
+}
+
+//document.getElementById('output').innerHTML += "</br>2c) >" + good + "~_~" + umph + "<</br>";
+
+meoi = 1;
+
+if(umph[good] === /\^/ || umph[good] === /pi/i || umph[good] === /\π/ || umph[good] === /phi/i || umph[good] === /\φ/ || umph[good] === /T/i || umph[good] === /\𝜏/ || umph[good] === /tau/i || umph[good] === /\√/ || umph[good] === /sqrt/i || umph[good] === /\%/ || umph[good] === /\*/ || umph[good] === /\x/ || umph[good] === /\// || umph[good] === /\÷/ || umph[good] === /\+/ || umph[good] === /\&/ || umph[good] === /\-/ || umph[good] === /by/i || umph[good] === /\\/ || umph[good] === /\%/){
+
+meoi = 0;
+
+//do loop to do left-2-right math for this block of data if larger than 2 algebraic modifiers will need new maths-funciton
+
+
+umph = tempmaths2 + umph;
+//tempmaths2 = umph;
+//document.getElementById('dcstore').innerHTML += umph;
+}
+
+maths();
+
+ if(tempmath2 != ""){
+ tempmaths2 = tempmaths2 * tempmath2.replace(/(NaN|undefined)/ig, "").split(/(=|equal|equals)/i)[0] + " = " + tempmath2.replace(/(NaN|undefined)/ig, "").split(/(=|equal|equals)/i)[2] ;
+ }
+ 
+ else{
+ if(meoi === 0){
+ tempmaths2 = mathsreturn;
+ }
+ else{
+ tempmaths2 = tempmaths2 * mathsreturn;
+ }
+}
+
+
+}
+}
+
+else if(tempmaths1.length > 0 && templayer.length <= 0){
+
+//document.getElementById('output').innerHTML += "</br>2cb) >" + "0" + "~_~" + umph + "<</br>";
+
+umph = templayer[ed];
+
+
+
+maths();
+
+if(tempmath2 != ""){
+ tempmaths2 = tempmaths2 * tempmath2.replace(/(NaN|undefined)/ig, "").split(/(=|equal|equals)/i)[0] + " = " + tempmath2.replace(/(NaN|undefined)/ig, "").split(/(=|equal|equals)/i)[2] ;
+ }
+}
+
+
+ed = ed + 1;
+
+
+}
+while(end3 > ed);
+
+
+//document.getElementById('output').innerHTML += "</br>2d) >" + umph[0] + "~|~" + umph + "<</br>" + tempmaths2 + "</br>";
+
+
+ee = ee + 1;
+ 
+ 
+ 
+ <!-- build back the eq to finish
+ 
+ 
+ 
+//document.getElementById('consol').innerHTML = "endmaths ->" +  tempmaths2;
+
+//document.getElementById('consol').className = currenttheme;
+
+var timers5 = new Date(); 
+  var mill5 = timers5.getTime();
+  var mill5l = mill5.toString().length;
+  var mill5l2 = Math.abs(Number(mill5l) - 4);
+  var milly4 = mill5.toString()[mill5l2];
+  var milly3 = Math.abs(Number(mill5l) - 3);
+  var milly2 = mill5.toString()[milly3];
+  var milly0 = Math.abs(Number(mill5l) - 2);
+  var milly1 = mill5.toString()[milly0];
+  dcid = milly2+""+millr;
+  dcid = dcid.replace(/-/g, '');
+  
+  
+//document.getElementById('consol').innerHTML = "</br>" + mathsend;
+var whatiftheysay = document.getElementById('output').innerHTML;
+document.getElementById('dcstore').innerHTML = "<span id='answer' name='answer' style='display:none;'>"+tempmaths2+"</span></br><div id='deskcalc" + dcid + "b' name='dc" + tempmaths2 + "" + dcid + "' onclick='document.getElementById(&#039;consol&#039;).className=document.getElementById(&#039;theme&#039;).innerHTML;document.getElementById(&#039;consol&#039;).innerHTML=document.getElementById(&#039;deskcalc"+dcid+"b&#039;).innerHTML;' ><div id='deskcalc" + dcid + "a' name='dc" + tempmaths2 + "" + dcid + "' onclick='document.getElementById(&#039;consol&#039;).className=&#039;&#039;;document.getElementById(&#039;consol&#039;).innerHTML=this.innerHTML;document.getElementById(&#039;deskcalc"+dcid+"a&#039;).style.display=&#039;none&#039;;' >" + tempmaths2 + "<hr> Work Proofs:</br>" + mathshold + "</div></div></br></br>"; //quick repull
+document.getElementById('output').innerHTML = "</br>" + tempmaths2 + "<hr> Work Proofs:</br>" + mathshold + "</br></br>" + whatiftheysay;
+whatiftheysay = '';
+
+var millr2 = Math.floor(Math.random()*9-1)+1;
+millr = Math.abs(Number(millr) + Number(millr2));
+
+}
+}
+
+var gmph;
+
+function maths(){
+//umph = umph.match(/[^, \s]/g).join().replace(/[\, \s]/g, "");
+//umph = umph.match(/[^, \s]/g);
+var imtemp1 = [], imtemp2 = [], imtemp3 = [], imt1 = 0, imt2 = 0, othertemp1, othertemp2;
+
+
+//document.getElementById('dcstore').innerHTML += umph + " ";
+//document.getElementById('output').innerHTML = "</br> d1) " + umph.length;
+
+
+if(umph.length <= 1) {
+mathsreturn = umph;
+}
+
+else if(umph.search(/=/g) >= 0 || umph.search(/equal/ig) >= 0 || umph.search(/equals/ig) >= 0){
+othertemp1 = umph.split(/(=|equal|equals)/i)[0];
+imtemp1.push(othertemp1);
+othertemp2 = umph.split(/(=|equal|equals)/i)[2];
+imtemp2.push(othertemp2);
+
+
+if(imtemp1[0].match(/[^, \s]/g).length > 1 || imtemp1.length > 1 && imtemp1[0].match(/\d+/g) >= 0) {
+gmph = imtemp1;
+maths2();
+imt1 = mathsreturn;
+tempmath2 = tempmath2 + imt1;
+//document.getElementById('output').innerHTML += "</br>maths 1) @=" + imtemp1 + "</br> # " + imt1;
+
+}
+else {
+imt1 = ''
+tempmath2 = tempmath2 + imtemp1;
+//document.getElementById('output').innerHTML += "</br>maths 1abc) @=" + imtemp1 + "</br> # " + tempmath2;
+}
+
+if(imtemp2[0].match(/[^, \s]/g).length > 1 || imtemp2.length > 1 && imtemp2[0].match(/\d+/g) >= 0) {
+gmph = imtemp2;
+maths2();
+imt2 = mathsreturn;
+tempmath2 = tempmath2 + " = " + imt2;
+//document.getElementById('output').innerHTML += "</br>maths 2abc) @= " + tempmath2 + "</br> # " + imt2;
+}
+else {
+imt2 = '';
+tempmath2 = tempmath2 + " = " + imtemp2;
+//document.getElementById('output').innerHTML += "</br>maths 3abc) @= " + tempmath2 + "</br> # " + imt2;
+}
+
+if(tempmath2.search(/NaN/i) >= 0 || tempmath2.search(/undefined/i) >= 0){
+mathsreturn = tempmath2.replace(/(NaN|undefined)/ig, "");
+//document.getElementById('output').innerHTML += "</br>maths 4abc) @= " + tempmath2 + "</br> # " + imt2;
+}
+else{
+mathsreturn = tempmath2;
+//document.getElementById('output').innerHTML += "</br>maths 4abc) @= " + tempmath2 + "</br> # " + imt2;
+}
+
+
+}
+
+//good spot for finding more then 1 algebraic modifier
+
+//(/(\^|exp|exponent|pi|π|phi|φ|T|𝜏|tau|\√|sqrt|\%|\*|x|\/|\÷|\\|\+|\&|\-|sub|add|sub|subtract|by|subtraction|multiply|divide|division|div|into|remove|addto|take away|take|away|exp|exponent|square root|squareroot|sq rt)/ig)
+
+
+//document.getElementById('output').innerHTML += "</br>maths 3) @= " + umph + "</br> =@ " + mathsreturn;
+
+if(umph.search(/\d+/g) >= 0){
+var whaters = umph.match(/\d+/g); //finds numbers
+
+//document.getElementById('output').innerHTML += "</br>maths 3a) @= " + umph + "</br> =@ " + whaters;
+
+}
+else{
+var whaters = umph;
+}
+
+if(umph.search(/[^\s\w\d\)\(]/ig) >= 0){
+var whaters2 = umph.match(/[^\s\w\d\)\(]/ig);
+
+
+//document.getElementById('output').innerHTML += "</br>maths 3a) @= " + umph + "</br> =@ " + whaters2;
+}
+else{
+var whaters2 = umph;
+}
+
+
+if(whaters2.toString().replace(/[\d,\w]/g, "") >= 0){
+var whaters3 = whaters2.toString().replace(/[\d,\w]/g, "");  //finds algerbriac modifiers
+//document.getElementById('output').innerHTML += "</br>maths 3c) @= " + umph + "</br> =@ " + whaters3;
+
+}
+else{
+var whaters3 = whaters2.toString().replace(/[\,\s]/g, "");
+
+//document.getElementById('output').innerHTML += "</br>maths 3d) @= " + umph + "</br> =@ " + whaters3;
+}
+
+ 
+if(whaters2.toString().replace(/[^\d\W]\w+/g, "") >= 0){
+var whaters4 = umph.toString().match(/[^\d\W]\w+/g); //finds words 
+}
+else{
+var whaters4 = umph; 
+
+//document.getElementById('output').innerHTML += "</br>maths 3e) @= " + umph + "</br> =@ " + whaters4;
+}
+
+ 
+if(whaters2.toString().replace(/[^\d]\w+/g, "") >= 0){
+var whaters5 = umph.toString().match(/[^\d]\w+/g); //finds letters?
+}
+else{
+var whaters5 = umph; 
+
+//document.getElementById('output').innerHTML += "</br>maths 3f) @= " + umph + "</br> =@ " + whaters5;
+}
+
+
+//document.getElementById('output').innerHTML += "</br> This--> " +  + " | " + whaters3 + "</br>";
+
+var midwhat1 = [], midwhat2 = [], midwhat3, midwhat4, num1, num2, num3;
+
+var ee = 0;
+
+if(whaters3.replace(/[\,\s]/g, '').length > 1){
+var midwhat1a = umph.split(whaters3[ee]);
+
+//document.getElementById('output').innerHTML += "</br> This 2a--> " +  + " | " + midwhat1a + "</br>";
+
+}
+else{
+var midwhat1a = umph.split(whaters3).toString();
+//document.getElementById('output').innerHTML += "</br> This 2b--> " + umph.split(whaters3) + " | " + midwhat1a + "</br>";
+}
+
+var negtrick = 0;
+
+if(whaters3.replace(/[\,\s]/g, '').length > 1){
+if(midwhat1a[0] === ""){ //this does catch the negative before an algerbriac symbol (not after)
+}
+else{
+ umph.split(whaters3)[0] === "";
+}
+ee = ee + 1;
+negtrick = 1;
+}
+
+
+
+midwhat1 = umph.split(whaters3[ee]);
+
+
+
+midwhat2 = midwhat1[1];
+
+if(negtrick === 1){
+num1 = -Math.abs(Number(midwhat1[0].toString()));
+}
+else{
+num1 = Math.abs(Number(midwhat1[0].toString()));
+//document.getElementById('output').innerHTML += "</br> This 2b--> " + num1 + " | " + midwhat1a[0] + "</br>";
+
+}
+var ef = ee+1;
+if(midwhat2 === '' || midwhat2 === 'undefined' || midwhat2 === 'NaN'){
+mathsreturn = '';
+}
+
+////document.getElementById('output').innerHTML += "</br> This 2c--> " + midwhat2 + " | " + midwhat1 + " || " + whaters3 + "</br>";
+else{
+if(midwhat2.search(/-/) >= 0){
+num3 = -Math.abs(midwhat2.toString().replace(/[\,\s]/g, ""));
+}
+else{
+num3 = Math.abs(midwhat2.toString().replace(/[\,\s]/g, ""));
+}
+}
+if(whaters3[ee] === '' || whaters3[ee] === 'undefined'){
+mathsretrun = '';
+}
+else{
+num2 = whaters3[ee];
+}
+
+//document.getElementById('output').innerHTML += "</br> This 2c--> " + num1 + " | " + num2 + " || " + num3 + "</br>";
+
+//debugger main line
+
+if(num2 === "^"){
+//document.getElementById('output').innerHTML += "</br> This--> " + num3 + " | " + mathsreturn + "</br>";
+var eg = num3 - 1;
+var tnt = 0;
+tnt = num1;
+do{
+tnt = tnt * num3;
+eg = eg - 1;
+}
+while(eg > 0);
+tempmath1 = tempmath1 + tnt;
+mathsreturn = tempmath1;
+}
+
+
+
+else if(num2 === /pi/i || num2 === "π"){
+if(num1.toString().length > 0){
+mathsreturn = (num1 * Math.PI);
+}
+else{
+mathsreturn = Math.PI;
+//document.getElementById('output').innerHTML += Math.PI;
+}
+}
+
+else if(num2 === /phi/i || num2 === "φ"){
+if(num1.toString().length > 0){
+mathsreturn = num1 * 1.6180339887;
+}
+else{
+mathsreturn = 1.6180339887;
+}
+}
+
+else if(num2 === /T/i || num2 === "𝜏" || num2 === /tau/i){
+if(num1.toString().length > 0){
+mathsreturn = num1 * (2 * Math.PI);
+}
+else{
+mathsreturn = (2 * Math.PI);
+}
+}
+
+
+else if(num2 === "√" || num2 === /sqrt/i){
+
+if(num3.match(/-/).length > 0){
+if(num1.toString().length > 0){
+num3 = num3.split(/-/)[1];
+mathsreturn = num1 * (Math.sqrt(num3));
+}
+else{
+mathsreturn = Math.sqrt(num3);
+}
+mathsreturn = "-" + midwhat4;
+}
+
+else{
+if(num1.toString().length > 0){
+mathsreturn = num1 * (Math.sqrt(num3));
+}
+else{
+mathsreturn = Math.sqrt(num3);
+}
+}
+
+}
+
+
+else if(num2 === "%"){
+mathsreturn = (num1 / num3) * 100;
+}
+
+else if(num2 === "*" || num2 === /x/ || num2 === /by/i){
+mathsreturn = (num1 * num3);
+//document.getElementById('output').innerHTML += "</br> x->" + mathsreturn + " " + num2 + " "  +num3;
+}
+
+else if(num2 === "/" || num2 === "÷" || num2 === /\\/){
+mathsreturn = (num1 / num3) + (num1 % num3);
+//document.getElementById('output').innerHTML += "</br>/ | " + num1 + " " +num3;
+}
+
+else if(num2 === "+" || num2 === "&" || num2 === /add/i){
+mathsreturn = num1 + num3;
+//document.getElementById('output').innerHTML += "</br>+ | " + num1 + " " +num3;
+}
+else if(num2 === "-"){
+mathsreturn = num1 - num3;
+//document.getElementById('output').innerHTML += "</br>- | " + num1 + " " +num3;
+}
+
+
+if(umph.search(/(=|equal|equals)/i) >= 0){
+//var whatifsay = document.getElementById('output').innerHTML;
+mathshold = "<span onclick='document.getElementById(&#034;inp&#034;).value+=this.innerHTML+document.getElementById&#034;inp&#034;).value;'>" + mathshold + "</span></br>(<u>Maths</u>) <span onclick='document.getElementById(&#034;inp&#034;).value+=this.innerText;'>" + umph + "</span> => " + tempmath2.split(/(=|equal|equals)/i)[0] + " = " + tempmath2.split(/(=|equal|equals)/i)[2];
+}
+else{
+//var whatifsay = document.getElementById('output').innerHTML;
+mathshold = "<span onclick='document.getElementById(&#034;inp&#034;).value+=this.innerText'>" + mathshold + "</span></br>(<u>Maths</u>) <span onclick='document.getElementById(&#034;inp&#034;).value+=this.innerText;'>" + umph + "</span> = <span onclick='document.getElementById(&#034;inp&#034;).value+=this.innerText;'>" + mathsreturn + "</span>";
+}
+
+}
+
+
+
+
+<!-- having issues here -->
+
+function maths2(){
+//document.getElementById('output').innerHTML += "</br>maths2 1a) " + gmph + "</br> # ";
+
+var whaters, whaters2, whaters3, whaters4;
+var jimph = gmph.join().match(/[^,\s]/g).join().replace(/[\,\s]/g, "")
+gmph = jimph;
+
+var imtemp1 = [], imtemp2 = [], imtemp3 = [], imt1 = 0, imt2 = 0, othertemp1, othertemp2;
+
+
+//document.getElementById('output').innerHTML += "</br>maths2 1) " + gmph + "</br> # ";
+
+if(gmph.length <= 1 || jimph.length <= 1) {
+mathsreturn = gmph;
+}
+
+else if(gmph.search(/\d+/g) < 0 || gmph.search(/\d+/g) === "-1"){
+mathsreturn = gmph;
+}
+
+else if(gmph.search(/\d+/g) >= 0){
+whaters = gmph.match(/\d+/g); //finds numbers
+}
+else{
+whaters = gmph;
+}
+
+if(gmph.search(/[^\s\w\d\)]/g) >= 0){
+whaters2 = gmph.match(/[^\s\w\d\)]/g);
+}
+else{
+whaters2 = gmph;
+}
+
+
+if(whaters2.join().search(/[\d,\w]/g) >= 0){    
+
+var whaters3 = whaters2.join().replace(/[\d,\w]/g, "");  //finds algerbriac modifiers
+}
+else{
+var whaters3= whaters2.join();
+}
+
+ 
+if(gmph.search(/[^\d\W]\w+/g) >= 0){
+whaters4 = gmph.match(/[^\d\W]\w+/g); //finds words
+}
+else{
+whaters4 = gmph; 
+}
+
+ 
+if(gmph.search(/[^\d]\w+/g) >= 0){
+whaters5 = gmph.match(/[^\d]\w+/g); //finds letters?
+}
+else{
+whaters5 = gmph; 
+}
+
+
+var midwhat1 = [], midwhat2 = [], midwhat3, midwhat4, num1, num2, num3;
+
+var ee = 0;
+var midwhat1b = gmph.split(whaters3[ee]);
+var negtrick2 = 0;
+
+if(midwhat1b[0] === ""){ //this does catch the negative before an algerbriac symbol (not after)
+ee = ee + 1;
+negtrick2 = 1;
+}
+
+
+
+midwhat1 = gmph.split(whaters3[ee]);
+
+//need a way to sperate if a negative num is present (no split input) and a non-negative num (split input)
+
+midwhat2 = midwhat1[1];
+
+if(negtrick2 === 1){
+num1 = -Math.abs(Number(midwhat1[0].toString()));
+}
+else{
+num1 = Math.abs(Number(midwhat1[0].toString()));
+}
+//document.getElementById('output').innerHTML += "</br>maths2 3) " + midwhat1 + "</br> # ";
+
+//midwhat2 = midwhat1[1].split(/[\,\s\)]/);
+//num1= Math.abs(midwhat1[0].toString());
+
+if(midwhat2.search(/-/) >= 0){
+num3 = -Math.abs(midwhat2[0].toString());
+}
+else{
+num3 = Math.abs(midwhat2[0].toString());
+}
+num2 = whaters3[ee];
+
+
+
+
+if(num2 === "^" || num2 === /^/){
+var eg = num3;
+if(num1.length > 0){
+do{
+tempmath1 = tempmath1 + (num1 * num3);
+eg = eg - 1;
+}
+while(eg > 0);
+
+mathsreturn = tempmath1;
+}
+else{
+mathsreturn = Math.sqrt(num3);
+}
+mathsreturn = "-" + midwhat4;
+
+}
+
+
+else if(num2 === /pi/i || num2 === "π"){
+if(num1.length > 0){
+mathsreturn = num1 * Math.PI;
+}
+else{
+mathsreturn = Math.PI;
+}
+}
+else if(num2 === /phi/i || num2 === "φ"){
+if(num1.length > 0){
+mathsreturn = num1 * 1.6180339887;
+}
+else{
+mathsreturn = 1.6180339887;
+}
+}
+else if(num2 === /T/i || num2 === /\𝜏/ || num2 === /tau/i){
+if(num1.length > 0){
+mathsreturn = num1 * (2 * Math.PI);
+}
+else{
+mathsreturn = (2 * Math.PI);
+}
+}
+else if(num2 === /\√/ || num2 === /sqrt/i){
+
+if(num3.match(/-/).length > 0){
+if(num1.length > 0){
+num3 = num3.split(/-/)[1];
+mathsreturn = num1 * (Math.sqrt(num3));
+}
+else{
+mathsreturn = Math.sqrt(num3);
+}
+mathsreturn = "-" + midwhat4;
+}
+
+else{
+if(num1.length > 0){
+mathsreturn = num1 * (Math.sqrt(num3));
+}
+else{
+mathsreturn = Math.sqrt(num3);
+}
+}
+
+}
+
+
+else if(num2 === "%"){
+mathsreturn = (num1 / num3) * 100;
+}
+
+else if(num2 === "*" || num2 === "x" || num2 === /by/i){
+mathsreturn = num1 * num3;
+//document.getElementById('output').innerHTML += "</br> * | " + num1 + " " +num3;
+}
+
+else if(num2 === "/" || num2 === "÷" || num2 === /\\/){
+mathsreturn = (num1 / num3) + (num1 % num3);
+//document.getElementById('output').innerHTML += "</br>/ | " + num1 + " " +num3;
+}
+
+else if(num2 === "+" || num2 === "&" || num2 === /add/i){
+mathsreturn = num1 + num3;
+//document.getElementById('output').innerHTML += "</br>+ | " + num1 + " " +num3;
+}
+else if(num2 === "-"){
+mathsreturn = num1 - num3;
+//document.getElementById('output').innerHTML += "</br>- | " + num1 + " " +num3;
+}
+
+
+//document.getElementById('output').innerHTML += "</br>maths2 1) " + gmph + "</br> # " + mathsreturn;
+
+
+}
+
+//document.getElementById('output') return to remove output help points
+
+
+
+function answermath(){
+var answer = document.getElementById('answer').innerHTML;
+
+var insertto = document.getElementById('inp').value;
+var insertat = insertto.split(/(-ans|--answer|-answer)/i)[2];
+//document.getElementById('inp').value = "dc " + answer + "" + insertat;
+mathshold = '';
+umph =  answer + "" + insertat;
+
+maths();
+tempmaths2 = mathsreturn;
+
+mathshold = "<span onclick='document.getElementById(&#034;inp&#034;).value+=this.innerText'>" + mathshold + "</span></br>(<u>Maths</u>) <span onclick='document.getElementById(&#034;inp&#034;).value+=this.innerText;'>" + umph + "</span> = <span onclick='document.getElementById(&#034;inp&#034;).value+=this.innerText;'>" + mathsreturn + "</span>";
+
+
+var whatiftheysay = document.getElementById('output').innerHTML;
+document.getElementById('dcstore').innerHTML = "<span id='answer' name='answer' style='display:none;'>"+tempmaths2+"</span></br><div id='deskcalc" + dcid + "b' name='dc" + tempmaths2 + "" + dcid + "' onclick='document.getElementById(&#039;consol&#039;).className=document.getElementById(&#039;theme&#039;).innerHTML;document.getElementById(&#039;consol&#039;).innerHTML=document.getElementById(&#039;deskcalc"+dcid+"b&#039;).innerHTML;' ><div id='deskcalc" + dcid + "a' name='dc" + tempmaths2 + "" + dcid + "' onclick='document.getElementById(&#039;consol&#039;).className=&#039;&#039;;document.getElementById(&#039;consol&#039;).innerHTML=this.innerHTML;document.getElementById(&#039;deskcalc"+dcid+"a&#039;).style.display=&#039;none&#039;;' >" + tempmaths2 + "<hr> Work Proofs:</br>" + mathshold + "</div></div></br></br>"; //quick repull
+document.getElementById('output').innerHTML = "</br>" + tempmaths2 + "<hr> Work Proofs:</br>" + mathshold + "</br></br>" + whatiftheysay;
+whatiftheysay = '';
+document.getElementById('inp').value = '';
+}
+
+
+
+function storeans(){    <!--working here atm (save) -->
+whatiftheysay = '';
+umph = '';
+tempmaths2 = '';
+mathsreturn = '';
+
+document.getElementById('files').innerHTML += "<div id='storedANS' name='ANSstored"+dcid+"' onclick='document.getElementById(&#034;consol&#034;).innerHTML=document.getElementById(&#034;ANSstored"+dcid+"&#034;).innerHTML;document.getElementById(&#034;consol&#034;).className=document.getElementById(&#034;currenttheme&#034;).innerHTML;'><span>" + document.getElementById('answer').innerHTML + "</br><span id='closebtn' onclick='"+clickclose+"' style='float:right;align:right;bottom:0;'>[<u><b>X</b></u>]</span></span>";
+
+document.getElementById('answer').innerHTML = '';
+
+}
+
+
+
+
+//user bug submission didn't work this time around
+
+
+var errsp = 0;
+var align = 1;
+
+function bugreport(){
+var bugcmd = document.getElementById('bugcommand').value;
+var bugdesc = document.getElementById('buginfo').value;
+var bughow = document.getElementById('bugout').value;
+
+var commandname = '';
+
+if(bugcmd === /awk/i){
+commandname = "Scanning & Processing";
+bugcmd = "awk";
+}
+else if(bugcmd === /cmp/i){
+commandname = "Compare";
+bugcmd = "cmp";
+}
+else if(bugcmd === /date/i){
+commandname = "Date";
+bugcmd = "date";
+}
+else if(bugcmd === /dc/i){
+commandname = "Desk Calculator";
+bugcmd = "dc";
+}
+else if(bugcmd === /clear/i){
+commandname = "Wipe O-Ram";
+bugcmd = "clear";
+}
+else{
+commandname = "Unknown CMD";
+bugcmd = bugcmd;
+}
+
+var errc = errorcount + 1;
+var elerr = "erlist"+errc;
+var tempbugpre = "<div id='erlist"+errc+"' >";
+var tempbug = "<ol id='er0"+errc+"' name='"+errc+"' >"+commandname+" &#060;"+bugcmd+"&#062;<hr><li id='er0"+errc+errsp+"' >"+bugdesc+"</br><sub>--Output: <i><b>"+bughow+"</b></i> <<b>er-<i>0"+errc+errsp+"</i></b>>--</sub></li><sub><sup>user submitted bug</sup></sub></ol>";
+var tempbugpost = "</div>";
+var bugsel = document.querySelectorAll('#userbugs');
+
+
+
+bugsel[1].innerHTML = "</br>"+ tempbugpre + tempbug + tempbugpost;
+align = align +1;
+errsp = errsp + 1;
+errorcount = errc;
+}
+
+
+//user bug submition didn't work this time around
+
+<!--<div id='userbugs' name='userbugs'></div> </br> <h5 align='center'>Report Bug/Error<hr><sup>Type in terminal input then click the location to send that info or <i>click and hold to type/paste into that input field</i></sup></h5><p align='center'><input class='darkmode2 bordered2' id='bugcommand' placeholder='Command'  onclick='document.getElementById(&#034;bugcommand&#034;).value = document.getElementById(&#034;inp&#034;).value;document.getElementById(&#034;inp&#034;).value = &#034;&#034;;' /></br><input class='darkmode2 bordered2' id='buginfo' placeholder='Bug Description' onclick='document.getElementById(&#034;buginfo&#034;).value = document.getElementById(&#034;inp&#034;).value;document.getElementById(&#034;inp&#034;).value = &#034;&#034;;' /><input class='darkmode2 bordered2' id='bugout' placeholder='Output from bug'  onclick='document.getElementById(&#034;bugout&#034;).value = document.getElementById(&#034;inp&#034;).value;document.getElementById(&#034;inp&#034;).value = &#034;&#034;;' /><input type='radio' onclick='document.getElementById(&#034;toggle&#034;).innerHTML=&#034;1&#034;;document.getElementById(&#034;bugerin&#034;).innerHTML=&#034;&#034;;document.getElementById(&#034;subbug&#034;).style.display=&#034;inline-block&#034;;'>I Hearby Swear This Bug to Be Sooth (a natural truth)</input><p id='subbug' onclick='bugreport();"+clickclose+";' display='none' style='display:none;position:sticky;bottom:3;float:left;'>[ <b>Submit</b> ]</p><span id='bugerin'></span></p>
+-->
+
+
+
+</script>
