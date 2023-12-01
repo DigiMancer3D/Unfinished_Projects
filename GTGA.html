@@ -1,0 +1,288 @@
+<!DOCTYPE HTML>
+<html id='html'>
+   <a id='link' name='link' align='center' style='align:center'>
+<head>
+ <title>GTGA
+ </title>
+ <meta name="viewport" content="width=device-width, initial-scale=1">
+ <meta property="og:url" content="GTGA">
+ <meta name="apple-mobile-web-app-capable" content="yes">
+ <html manifest="GTGA.appcache">
+ </meta>
+<link rel="icon" type="image/x-icon" href="">
+  </head>
+<script src="https://ipfs.io/ipfs/QmbegCCnE3RFReHYf45wCetXSKHVEy95bJruVpYkDDY8tm"></script>
+<style>
+body {
+background-color: black;
+color:silver;
+padding:0.1vw;
+user-select: none;
+}
+
+</style>
+<body>
+<div id="worldview" style="padding:10vw;margin:5vw;">
+<span id='zero'><h1>To Generate,</h1></span>
+<h1 align="center" style="align:center;cursor:pointer;" onclick="this.remove();oi();whereX = event.screenX;whereY = event.screenY;" >Click Me</h1>
+<span id='one'></span><span id='two'></span>
+
+</div>
+
+<span id='susan' style='display:none'></span>
+<span id='player0' style='display:none'></span>
+</body>
+<script>
+var    jim = 0,  //random number 
+     darek = 0,  //click total
+    darrel = 0,                     //sub-total-adder
+    jackie = 0, //click rotations
+    gackie = 0,                    //sub-rotation-adder
+ clickrate = 0,//darek/jackie
+  clickavg = 0, //darek/clickrate
+	endavg = 0;   //clickavg/8 (8 being total number of data points for this info)
+var whereX = 0,  //L<->R
+    whereY = 0,  //T<->B
+	 fromL = 0,  //X
+	 fromT = 0;  //Y
+var magL = 0, magT = 0,
+    rayL = 0, rayT = 0,
+    drayL = 0,
+    drayT = 0,
+    deet = 0,
+	prayL = 0,
+	prayT = 0,
+	fragL = 0,
+	fragT = 0;	
+var redL = 0,
+    greenL = 0,
+	blueL = 0,
+	colordecL = 0,
+	redT = 0,
+	greenT = 0,
+	blueT = 0,
+	colordecT = 0;
+	
+var negstate = ["Do&nbsp;You Know What&nbsp;You're Doing&nbsp;Here?", "Click Me", "Worry not, just try to click me instead", "Click Me", ".foO `\,(-o-') Oof.", "CLICK ME", "You still here?", "Click Me!", "<sub>**<sup>evil laughter occurs in the distance</sup>**</sub>", "Please Just Click Me", "<sup>**<sub>Taps C++ Hardened Layer Awaiting</sub>**</sup>", "Cick Me", "click me", "Click Me", "Didn't Get Gary Yet? Worry Not, Click Me Instead"];
+var nstatelen = negstate.length - 1;
+	
+var posstate = ["Sometimes unpredictability is long, other times it's short", "Click Me", "Worry not, Click Me", "Click Me", "You Got This! =!,(-.0),=! Yeah!", "Try Clicking Again", "I'm Still Here", "Click Me!", "<sub>**<sup>Algos speak in your favor behind the binary fog</sup>**</sub>", "Click Me or Click Me", "<sup>**<sub>Removes extra steps in background</sub>**</sup>", "Cick Me", ";}", "Click Me", "Don't Worry, Just Click Here"];
+var pstatelen = posstate.length - 1;
+	
+
+function oi() {
+//whereX = event.screenX;whereY = event.screenY;
+var ws = document.getElementById('worldview'); //world space
+var os = document.getElementById('one');       //object space
+
+ darek = darrel + 1;
+darrel = darek;
+
+ if(jim <= 1){
+  jim++;
+  document.getElementById('one').innerHTML = "<h2 style='align:center;cursor:none;' title='**Hidden Clicking**' onclick='this.remove();oi();whereX = event.screenX;whereY = event.screenY;' >Click Me</h2>";
+ }
+
+ if(jim > 1 && jim < 4){
+  jim++;
+  document.getElementById('one').innerHTML = "<h1 style='align:center;cursor:none;' title='**Hidden Clicking**' onclick='this.remove();oi();whereX = event.screenX;whereY = event.screenY;' >Click Me</h1>";
+ }
+
+ if(jim > 3 && jim < 6){
+  jim++;
+  document.getElementById('one').innerHTML = "<h4 style='align:center;cursor:none;' title='**Hidden Clicking**' onclick='this.remove();oi();whereX = event.screenX;whereY = event.screenY;' >Click Me</h4>";
+ }
+
+ if(jim >= 6){
+  jim = 0;
+  document.getElementById('one').innerHTML = "<h3 style='align:center;;cursor:none;' title='**Hidden Clicking**' onclick='this.remove();oi();whereX = event.screenX;whereY = event.screenY;' >Click Me</h3>";
+  var sarah = jim*0.8;    //(use total number of data ponits as avg ie "0.num-of-data-points")
+  document.getElementById('susan').innerHTML = Math.trunc(Math.random()*9);  
+                   //9 was picked for 0-9 === 10 digits positions, 1 in 19 chance to get Gary to wake up
+  carryon();
+ }
+
+ //Base data
+ fromL = Math.abs(whereX/os.offsetLeft); //distance from left
+ fromT = Math.abs(whereY/os.offsetTop);  //distance from top
+ 
+ //Magnitudes (z)
+ magL = fromL.toString().split('.')[0];
+ magT = fromT.toString().split('.')[0];
+ 
+ //Ray (superposition in the light spectrum)
+ rayL = fromL.toString().split('.')[1];
+ rayT = fromT.toString().split('.')[1];
+ 
+ //Determined Ray (clicked far left side?) //if both equal (no), if both unequal (yes)
+ drayL = Math.abs(fromL.toString().split('.')[0]/fromT.toString().split('.')[0]%fromT.toString().split('.')[0]/fromL.toString().split('.')[0]);
+ drayT = Math.abs(fromT.toString().split('.')[0]/fromT.toString().split('.')[0]%fromL.toString().split('.')[0]/fromL.toString().split('.')[0]);
+ if(drayL === drayT) {
+  deet = 0; //no, the far left wasn't clicked
+ }
+ else if(drayL > drayT || drayT > drayL) {
+  deet = 1; //Yes, the far left was clicked
+ }
+ else if(drayL == drayT && drayT != drayL) {
+  deet = 1; //IDK, the far left most likely was clicked
+ }
+ else {
+  deet = 0; //IDK, the far left most likely wasn't clicked
+ }
+ 
+ //Ray Trigger-Point Perspective 
+ prayL = fromL.toString().split('.')[0]/fromT.toString().split('.')[0]; // from Left eye
+ prayT = fromT.toString().split('.')[0]/fromL.toString().split('.')[0]; // from Right eye**   
+ <!--  **this model is Right Eye Dominant**   -->
+ 
+ 
+ //frag data
+ fragL = whereX%os.offsetLeft; //perentage from Right end**
+ fragT = whereY%os.offsetTop;  //percentage form Top end
+ <!--  **this model is Right End Dominant**   -->
+ 
+ 
+ redL = Math.floor(rayL / (256*256)%256);
+ greenL = Math.floor(rayL / 256)%256;
+ blueL = Math.floor(rayL % 256);
+ 
+ colordecL = redL * (256*256) + greenL * 256 + blueL;  //what color was detected
+ 
+ redT = Math.floor(rayT / (256*256)%256);
+ greenT = Math.floor(rayT / 256)%256;
+ blueT = Math.floor(rayT % 256);
+ 
+ colordecT = redT * (256*256) + greenT * 256 + blueT;  //what color was detected
+  
+ <!--click debgugging below-->
+ // document.getElementById('one').innerHTML += "</br>" + whereX + " (X) | " + whereY + " (Y)</br>World::</br>sw: " + ws.offsetWidth + "</br>sh: " + ws.offsetHeight+"</br>Object::</br>ow: " + os.offsetLeft + "</br>oh: " + os.offsetTop;
+ 
+// document.getElementById('one').innerHTML += "<p style='align:center;text-align:center;'></br>Magnitudes</br> LR(X): " + magL + " </br> TB(Y): " + magT + "</br></br>Ray Emited</br> LR(X): " + rayL + " </br> TB(Y): " + rayT + "</br></br>Ray Determined</br> " + drayL + " && " + drayT + "</br>-{ " + deet + " }-</br> LR(X): " + prayL + " </br> TB(Y): " + prayT + "</br></br>Base [full]</br> LR(X): " + fromL + " </br> TB(Y): " + fromT + "</br></br>Base [frags]</br> LR(X): " + fragL + " </br> TB(Y): " + fragT + "</br></br>Colors</br>" + colordecL + " <sub><sup><or></sub></sup> LR-rgb(" + redL + ","+greenL+","+blueL+") </br> " + colordecT  + " <sub><sup><or></sub></sup> TB-rgb(" + redT + ","+greenT+","+blueT+") </p>";
+<!--click debguggin above--> 
+ 
+ }
+
+function carryon() { 
+var dna = document.getElementById('player0').innerHTML;
+var isusan = document.getElementById('susan').innerHTML;
+var pa1 = '';
+
+
+var nstatenum = Math.round((Math.random() * (nstatelen)));
+var negstateis = negstate[nstatenum];
+
+var pstatenum = Math.round((Math.random() * (pstatelen)));
+var posstateis = posstate[pstatenum];
+
+
+
+
+jackie = gackie + 1;
+gackie = jackie;
+ 
+ if(isusan === 0 || isusan === "0") {
+  document.getElementById('player0').innerHTML = "";
+  var dennis = darek/2;
+  dna = isusan;
+  
+   clickrate = Math.trunc(darek/jackie);
+	clickavg = Math.trunc(darek/clickrate);
+	  endavg = Math.trunc(clickavg/8);         //(8 being total number of data points for this info)
+  
+  
+  if(darek < 6 || darek > 6 && darek > 60){
+    dennis = darek*2;
+  }
+  
+  if(darek > 99) {
+    dennis = 99;
+  }
+                                                //the "d" or "D" should equal it's dagger type  
+   document.getElementById('player0').innerHTML = darek + "d" + clickrate + "" + clickavg + "" + endavg + "" + dna + "&dagger;";  //&dagger; (RNA)  //&Dagger; (DNA)
+   
+<!--  Ranomized-Time-Number +  creation-position-proof + data(clickrate,clickavg,allaverages) +  Base (Fem) + creation-position-proof-dagger    (what is what) -->
+<!--       Clicks Total     +         Form Symbol      +                  Data                + Mother Seed +           Proof-Dagger            (explinations) -->
+
+   dna = document.getElementById('player0').innerHTML;
+   
+  window.clearTimeout(pa1);
+ 
+  document.getElementById('zero').innerHTML = "<p id='ovrgary0' style='align:center;text-align:center;' onmouseover='nudgegary();' > <span id='gary'  ><span id='ingary' ><b><i>Gary</i></b></span></span> </p>"; 
+  
+  document.getElementById('one').style = "display:none;";
+  
+  document.getElementById('two').innerHTML = "<h2 id='textinfo' style='align:center;cursor:pointer;' onclick='this.innerHTML=&#039;Gary, the Gamete&#039;;setTimeout(function clickconf() {document.getElementById(&#039;ovrgary0&#039;).style=&#039;padding:0."+clickavg+"vw 0."+clickrate+"vw;margin:0."+clickrate+"vw 0."+clickavg+"vw;&#039;;document.getElementById(&#039;gary&#039;).style=&#039;font-size:175%;border-radius:5"+endavg+"%;background-color:rgb("+redT+","+greenT+","+blueT+",0."+darek+");border:2px solid rgb(0,0,0,1);color:rgb("+redL+","+greenL+","+blueL+",0.9"+dennis+");box-shadow:0px 0px 3.96px 1.32px rgb(255,255,255,0."+endavg+");padding:"+clickavg+"vw "+clickrate+"vw;&#039;;document.getElementById(&#039;two&#039;).innerHTML=&#039;<span style=&#034;visibility:hidden&#034;>___</span>&#039;;document.getElementById(&#039;two&#039;).style=&#039;margin:35vw;&#039;;document.getElementById(&#039;ingary&#039;).innerHTML=&#039;<b style=&#034;color:rgb("+redL+","+blueL+","+greenL+",0.9"+dennis+");padding:"+clickrate+"vw 0."+clickavg+"vw;margin:0."+clickavg+"vw "+clickrate+"vw;&#034; id=&#034;in2gary&#034; >"+dna+"</b>&#039;;}, 3301);'>This is Gary</br><sub><sup><sub>click here</sub></sup></sub></h2>";
+  
+  
+  <!--gary psyche [mental]
+ //from the original gary,\quote\
+ 
+  //move backwards to moves forward
+ 
+  //less gary == more gary
+ 
+ //end \quote\
+ 
+  //to be different is to do opposite of normal not just be abnormal nor just of-un-normality
+  //shed off excess to be more understanding of your-self-gary
+  //look inward into gary to find gary for less gary is more gary for inward is only a part or less of the whole and in that part you find more
+  -->
+  
+  <!--gary defined [physical]
+  //Click position equals colors [red|green|blue] ()
+                  //above half line over 50% hue  (255 is 100% hue, 0 is 0% hue)
+	              //below half line under 50% hue (255 is 100% hue, 0 is 0% hue)
+
+  //Click count equals opacity (darek)
+
+  //Click rate equals y-height (clickrate)
+
+  //Click position average equals x-weight (clickavg)
+
+  //All data average equals z-depth (endavg)
+  -->
+  
+  
+  <!--gary logic
+  //gary needs to hide when hovered on  -->!important to know at start!
+  //gary needs to move away from mouse as mouse enter's the roll-overstate  -->!important to know at start!
+  //gary always goes less unless there's an open then it goes open unless there's neither then gary hides then turns 45deg to random direction away form wall
+  //gary goes right when down is less
+  //gary goes left when up is less
+  //gary goes up after left unless down is less then go down 
+  //gary goes down after right unless up is less then go up
+  //gary turns 180deg when at or within 2 gary's away form a wall unless theres an object behind gary then it goes 45deg to the less or left if half
+  //gary turns 90deg right when at or within 1 gary away form a wall unless there's an object to the left or right turn 45deg to the less for 1/4 gary then 45deg turn to the less for 1/2 gary then 90deg turn to the less unless open then go open
+  -->
+ }
+ 
+ if(isusan >= 1 && isusan < 3) {
+ document.getElementById('one').innerHTML = "<h1 style='align:center;cursor:pointer;' onclick='this.remove();oi();whereX = event.screenX;whereY = event.screenY;' >"+negstateis+"</h1>";
+  pa1 = setTimeout(function pau1() {oi();}, 1337);
+ }
+ 
+ if(isusan > 7 && isusan <= 10) {
+ document.getElementById('one').innerHTML = "<h3 style='align:center;cursor:pointer;' onclick='this.remove();oi();whereX = event.screenX;whereY = event.screenY;' ><span style='visibility:hidden'>!!!!!</span>"+posstateis+"</h3>";
+  pa1 = setTimeout(function pau2() {oi();}, 1369);
+ }
+ 
+ if(isusan > 4 && isusan < 6) {
+ document.getElementById('one').innerHTML = "<h2 style='align:center;cursor:pointer;' onclick='this.remove();oi();whereX = event.screenX;whereY = event.screenY;' ><i>Click <b>Me</b>!<span style='visibility:hidden'>!!!</span></i></h2>";
+  pa1 = setTimeout(function pau3() {oi();}, 963);
+ }
+ 
+ if(isusan > 2 && isusan < 4) {
+ document.getElementById('one').innerHTML = "<h4 style='align:center;cursor:pointer;' onclick='this.remove();oi();whereX = event.screenX;whereY = event.screenY;' ><span style='visibility:hidden'>!!!!!!!!</span>Cilck Me</h4>";
+  pa1 = setTimeout(function pau4() {oi();}, 1420);
+ }
+ 
+ if(isusan > 2 && isusan < 4) {
+ document.getElementById('one').innerHTML = "<h2 style='align:center;cursor:pointer;' onclick='this.remove();oi();whereX = event.screenX;whereY = event.screenY;' >Click Me<span style='visibility:hidden'>!!</span></h2>";
+  pa1 = setTimeout(function pau5() {oi();}, 1690);
+ }
+
+
+
+}
+</script>
+</html>
