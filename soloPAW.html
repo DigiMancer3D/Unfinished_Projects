@@ -1,0 +1,1751 @@
+<!DOCTYPE HTML>
+ <html manifest="soloPAW.appcache">
+<head>
+ <title>sPAW Runs
+ </title>
+ <meta charset="utf-8" />
+ <meta name="viewport" content="width=device-width, initial-scale=1">
+ <meta property="og:url" content="1-Handed Gamming">
+ <meta name="apple-mobile-web-app-capable" content="yes">
+ <meta name="apple-mobile-web-app-sPAWruns" content="black-translucent">
+ <meta name="mobile-web-app-sPAWruns" content="black-translucent">
+ <meta name="web-app-sPAWruns" content="black-translucent">
+ <meta name="web-sPAWruns" content="black-translucent">
+ <meta property="og:url" content="index,follow">
+ <meta name="application-name" content="sPAW Runs">
+ <meta name="author" content="3Douglas 3D Pihl">
+ <meta name="description" content="Find out about sPAW runs">
+ <meta name="spellcheck" content="no">
+ <meta name="title" content="sPAW Runs">
+ <meta name="keywords" content="game runs run sPAW soloPAW 1-hand gamming gaming eldenring">
+ <link rel="icon" href="https://ipfs.io/ipfs/QmR7uN2NrMj6zyT3VCtSVNkFnoDFmze3XUN9syeoHVYQ13?filename=sPAW-paw-face-logo.png">
+ </head>
+ <style>
+ html {
+  scroll-behavior: smooth;
+  overflow-x: hidden;
+  width: 100%;
+ }
+ 
+ body {
+  background-color: black;
+ }
+ 
+ 
+ <!-- starting point -->
+ .start { <!-- landing spot -->
+ width: 100%;
+ align:center;
+ text-align:center;
+ background-color:black;
+ color:gold;
+ }
+ 
+ .ti { <!-- landing image -->
+ max-width: 100%;
+ height: 98vh;
+ align:center;
+ padding: 0.15vw;
+ box-radius: 5vw;
+ box-shadow: 0px 0px 9px rgb(75,75,75,0.85);
+ position:center;
+ }
+ 
+ <!-- header/hud -->
+ .top {
+  animation: fade 1s ease-in-out;
+ }
+ 
+ @keyframes fade {
+  0% {
+   opacity: 0;
+  }
+  50% {
+   opacity: 0.69;
+  }
+  100% {
+   opacity: 1;
+  }   
+ } 
+ 
+ .hudtop {
+ position: sticky;
+ top:0;
+ }
+ 
+ .leftbox {
+ text-shadow: 0px 0px 13px rgb(150,150,150,0.89);
+ border-radius: 15px;
+ max-width: 5vw;
+ max-height: 5vw;
+ -webkit-box-reflect: below 0px linear-gradient(to bottom, rgba(0,0,0,0.0), rgba(0,0,0,0.4));
+ box-reflect: below 0px linear-gradient(to bottom, rgba(0,0,0,0.0), rgba(0,0,0,0.4));
+ }
+ 
+ .nav:hover {
+ <!-- light ring -->
+ -webkit-animation: lightring 6.39s infinite alternate;
+          animation: lightring 6.39s infinite alternate;
+ }
+ 
+@-webkit-keyframes lightring {
+ 0% {
+  box-shadow: 2px 0px 5px rgb(230,232,250,0.79);
+ }
+ 33%{
+  box-shadow: 2px -2px 9px rgb(230,232,250,0.79);
+ }
+ 66%{
+  box-shadow: -2px 2px 13px rgb(230,232,250,0.79);
+  }
+ 100%{
+  box-shadow: 0px 2px 8px rgb(230,232,250,0.79);
+ }
+}
+@keyframes lightring {
+ 0% {
+  box-shadow: 2px 0px 5px rgb(230,232,250,0.79);
+ }
+ 33%{
+  box-shadow: 2px -2px 9px rgb(230,232,250,0.79);
+ }
+ 66%{
+  box-shadow: -2px 2px 13px rgb(230,232,250,0.79);
+  }
+ 100%{
+  box-shadow: 0px 2px 8px rgb(230,232,250,0.79);
+ }
+}
+ 
+ 
+@-webkit-keyframes lightring2 {
+ 0% {
+  text-shadow: 2px 0px 5px rgb(230,232,250,0.79);
+ }
+ 33%{
+  text-shadow: 2px -2px 9px rgb(230,232,250,0.79);
+ }
+ 66%{
+  text-shadow: -2px 2px 13px rgb(230,232,250,0.79);
+ }
+ 100% {
+  text-shadow: 0px 2px 5px rgb(230,232,250,0.79);
+ }
+}
+@keyframes lightring2 {
+ 0% {
+  text-shadow: 2px 0px 5px rgb(230,232,250,0.79);
+ }
+ 33%{
+  text-shadow: 2px -2px 9px rgb(230,232,250,0.79);
+ }
+ 66%{
+  text-shadow: -2px 2px 13px rgb(230,232,250,0.79);
+ }
+ 100% {
+  text-shadow: 0px 2px 5px rgb(230,232,250,0.79);
+ }
+}
+ 
+ .nav {
+ padding: 0.5vw;
+ margin: 1.75vw;
+ 
+ }
+ 
+ .nav:hover {
+ <!-- shimer-->
+ -webkit-mask:linear-gradient(-60deg,#000 30%,#0004,#000 70%) right/331% 100%;
+          mask:linear-gradient(-60deg,#000 30%,#0004,#000 70%) right/331% 100%;
+  background-repeat: no-repeat;
+  -webkit-animation: shimmer 6.39s infinite alternate;
+          animation: shimmer 6.39s infinite alternate;
+  cursor: default;
+		  
+ }
+ 
+@-webkit-keyframes shimmer {
+  100%{
+ -webkit-mask-position:left;
+ mask-position:left;
+  }
+ }
+  @keyframes shimmer {
+  100%{
+ -webkit-mask-position:left;
+ mask-position:left;
+  }
+ }
+ 
+ 
+ .iconlogo:hover {
+ -webkit-mask:linear-gradient(-60deg,#000 30%,#0004,#000 70%) right/331% 100%;
+          mask:linear-gradient(-60deg,#000 30%,#0004,#000 70%) right/331% 100%;
+  background-repeat: no-repeat;
+  -webkit-animation: shimmer 9.63s infinite alternate;
+          animation: shimmer 9.63s infinite alternate;
+  cursor: none; 
+ }
+ 
+ 
+ .navbtn {
+  color:transparent;
+  min-width: 5vw;
+  max-height: 5vw;
+  padding-bottom: 2.2vw;
+  padding-top:-2.2vw;
+  padding-left:1.5vw;
+  cursor: cursor;
+ }
+ 
+ .navbtn:hover { 
+  -webkit-mask:linear-gradient(-60deg,#000 30%,#0004,#000 70%) right/331% 100%;
+          mask:linear-gradient(-60deg,#000 30%,#0004,#000 70%) right/331% 100%;
+  background-repeat: no-repeat;
+  -webkit-animation: glimmer 6.39s infinite alternate;
+          animation: glimmer 6.39s infinite alternate;
+  color:orange;
+  min-width: 5vw;
+  max-height: 5vw;
+  padding-bottom: 2.2vw;
+  padding-top:-2.2vw;
+  padding-left:1.5vw;
+  cursor: none;
+ -webkit-box-reflect: below 3px linear-gradient(to bottom, rgba(0,0,0,0),rgba(0,0,0,0),rgba(0,0,0,0),rgba(0,0,0,0), rgba(0,0,0,0.7), rgba(0,0,0,0.53));
+         box-reflect: below 3px linear-gradient(to bottom, rgba(0,0,0,0),rgba(0,0,0,0),rgba(0,0,0,0),rgba(0,0,0,0), rgba(0,0,0,0.7), rgba(0,0,0,0.53));
+ }
+ 
+@-webkit-keyframes glimmer {
+0% {
+opacity: 0;
+  text-shadow: 0px 0px 0px rgb(230,232,250,0.79);
+}
+ 50%{
+ opacity:0.4;
+ -webkit-mask-position:left;
+ mask-position:left;
+  }
+  100%{
+ opacity:1;
+  text-shadow: -2px 0px 9px rgb(230,232,250,0.79);
+  }
+ }
+  @keyframes glimmer {
+0% {
+opacity: 0;
+  text-shadow: 0px 0px 0px rgb(230,232,250,0.79);
+}
+  50%{
+ opacity:0.4;
+ -webkit-mask-position:left;
+ mask-position:left;
+  }
+  100%{
+ opacity:1;
+  text-shadow: -2px 0px 9px rgb(230,232,250,0.79);
+  }
+ }
+ 
+ 
+@-webkit-keyframes glimmer2 {
+0% {
+opacity: 1;
+  text-shadow: 0px 0px 0px rgb(230,232,250,0.79);
+}
+ 50%{
+ opacity:0.4;
+ -webkit-mask-position:left;
+ mask-position:left;
+  }
+  100%{
+ opacity:1;
+  text-shadow: -2px 0px 9px rgb(230,232,250,0.79);
+  }
+ }
+  @keyframes glimmer2 {
+0% {
+opacity: 1;
+  text-shadow: 0px 0px 0px rgb(230,232,250,0.79);
+}
+  50%{
+ opacity:0.4;
+ -webkit-mask-position:left;
+ mask-position:left;
+  }
+  100%{
+ opacity:1;
+  text-shadow: -2px 0px 9px rgb(230,232,250,0.79);
+  }
+ }
+ 
+ 
+ 
+@-webkit-keyframes underglow {
+0% {
+transform: scale(101%);
+  text-shadow: 0px 4px 6px rgb(203,96,21,0.99);
+}
+ 31%{
+  text-shadow: 5px 0.5px 12px rgb(255, 165, 0 ,0.73);
+  }
+ 69%{
+  text-shadow: -1.5px -6.63px 19px rgb(255, 170, 51 ,0.69);
+  }
+  100%{
+transform: scale(113%);
+  text-shadow: -8px 1.5px 7.8px rgb(250,167,23,0.88);
+  }
+ }
+  @keyframes underglow {
+0% {
+transform: scale(101%);
+  text-shadow: 0px 4px 6px rgb(203,96,21,0.99);
+}
+ 31%{
+  text-shadow: 5px 0.5px 12px rgb(255, 165, 0 ,0.73);
+  }
+ 69%{
+  text-shadow: -1.5px -6.63px 19px rgb(255, 170, 51 ,0.69);
+  }
+  100%{
+transform: scale(113%);
+  text-shadow: -8px 1.5px 7.8px rgb(250,167,23,0.88);
+  }
+ }
+ 
+ .imgsee:hover {
+ 
+  -webkit-animation: underglowbox 9.39s infinite alternate;
+          animation: underglowbox 9.39s infinite alternate;
+ }
+ 
+@-webkit-keyframes underglowbox {
+0% {
+transform: scale(101%);
+  box-shadow: 0px 4px 6px rgb(203,96,21,0.99);
+ -webkit-box-reflect: below 3px linear-gradient(to bottom, rgba(0,0,0,0),rgba(0,0,0,0),rgba(0,0,0,0),rgba(0,0,0,0), rgba(0,0,0,0.7), rgba(0,0,0,0.53));
+         box-reflect: below 3px linear-gradient(to bottom, rgba(0,0,0,0),rgba(0,0,0,0),rgba(0,0,0,0),rgba(0,0,0,0), rgba(0,0,0,0.7), rgba(0,0,0,0.53));
+}
+ 31%{
+  box-shadow: 5px 0.5px 12px rgb(255, 165, 0 ,0.73);
+ -webkit-box-reflect: below 0px linear-gradient(to bottom, rgba(0,0,0,0),rgba(0,0,0,0),rgba(0,0,0,0),rgba(0,0,0,0), rgba(0,0,0,0.5), rgba(0,0,0,0.73));
+         box-reflect: below 0px linear-gradient(to bottom, rgba(0,0,0,0),rgba(0,0,0,0),rgba(0,0,0,0),rgba(0,0,0,0), rgba(0,0,0,0.5), rgba(0,0,0,0.73));
+  }
+ 69%{
+  box-shadow: -1.5px -6.63px 19px rgb(255, 170, 51 ,0.69);
+ -webkit-box-reflect: below 1.85px linear-gradient(to bottom, rgba(0,0,0,0),rgba(0,0,0,0),rgba(0,0,0,0),rgba(0,0,0,0), rgba(0,0,0,0.6), rgba(0,0,0,0.66));
+         box-reflect: below 1.85px linear-gradient(to bottom, rgba(0,0,0,0),rgba(0,0,0,0),rgba(0,0,0,0),rgba(0,0,0,0), rgba(0,0,0,0.6), rgba(0,0,0,0.66));
+  }
+  100%{
+transform: scale(103%);
+  box-shadow: -8px 1.5px 7.8px rgb(250,167,23,0.88);
+ -webkit-box-reflect: below 3px linear-gradient(to bottom, rgba(0,0,0,0),rgba(0,0,0,0),rgba(0,0,0,0),rgba(0,0,0,0), rgba(0,0,0,0.7), rgba(0,0,0,0.53));
+         box-reflect: below 3px linear-gradient(to bottom, rgba(0,0,0,0),rgba(0,0,0,0),rgba(0,0,0,0),rgba(0,0,0,0), rgba(0,0,0,0.7), rgba(0,0,0,0.53));
+  }
+ }
+  @keyframes underglowbox {
+0% {
+transform: scale(101%);
+  box-shadow: 0px 4px 6px rgb(203,96,21,0.99);
+ -webkit-box-reflect: below 3px linear-gradient(to bottom, rgba(0,0,0,0),rgba(0,0,0,0),rgba(0,0,0,0),rgba(0,0,0,0), rgba(0,0,0,0.7), rgba(0,0,0,0.53));
+         box-reflect: below 3px linear-gradient(to bottom, rgba(0,0,0,0),rgba(0,0,0,0),rgba(0,0,0,0),rgba(0,0,0,0), rgba(0,0,0,0.7), rgba(0,0,0,0.53));
+}
+ 31%{
+  box-shadow: 5px 0.5px 12px rgb(255, 165, 0 ,0.73);
+ -webkit-box-reflect: below 0px linear-gradient(to bottom, rgba(0,0,0,0),rgba(0,0,0,0),rgba(0,0,0,0),rgba(0,0,0,0), rgba(0,0,0,0.5), rgba(0,0,0,0.73));
+         box-reflect: below 0px linear-gradient(to bottom, rgba(0,0,0,0),rgba(0,0,0,0),rgba(0,0,0,0),rgba(0,0,0,0), rgba(0,0,0,0.5), rgba(0,0,0,0.73));
+  }
+ 69%{
+  box-shadow: -1.5px -6.63px 19px rgb(255, 170, 51 ,0.69);
+ -webkit-box-reflect: below 1.85px linear-gradient(to bottom, rgba(0,0,0,0),rgba(0,0,0,0),rgba(0,0,0,0),rgba(0,0,0,0), rgba(0,0,0,0.6), rgba(0,0,0,0.66));
+         box-reflect: below 1.85px linear-gradient(to bottom, rgba(0,0,0,0),rgba(0,0,0,0),rgba(0,0,0,0),rgba(0,0,0,0), rgba(0,0,0,0.6), rgba(0,0,0,0.66));
+  }
+  100%{
+transform: scale(103%);
+  box-shadow: -8px 1.5px 7.8px rgb(250,167,23,0.88);
+ -webkit-box-reflect: below 3px linear-gradient(to bottom, rgba(0,0,0,0),rgba(0,0,0,0),rgba(0,0,0,0),rgba(0,0,0,0), rgba(0,0,0,0.7), rgba(0,0,0,0.53));
+         box-reflect: below 3px linear-gradient(to bottom, rgba(0,0,0,0),rgba(0,0,0,0),rgba(0,0,0,0),rgba(0,0,0,0), rgba(0,0,0,0.7), rgba(0,0,0,0.53));
+  }
+ }
+ 
+ .hud1 {
+ 
+ }
+ 
+ .hud2 {
+ 
+ }
+ 
+ .hud:hover {
+ <!-- light ring -->
+ -webkit-animation: lightring 6.39s infinite alternate;
+          animation: lightring 6.39s infinite alternate;
+ 
+ }
+ 
+ 
+ <!-- website content container -->
+ .viewport {
+
+ }
+ 
+ .block {
+ padding: 1.5vw 0.5vw;
+ margin: 1.5vw 0.5vw;
+ background-color:rgb(0,0,0,0.93);
+ color:white;
+ -webkit-animation: fadein 1.69s ease-in-out;
+         animation: fadein 1.69s ease-in-out;
+ }
+ 
+ 
+ 
+@-webkit-keyframes fadein {
+ from{
+  transform: translate(0%, 45%) scale(80%);
+ opacity: 0;
+ filter: blur(13px);
+ transform-style: preserve-3d;
+  }
+  to{
+  transform: translate(0%, 0%) scale(100%);
+ opacity: 1;
+ filter: blur(0px);
+ transform-style: preserve-3d;
+  }
+ }
+  @keyframes fadein {
+from{
+  transform: translate(0%, 45%) scale(100%);
+ opacity: 0;
+ filter: blur(13px);
+ transform-style: preserve-3d;
+  }
+  to{
+  transform: translate(0%, 0%) scale(100%);
+ opacity: 1;
+ filter: blur(0px);
+ transform-style: preserve-3d;
+  }
+ }
+ 
+ 
+@-webkit-keyframes fadeout {
+ 0%{
+  transform: translate(0%, 0%) scale(109%);
+ opacity: 0.9;
+ filter: blur(0px);
+ transform-style: preserve-3d;
+ visibility:visible;
+  }
+  100%{
+  transform: translate(0%, 45%) scale(10%);
+ opacity: 0.15;
+ filter: blur(23px);
+ transform-style: preserve-3d;
+ visibility:hidden;
+  }
+ }
+  @keyframes fadeout {
+0%{
+  transform: translate(0%, 0%) scale(109%);
+ opacity: 0.9;
+ filter: blur(0px);
+ transform-style: preserve-3d;
+ visibility:visible;
+  }
+  100%{
+  transform: translate(0%, 45%) scale(10%);
+ opacity: 0.15;
+ filter: blur(23px);
+ transform-style: preserve-3d;
+ visibility:hidden;
+  }
+ }
+ 
+ .button {
+  background-color: rgb(150,255,150,0.49);
+  padding: 1vw;
+  font-size:30px;
+  margin: 0.5vw;
+  box-shadow: 0px 0px 3px rgb(125,125,125,0.8);
+  color:orange;
+  border-radius: 15px;
+  border: 2px solid rgb(175,255,175,0.7);
+  -webkit-animation: hov 9.36s infinite alternate ease-in-out;
+          animation: hov 9.36s infinite alternate ease-in-out;
+  transition-duration: 2s;
+		  
+ }
+ 
+ .button2 {
+  background-color: rgb(150,255,150,0.49);
+  padding: 1vw;
+  font-size:30px;
+  margin: 0.5vw;
+  box-shadow: 0px 0px 3px rgb(125,125,125,0.8);
+  color:orange;
+  border-radius: 15px;
+  border: 2px solid rgb(175,255,175,0.7);
+  -webkit-animation: hov2 9.36s infinite alternate ease-in-out;
+          animation: hov2 9.36s infinite alternate ease-in-out;
+  transition-duration: 2s;
+		  
+ }
+ 
+ .button3 {
+  background-color: rgb(150,255,150,0.49);
+  padding: 1vw;
+  font-size:30px;
+  margin: 0.5vw;
+  box-shadow: 0px 0px 3px rgb(125,125,125,0.8);
+  color:orange;
+  border-radius: 15px;
+  border: 2px solid rgb(175,255,175,0.7);
+  -webkit-animation: hov3 9.36s infinite alternate ease-in-out;
+          animation: hov3 9.36s infinite alternate ease-in-out;
+  transition-duration: 2s;
+		  
+ }
+ 
+ .input1 {
+  background-color: rgb(150,255,150,0.49);
+  padding: 0.1vw;
+  font-size:30px;
+  margin: 0.5vw;
+  box-shadow: 0px 0px 3px rgb(125,125,125,0.8);
+  color:white;
+  border-radius: 15px;
+  border: 2px solid rgb(175,255,175,0.7);
+  transition-duration: 2s;
+  text-align: center;
+ -webkit-mask:linear-gradient(-60deg,#000 30%,#0004,#000 70%) right/331% 100%;
+          mask:linear-gradient(-60deg,#000 30%,#0004,#000 70%) right/331% 100%;
+  background-repeat: no-repeat;
+  -webkit-animation: shimmer 3.69s 1 alternate ease-in-out;
+          animation: shimmer 3.69s 1 alternate ease-in-out;
+ }
+ 
+ ::placeholder {
+ color: white;
+ opacity:0.83;
+ font-size:90%;
+ text-align:center;
+ -webkit-mask:linear-gradient(-60deg,#000 30%,#0004,#000 70%) right/331% 100%;
+          mask:linear-gradient(-60deg,#000 30%,#0004,#000 70%) right/331% 100%;
+  background-repeat: no-repeat;
+  -webkit-animation: shimmer 6.36s infinite alternate ease-in-out;
+          animation: shimmer 6.36s infinite alternate ease-in-out;
+ }
+ 
+ 
+ .button:hover, .button2:hover, .button3:hover, .button0:hover, .button4:hover  {
+  background-color: rgb(250,255,250,0.9);
+  padding: 1vw;
+  font-size:30px;
+  margin: 0.5vw;
+  box-shadow: 0px 0px 6px rgb(125,125,125,0.6);
+  opacity: 1;
+  -webkit-animation: return 1.69s 1 ease-in-out;
+          animation: return 1.69s 1 ease-in-out;
+  color:orange;
+  border-radius: 15px;
+  border: 2px solid rgb(175,255,175,0.7);
+  transition-duration: 2s;
+ }
+ 
+ 
+ .button0 {
+  background-color: rgb(150,255,150,0.49);
+  padding: 1vw;
+  font-size:30px;
+  margin: 0.5vw;
+  box-shadow: 0px 0px 3px rgb(125,125,125,0.8);
+  color:orange;
+  border-radius: 15px;
+  border: 2px solid rgb(175,255,175,0.7);
+ -webkit-mask:linear-gradient(-60deg,#000 30%,#0004,#000 70%) right/331% 100%;
+          mask:linear-gradient(-60deg,#000 30%,#0004,#000 70%) right/331% 100%;
+  background-repeat: no-repeat;
+  -webkit-animation: shimmer 1.69s 1 ease-out;
+          animation: shimmer 1.69s 1 ease-out;
+  transition-duration: 2s;
+		  
+ }
+ 
+ 
+ .button4 {
+  background-color: rgb(150,255,150,0.49);
+  padding: 1vw;
+  font-size:30px;
+  margin: 0.5vw;
+  box-shadow: 0px 0px 3px rgb(125,125,125,0.8);
+  color:orange;
+  border-radius: 15px;
+  border: 2px solid rgb(175,255,175,0.7);
+ -webkit-mask:linear-gradient(-60deg,#000 30%,#0004,#000 70%) right/331% 100%;
+          mask:linear-gradient(-60deg,#000 30%,#0004,#000 70%) right/331% 100%;
+  background-repeat: no-repeat;
+  -webkit-animation: glimmer2 12.93s infinite alternate ease-in-out;
+          animation: glimmer2 12.93s infinite alternate ease-in-out;
+  transition-duration: 2s;
+		  
+ }
+ 
+ 
+ 
+ @-webkit-animation return {
+ 100% {
+  transform: translate(0%,0%) scale(110%);
+ filter: blur(0px);
+ transform-style: preserve-3d;
+  box-shadow: 0px 0px 13px rgb(105,105,105,0.4);
+  opacity: 1;
+  }
+  }
+  
+  
+@-webkit-keyframes hov {
+ 0%{
+  transform: translate(0%, 0%) scale(100%);
+ filter: blur(0px);
+ transform-style: preserve-3d;
+  box-shadow: 0px 0px 6px rgb(135,135,135,0.7);
+  }
+ 30%{
+  transform: translate(3%, -5%) scale(90%);
+ filter: blur(2px);
+ transform-style: preserve-3d;
+  box-shadow: -3px 4px 8px rgb(150,150,150,0.9);
+  }
+ 57%{
+  transform: translate(-5%, -1%) scale(95%);
+ filter: blur(1px);
+ transform-style: preserve-3d;
+  box-shadow: -1px -5px 7px rgb(175,175,175,0.8);
+  }
+ 84%{
+  transform: translate(2%, 3%) scale(88%);
+ filter: blur(0.5px);
+ transform-style: preserve-3d;
+  box-shadow: 3px -8px 11px rgb(175,175,175,0.6);
+  }
+  100%{
+  transform: translate(0%, 0%) scale(100%);
+ filter: blur(0px);
+ transform-style: preserve-3d;
+  box-shadow: 0px 0px 6px rgb(135,135,135,0.7);
+  }
+ }
+  @keyframes hov {
+ 0%{
+  transform: translate(0%, 0%) scale(100%);
+ filter: blur(0px);
+ transform-style: preserve-3d;
+  box-shadow: 0px 0px 6px rgb(135,135,135,0.7);
+  }
+ 30%{
+  transform: translate(3%, -5%) scale(90%);
+ filter: blur(2px);
+ transform-style: preserve-3d;
+  box-shadow: -3px 4px 8px rgb(150,150,150,0.9);
+  }
+ 57%{
+  transform: translate(-5%, -1%) scale(95%);
+ filter: blur(1px);
+ transform-style: preserve-3d;
+  box-shadow: -1px -5px 7px rgb(175,175,175,0.8);
+  }
+ 84%{
+  transform: translate(2%, 3%) scale(88%);
+ filter: blur(0.5px);
+ transform-style: preserve-3d;
+  box-shadow: 3px -8px 11px rgb(175,175,175,0.6);
+  }
+  100%{
+  transform: translate(0%, 0%) scale(100%);
+ filter: blur(0px);
+ transform-style: preserve-3d;
+  box-shadow: 0px 0px 6px rgb(135,135,135,0.7);
+  }
+ }
+ 
+ 
+  
+  
+@-webkit-keyframes hov2 {
+ 0%{
+  transform: translate(0%, 0%) scale(100%);
+ filter: blur(0px);
+ transform-style: preserve-3d;
+  box-shadow: 0px 0px 6px rgb(135,135,135,0.7);
+  }
+ 30%{
+  transform: translate(3%, -5%) scale(90%);
+ filter: blur(0px);
+ transform-style: preserve-3d;
+  box-shadow: 3px -4px 8px rgb(150,150,150,0.9);
+  }
+ 57%{
+  transform: translate(-5%, -1%) scale(95%);
+ filter: blur(0.5px);
+ transform-style: preserve-3d;
+  box-shadow: 1px 5px 7px rgb(175,175,175,0.8);
+  }
+ 84%{
+  transform: translate(5%, 3%) scale(88%);
+ filter: blur(1px);
+ transform-style: preserve-3d;
+  box-shadow: -3px 8px 11px rgb(175,175,175,0.6);
+  }
+  100%{
+  transform: translate(0%, 0%) scale(100%);
+ filter: blur(2px);
+ transform-style: preserve-3d;
+  box-shadow: 0px 0px 6px rgb(135,135,135,0.7);
+  }
+ }
+  @keyframes hov2 {
+ 0%{
+  transform: translate(0%, 0%) scale(100%);
+ filter: blur(0px);
+ transform-style: preserve-3d;
+  box-shadow: 0px 0px 6px rgb(135,135,135,0.7);
+  }
+ 30%{
+  transform: translate(3%, -5%) scale(90%);
+ filter: blur(0px);
+ transform-style: preserve-3d;
+  box-shadow: 3px -4px 8px rgb(150,150,150,0.9);
+  }
+ 57%{
+  transform: translate(-5%, -1%) scale(95%);
+ filter: blur(0.5px);
+ transform-style: preserve-3d;
+  box-shadow: 1px 5px 7px rgb(175,175,175,0.8);
+  }
+ 84%{
+  transform: translate(5%, 3%) scale(88%);
+ filter: blur(1px);
+ transform-style: preserve-3d;
+  box-shadow: -3px 8px 11px rgb(175,175,175,0.6);
+  }
+  100%{
+  transform: translate(0%, 0%) scale(100%);
+ filter: blur(2px);
+ transform-style: preserve-3d;
+  box-shadow: 0px 0px 6px rgb(135,135,135,0.7);
+  }
+ }
+ 
+  
+  
+@-webkit-keyframes hov3 {
+ 0%{
+  transform: translate(0%, 0%) scale(100%);
+ filter: blur(1px);
+ transform-style: preserve-3d;
+  box-shadow: 0px 0px 6px rgb(135,135,135,0.7);
+  }
+ 30%{
+  transform: translate(5%, -5%) scale(90%);
+ filter: blur(0px);
+ transform-style: preserve-3d;
+  box-shadow: 3px -4px 8px rgb(150,150,150,0.9);
+  }
+ 57%{
+  transform: translate(-5%, -1%) scale(95%);
+ filter: blur(0px);
+ transform-style: preserve-3d;
+  box-shadow: 1px 5px 7px rgb(175,175,175,0.8);
+  }
+ 84%{
+  transform: translate(2%, 5%) scale(88%);
+ filter: blur(2px);
+ transform-style: preserve-3d;
+  box-shadow: -3px 8px 11px rgb(175,175,175,0.6);
+  }
+  100%{
+  transform: translate(0%, 0%) scale(100%);
+ filter: blur(0px);
+ transform-style: preserve-3d;
+  box-shadow: 0px 0px 6px rgb(135,135,135,0.7);
+  }
+ }
+  @keyframes hov3 {
+ 0%{
+  transform: translate(0%, 0%) scale(100%);
+ filter: blur(1px);
+ transform-style: preserve-3d;
+  box-shadow: 0px 0px 6px rgb(135,135,135,0.7);
+  }
+ 30%{
+  transform: translate(5%, -5%) scale(90%);
+ filter: blur(0px);
+ transform-style: preserve-3d;
+  box-shadow: 3px -4px 8px rgb(150,150,150,0.9);
+  }
+ 57%{
+  transform: translate(-5%, -1%) scale(95%);
+ filter: blur(0px);
+ transform-style: preserve-3d;
+  box-shadow: 1px 5px 7px rgb(175,175,175,0.8);
+  }
+ 84%{
+  transform: translate(2%, 5%) scale(88%);
+ filter: blur(2px);
+ transform-style: preserve-3d;
+  box-shadow: -3px 8px 11px rgb(175,175,175,0.6);
+  }
+  100%{
+  transform: translate(0%, 0%) scale(100%);
+ filter: blur(0px);
+ transform-style: preserve-3d;
+  box-shadow: 0px 0px 6px rgb(135,135,135,0.7);
+  }
+ }
+  
+ 
+@-webkit-keyframes swobble {
+ 0%{
+  transform: translate(0%, 0%) scale(100%);
+ filter: blur(0px);
+ transform-style: preserve-3d;
+  box-shadow: 0px 0px 6px rgb(135,135,135,0.7);
+  }
+ 30%{
+  transform: translate(3%, -1%) scale(90%);
+ filter: blur(0.4px);
+ transform-style: preserve-3d;
+  box-shadow: -3px 1px 8px rgb(150,150,150,0.6);
+  }
+ 57%{
+  transform: translate(-5%, 2%) scale(95%);
+ filter: blur(0.2px);
+ transform-style: preserve-3d;
+  box-shadow: -1px 5px 10px rgb(175,175,175,0.5);
+  }
+ 84%{
+  transform: translate(2%, -3%) scale(98%);
+ filter: blur(0.1px);
+ transform-style: preserve-3d;
+  box-shadow: 2px -1px 7px rgb(175,175,175,0.4);
+  }
+  100%{
+  transform: translate(1%, -1%) scale(100%);
+ filter: blur(0px);
+ transform-style: preserve-3d;
+  box-shadow: 0px 0px 3px rgb(135,135,135,0.8);
+  }
+ }
+  @keyframes swobble {
+ 0%{
+  transform: translate(0%, 0%) scale(100%);
+ filter: blur(0px);
+ transform-style: preserve-3d;
+  box-shadow: 0px 0px 6px rgb(135,135,135,0.7);
+  }
+ 30%{
+  transform: translate(3%, -1%) scale(90%);
+ filter: blur(0.4px);
+ transform-style: preserve-3d;
+  box-shadow: -3px 1px 8px rgb(150,150,150,0.6);
+  }
+ 57%{
+  transform: translate(-5%, 2%) scale(95%);
+ filter: blur(0.2px);
+ transform-style: preserve-3d;
+  box-shadow: -1px 5px 10px rgb(175,175,175,0.5);
+  }
+ 84%{
+  transform: translate(2%, -3%) scale(98%);
+ filter: blur(0.1px);
+ transform-style: preserve-3d;
+  box-shadow: 2px -1px 7px rgb(175,175,175,0.4);
+  }
+  100%{
+  transform: translate(1%, -1%) scale(100%);
+ filter: blur(0px);
+ transform-style: preserve-3d;
+  box-shadow: 0px 0px 3px rgb(135,135,135,0.8);
+  }
+ 
+ }
+ 
+ 
+@-webkit-keyframes swobble2 {
+ 0%{
+  transform: translate(0%, 0%) scale(100%);
+ filter: blur(0px);
+ transform-style: preserve-3d;
+  box-shadow: 0px 0px 6px rgb(135,135,135,0.7);
+  }
+ 30%{
+  transform: translate(3%, -1%) scale(90%);
+ filter: blur(0.4px);
+ transform-style: preserve-3d;
+  box-shadow: -3px 1px 8px rgb(150,150,150,0.6);
+  }
+ 57%{
+  transform: translate(-2%, 2%) scale(95%);
+ filter: blur(0.2px);
+ transform-style: preserve-3d;
+  box-shadow: -1px 5px 10px rgb(175,175,175,0.5);
+  }
+ 84%{
+  transform: translate(2%, -1%) scale(98%);
+ filter: blur(0.1px);
+ transform-style: preserve-3d;
+  box-shadow: 2px -1px 7px rgb(175,175,175,0.4);
+  }
+  100%{
+  transform: translate(1%, -1%) scale(100%);
+ filter: blur(0px);
+ transform-style: preserve-3d;
+  box-shadow: 0px 0px 3px rgb(135,135,135,0.8);
+  }
+ }
+  @keyframes swobble2 {
+ 0%{
+  transform: translate(0%, 0%) scale(100%);
+ filter: blur(0px);
+ transform-style: preserve-3d;
+  box-shadow: 0px 0px 6px rgb(135,135,135,0.7);
+  }
+ 30%{
+  transform: translate(3%, -1%) scale(90%);
+ filter: blur(0.4px);
+ transform-style: preserve-3d;
+  box-shadow: -3px 1px 8px rgb(150,150,150,0.6);
+  }
+ 57%{
+  transform: translate(-2%, 2%) scale(95%);
+ filter: blur(0.2px);
+ transform-style: preserve-3d;
+  box-shadow: -1px 5px 10px rgb(175,175,175,0.5);
+  }
+ 84%{
+  transform: translate(2%, -1%) scale(98%);
+ filter: blur(0.1px);
+ transform-style: preserve-3d;
+  box-shadow: 2px -1px 7px rgb(175,175,175,0.4);
+  }
+  100%{
+  transform: translate(1%, -1%) scale(100%);
+ filter: blur(0px);
+ transform-style: preserve-3d;
+  box-shadow: 0px 0px 3px rgb(135,135,135,0.8);
+  }
+ 
+ }
+ 
+ 
+@-webkit-keyframes swobble3 {
+ 0%{
+  transform: translate(0%, 0%) scale(100%);
+ filter: blur(0px);
+ transform-style: preserve-3d;
+  box-shadow: 0px 0px 6px rgb(135,135,135,0.7);
+  }
+ 4%{
+  transform: translate(2%, -1%) scale(98%);
+ filter: blur(0.1px);
+ transform-style: preserve-3d;
+  box-shadow: 2px -1px 7px rgb(175,175,175,0.4);
+  }
+ 37%{
+  transform: translate(-2%, 2%) scale(95%);
+ filter: blur(0.2px);
+ transform-style: preserve-3d;
+  box-shadow: -1px 5px 10px rgb(175,175,175,0.5);
+  }
+ 50%{
+  transform: translate(3%, -1%) scale(90%);
+ filter: blur(0.4px);
+ transform-style: preserve-3d;
+  box-shadow: -3px 1px 8px rgb(150,150,150,0.6);
+  }
+ 80%{
+  transform: translate(0%, 0%) scale(100%);
+ filter: blur(0px);
+ transform-style: preserve-3d;
+  box-shadow: 0px 0px 6px rgb(135,135,135,0.7);
+  shadow: 2px -1px 7px rgb(175,175,175,0.4);
+  }
+  100%{
+  transform: translate(1%, -1%) scale(100%);
+ filter: blur(0px);
+ transform-style: preserve-3d;
+  box-shadow: 0px 0px 3px rgb(135,135,135,0.8);
+  }
+ }
+  @keyframes swobble3 {
+ 0%{
+  transform: translate(0%, 0%) scale(100%);
+ filter: blur(0px);
+ transform-style: preserve-3d;
+  box-shadow: 0px 0px 6px rgb(135,135,135,0.7);
+  }
+ 4%{
+  transform: translate(2%, -1%) scale(98%);
+ filter: blur(0.1px);
+ transform-style: preserve-3d;
+  box-shadow: 2px -1px 7px rgb(175,175,175,0.4);
+  }
+ 37%{
+  transform: translate(-2%, 2%) scale(95%);
+ filter: blur(0.2px);
+ transform-style: preserve-3d;
+  box-shadow: -1px 5px 10px rgb(175,175,175,0.5);
+  }
+ 50%{
+  transform: translate(3%, -1%) scale(90%);
+ filter: blur(0.4px);
+ transform-style: preserve-3d;
+  box-shadow: -3px 1px 8px rgb(150,150,150,0.6);
+  }
+ 80%{
+  transform: translate(0%, 0%) scale(100%);
+ filter: blur(0px);
+ transform-style: preserve-3d;
+  box-shadow: 0px 0px 6px rgb(135,135,135,0.7);
+  shadow: 2px -1px 7px rgb(175,175,175,0.4);
+  }
+  100%{
+  transform: translate(1%, -1%) scale(100%);
+ filter: blur(0px);
+ transform-style: preserve-3d;
+  box-shadow: 0px 0px 3px rgb(135,135,135,0.8);
+  }
+ 
+ }
+ 
+ 
+ 
+@-webkit-keyframes swobble4 {
+ 0%{
+  transform: translate(0%, 0%) scale(100%);
+ filter: blur(0px);
+ transform-style: preserve-3d;
+  box-shadow: 0px 0px 6px rgb(135,135,135,0.7);
+  }
+ 27%{
+  transform: translate(-2%, 2%) scale(95%);
+ filter: blur(0.2px);
+ transform-style: preserve-3d;
+  box-shadow: -1px 5px 10px rgb(175,175,175,0.5);
+  }
+ 54%{
+  transform: translate(2%, -1%) scale(98%);
+ filter: blur(0.1px);
+ transform-style: preserve-3d;
+  box-shadow: 2px -1px 7px rgb(175,175,175,0.4);
+  }
+ 80%{
+  transform: translate(3%, -1%) scale(90%);
+ filter: blur(0.4px);
+ transform-style: preserve-3d;
+  box-shadow: -3px 1px 8px rgb(150,150,150,0.6);
+  }
+  100%{
+  transform: translate(1%, -1%) scale(100%);
+ filter: blur(0px);
+ transform-style: preserve-3d;
+  box-shadow: 0px 0px 3px rgb(135,135,135,0.8);
+  }
+ }
+  @keyframes swobble4 {
+ 0%{
+  transform: translate(0%, 0%) scale(100%);
+ filter: blur(0px);
+ transform-style: preserve-3d;
+  box-shadow: 0px 0px 6px rgb(135,135,135,0.7);
+  }
+ 27%{
+  transform: translate(-2%, 2%) scale(95%);
+ filter: blur(0.2px);
+ transform-style: preserve-3d;
+  box-shadow: -1px 5px 10px rgb(175,175,175,0.5);
+  }
+ 54%{
+  transform: translate(2%, -1%) scale(98%);
+ filter: blur(0.1px);
+ transform-style: preserve-3d;
+  box-shadow: 2px -1px 7px rgb(175,175,175,0.4);
+  }
+ 80%{
+  transform: translate(3%, -1%) scale(90%);
+ filter: blur(0.4px);
+ transform-style: preserve-3d;
+  box-shadow: -3px 1px 8px rgb(150,150,150,0.6);
+  }
+  100%{
+  transform: translate(1%, -1%) scale(100%);
+ filter: blur(0px);
+ transform-style: preserve-3d;
+  box-shadow: 0px 0px 3px rgb(135,135,135,0.8);
+  }
+ }
+ 
+ 
+ .playbtn {
+  background-color: rgb(150,255,150,0.49);
+  padding: 1vw;
+  font-size:30px;
+  margin: 0.5vw;
+  box-shadow: 0px 0px 3px rgb(125,125,125,0.8);
+  color:silver;
+  border-radius: 15px;
+  border: 2px solid rgb(175,255,175,0.7);
+ -webkit-mask:linear-gradient(-60deg,#000 30%,#0004,#000 70%) right/331% 100%;
+          mask:linear-gradient(-60deg,#000 30%,#0004,#000 70%) right/331% 100%;
+  background-repeat: no-repeat;
+  -webkit-animation: shimmer 6.39s infinite alternate;
+          animation: shimmer 6.39s infinite alternate;
+  transition-duration: 2s;
+  cursor:pointer;
+		  
+ }
+ 
+ .link11:hover {
+  -webkit-animation: underglow 3.36s infinite alternate ease-in-out;
+          animation: underglow 3.36s infinite alternate ease-in-out;
+  }
+ 
+ 
+ .playbtn:hover {
+  background-color: rgb(250,255,250,0.9);
+  padding: 1vw;
+  font-size:30px;
+  margin: 0.5vw;
+  box-shadow: 0px 0px 6px rgb(125,125,125,0.6);
+  -webkit-animation: swobble 9.36s infinite alternate ease-in-out;
+          animation: swobble 9.36s infinite alternate ease-in-out;
+  color:orange;
+  border-radius: 15px;
+  border: 2px solid rgb(175,255,175,0.7);
+  transition-duration: 2s;
+  cursor:pointer;
+ }
+ 
+ 
+ 
+ .stopbtn {
+  background-color: rgb(255,150,150,0.49);
+  padding: 1vw;
+  font-size:30px;
+  margin: 0.5vw;
+  box-shadow: 0px 0px 3px rgb(125,125,125,0.8);
+  color:darkred;
+  border-radius: 15px;
+  border: 2px solid rgb(255,175,175,0.7);
+ -webkit-mask:linear-gradient(-60deg,#000 30%,#0004,#000 70%) right/331% 100%;
+          mask:linear-gradient(-60deg,#000 30%,#0004,#000 70%) right/331% 100%;
+  background-repeat: no-repeat;
+  -webkit-animation: shimmer 6.39s infinite alternate;
+          animation: shimmer 6.39s infinite alternate;
+  transition-duration: 2s;
+  cursor:pointer;
+		  
+ }
+ 
+ 
+ .stopbtn:hover {
+  background-color: rgb(255,250,250,0.9);
+  padding: 1vw;
+  font-size:30px;
+  margin: 0.5vw;
+  box-shadow: 0px 0px 6px rgb(125,125,125,0.6);
+  -webkit-animation: swobble 9.36s infinite alternate ease-in-out;
+          animation: swobble 9.36s infinite alternate ease-in-out;
+  color:darkred;
+  border-radius: 15px;
+  border: 2px solid rgb(255,175,175,0.7);
+  transition-duration: 2s;
+  cursor:pointer;
+ }
+ 
+ .footer {
+  align: center;
+		  bottom:0;
+		  position:sticky;
+		  padding:0.25vw;
+		  margin: 0.25vw;
+		  
+  <!--background-color: rgb(0,0,0,0.8);-->
+  position:center;
+}
+
+.ering:hover{
+  -webkit-animation: lightring2 1.96s infinite alternate ease-in-out;
+          animation: lightring2 1.96s infinite alternate ease-in-out;
+		  }
+
+
+.ftr {
+width:96vw;
+align:center;
+padding:0.33vw;
+position:center;
+background-image: url('https://ipfs.io/ipfs/bafybeig5be7oqkobi4lkspzve7kgka2ww6f6ho6t3xbboyijfricp4xm6i'); 
+          background-color: rgb(69,65,69,0.7);
+		  background-repeat: round; 
+		  background-attachment: fixed; 
+		  background-position: center; 
+		  background-size:15vh; 
+		  background-opacity:0.78;
+		  text-shadow: 0px 2px 7.5px rgb(0,0,0,0.87);
+		  color:white;
+		  box-shadow: 0px 3px 113px rgb(0,0,0,0.63) inset;
+		  border-radius:15px;
+}
+ 
+
+.ftr2 {
+width:96vw;
+align:center;
+padding:0.33vw;
+position:center;
+          background-color: rgb(0,0,0,0.97);
+		  background-opacity:0.97;
+		  text-shadow: 0px 2px 7.5px rgb(0,0,0,0.87);
+		  color:white;
+		  box-shadow: 0px 3px 113px rgb(0,0,0,0.93) inset;
+		  border-radius:15px;
+}
+ 
+  .bbbb {
+  -webkit-animation: underglow 3.96s infinite alternate ease-in-out;
+          animation: underglow 3.96s infinite alternate ease-in-out;
+  }
+ 
+ </style>
+ <body  id='body' style='min-height:700px;align:center;' onscroll='scrollcheck();' >
+ <div id='landing' class='start' >
+ <p align="center" >
+ <img id='topimg' class='ti'src='https://ipfs.io/ipfs/QmZe1VhMpGB7qVgnwnt8fzrf39hH4fAC5GZZ322xYgiTkq' title=' sPAW Tiger, created by NightCafe Studio & Stable Diffusion' ></img>
+ </p>
+ </div>
+ <div id='main' class='top' style='display:none'> <!-- appears after scrolling is being performed -->
+  <div id='header' class='hudtop'>
+   
+    </br>
+   
+   <span id='navbar' class='nav'>
+   <img class='iconlogo' style='width:5vw;max-height:5vw;vertical-align: middle;' src='https://ipfs.io/ipfs/bafybeig5be7oqkobi4lkspzve7kgka2ww6f6ho6t3xbboyijfricp4xm6i' title=' sPAW Face-Print Seal, created by NightCafe Studio & Stable Diffusion' ></img> 
+    <b id='aboutbtn' class='navbtn' onclick='document.getElementById("about").scrollIntoView();' >ABOUT</b>
+	<b id='xtrabtn'  class='navbtn' onclick='document.getElementById("xtra").scrollIntoView();' >EXTRAS</b>
+	<b id='listbtn'  class='navbtn' onclick='document.getElementById("list").scrollIntoView();' >&nbsp;LIST&nbsp;</b>
+	<b id='runbtn'   class='navbtn' onclick='document.getElementById("runs").scrollIntoView();' style='display:none' >&nbsp;RUN&nbsp;</b>
+   </span>
+   
+   </br>
+   
+   <span id='timebox' class='hud1 hud' ></span><span id='runpos' class='hud2 hud' ></span>
+  </div>
+  <div id='content' class='viewport' >
+    <div id='about' name='about' class='block' style='display:none'></br></br>
+	 <h1 align='center' style='align:center;font-size:52px;'><i>solo<b>PAW</b></i></h1></br>
+	 <p align='left' style='align:left;font-size:20px;'><b style='font-size:23px;'>
+	  &nbsp; &nbsp; &nbsp; &nbsp; We are gamers that play 1-handed. We do speedruns, percent-runs, quick plays, any runs & playthroughs of video, flash, board, card & social games. Not all gamers are fully able-bodied, fully mentally capable, owning the new systems & can afford full version/new games. We are the odd, unusal & different when it comes to gaming.</b> </br></br><h3 align='center' style='align:center;font-size:32px;'><b>We are <i>Gammers</i> of a different <i>breed!</i></b></h3></br>&nbsp; &nbsp; &nbsp; &nbsp; The tools the gammer uses can often times be the difference during a learning phase of a game or can give you a cutting edge to the hardest competitions! What tool YOU use is up to You but the main tool used by many games old or new, the computer mouse. soloPAW Players use gaming mice like the <b target='_blank' class='link11' onclick='window.open("https://www.logitechg.com/en-us/products/gaming-mice/g502-hero-gaming-mouse.910-005469.html")' style='text-decoration:none;cursor:pointer;' title='learn more about this mouse'>G502</b> by Logitech which is where our main-state comes from, <i>Disfigured Tiger holding a Gaming Mouse (<b>in landing picture</b>)</i>, & our namestate, <i>solo<b>PAW</b></i>, <i>holding a <b>computer mouse</b></i>.</br></br>&nbsp; &nbsp; &nbsp; &nbsp; This page is to not only bring in awareness about disabled, new, different & unusal gammers but also to give them a place to collect their runs, run types and more to help bring in <b>s<i>PAW</i></b> run categories. Starting with the sPAW categories, keep in mind at the footer of this page is a way to submit your sPAW runs, categories & proofs to add to this page, they are as follows:<ol><b style='font-size:115%'><b style='font-size:120%'>A)</b> Demo Runs [demo filename/disc]</b>: Play through a demo disc/game in the various run types. <sup>**<sub>intro/fun/rare speedrun</sub>**</sup></ol></br><ol><b style='font-size:115%'><b style='font-size:120%'>B)</b> Playthroughs</b>: Show the road to beating a game. May be technical, vauge or just tips. <sup>**<sub>informative speedrun</sub>**</sup></ol></br><ol><b style='font-size:115%'><b style='font-size:120%'>C)</b> Any Runs [run name/location]</b>: Play through a section of a game or do specific areas/bosses/puzzles/challenges runs for a game. <sup>**<sub>informative speedrun</sub>**</sup></ol></br><ol><b style='font-size:115%'><b style='font-size:120%'>D)</b> Quick Plays [section/run]</b>: Play through a section of a game or do specific areas/bosses/puzzles/challenges runs for a game as fast as possible. <sup>**<sub>technical speedrun</sub>**</sup></ol></br><ol><b style='font-size:115%'><b style='font-size:120%'>E)</b> Percent-Runsn [--%]</b>: Play through a game and complete with a fully completed percentage (only up to 99%) as fast as you can. <sup>**<sub>technical speedrun</sub>**</sup></ol></br><ol><b style='font-size:115%'><b style='font-size:120%'>F)</b> Speedrun</b>: Play through a game and complete with a fully completed percentage (100%) as fast as you can. <sup>**<sub>technical speedrun</sub>**</sup></ol></br><ol><b style='font-size:115%'><b style='font-size:120%'>G)</b> Speedrun</b>: Play through a game and complete with a fully completed percentage (100%) as fast as you can (without exiting the game, timer never pauses). <sup>**<sub>original speedrun</sub>**</sup></ol></br>&nbsp; &nbsp; &nbsp; &nbsp; Run types can be various of almost any kind. These are community created and when appropriate is seen inside brackets ( <b>[ ]</b> ) next to the speed run filename/name when uploaded. Most of the way you upload your videos can help your videos be found through the sPAW and soloPAW searches.</br>&nbsp; &nbsp; &nbsp; &nbsp; Naming your video to reflect your run on public forums (like YouTube, Odysee, Rumble, etc) where anyone without an account can view the video can make your run easier to find. Set the title in similar to the following example, "<i><b>Game Title</b> sPAW <b>Character next to speedrun</b> [<b>run type</b>] Run (<b>end-time</b>)</i>". This will tell the majority of information and is the same data requested when uploading proofs. This is the default way to name sPAW runs. If your run doesn't have a time, type or another section of the titling, just don't include that section. For example if your run has no type it may look like, "<i><b>Elden Ring</b> sPAW <b>G</b> Run (1:33:01)</i>", and this example would be a legit sPAW run that needs no run type (because it's 100% need to beat plus dedicated restrictions).</br></br>&nbsp; &nbsp; &nbsp; &nbsp; In the page footer is the way to uploading your runs and it's a simple text comment in a Shoutbox. Set up your comment in the same way you set up your video title. This simple and decentralized way to submit runs does require your comment, name & info to match your video uploaded. To keep a single profile, re-use the same public forum account and Shoutbox data for other runs.Runs may have their own run uploading Shoutbox so only submit new run types or runs that would require new sections to be created. Anyone can crete a section or page for this website and there are Shoutboxes for submitting those upgrades as well.</br>&nbsp; &nbsp; &nbsp; &nbsp; Sumbitting site upgrages can be done in similar fashion as uploading your run videos, "<i><b>Tab Title</b> What's being upgraded [<b>keyword(s) for this upgrade</b>] Where the code is hosted (<b>code link</b>)</i>". Tab title is the title that will be in the tab (must be short). What's being upgraded may be like <i>new page</i>, <i>new navbar</i>, <i>new page effects</i> etc etc etc. Keyword may be <i>cosmetics</i> or <i>new feature</i> but generally should explain the point of the upgrade in 1 to 3 words. Where the code is hosted should match link data and where the following link directs to. The code link is the link to the code for the upgrade. This site is hosted on IPFS/IPNS and is looking to one day have IPNS folders for each sPAW Run so uploading would be submitting through a decentralized uploader or self-uploading to the folder and it would appear on the site automatically. Submitting upgrades for this upgrade first could be the diffrence between anyone submiting runs to only more technical capable people submitting. Our goal for submitting is to have a decentralized and easy way to upload.</br></br>&nbsp; &nbsp; &nbsp; &nbsp; The next sections have more information for you including the lists of <b>sPAW</b> Runs. Each active run will have information to explain the run inside it's own section from the list and/or will have the list of completion points (if needed). The amount of information may vary but should be as much in text as possible but links to videos/pics are acceptable (<i>no auto play gifs/vids/embeds/links/iframes</i>).
+	 </br></p>
+	</div>
+    <div id='xtra' name='xtras' class='block' style='display:none'>
+	<span style='float:left;width:48vw;'>
+	<h1 align='center' style='align:center;font-size:52px;'><i>Hardware</i></h1>
+	 <p align='left' style='align:left;font-size:20px;'><ol><b class='link11' onclick='window.open("https://www.logitechg.com/en-us/products/gaming-mice.html")' target="_blank" rel='noreffer noopener' title='logitechg.com' style='cursor:pointer;'>Logitech Gaming Mice</b></ol><ol><b class='link11' onclick='window.open("https://www.razer.com/pc/gaming-mice")' target="_blank" rel='noreffer noopener' title='razer.com' style='cursor:pointer;'>Razer Gaming Mice</b></ol><ol><b class='link11' onclick='window.open("https://steelseries.com/gaming-mice")' target="_blank" rel='noreffer noopener' title='steelseries.com' style='cursor:pointer;'>Steelseries Gaming Mice</b></ol>
+	 </p>
+	 </span>
+	<span style='float:left;width:48vw;'>
+	 <h1 align='center' style='align:center;font-size:52px;'><i>Software</i></h1>
+	 <p align='left' style='align:left;font-size:20px;'><ol><b class='link11' onclick='window.open("https://github.com/ThoNohT/NohBoard")' target="_blank" style='cursor:pointer;' title='Github.com'>Official NohBoard Stream Overlay</b></ol><ol><b class='link11' onclick='window.open("https://github.com/DigiMancer3D/NohBoard/blob/master/keyboards/Logitech_Hero_3502/Hero%203502%20ReadMe.txt")' rel='noreffer noopener' title='Github.com' target="_blank" style='cursor:pointer;'>Logitech G502 Hero NohBoard Stream Overlay</b></ol><ol><b class='link11' onclick='window.open("https://livesplit.org")' rel='noreffer noopener' title='livesplit.org' target="_blank" style='cursor:pointer;'>LiveSplit</b></ol><ol><b class='link11' onclick='window.open("https://www.speedrunslive.com/tools")' target="_blank" rel='noreffer noopener' title='speedrunslive.com' style='cursor:pointer;'>SpeedRunsLive</b></ol>
+	 </p>
+	 </span>
+	<span style='float:none;width:96vw;align:center;'>
+	 <h1 align='center' style='align:center;font-size:52px;'><i>Resources</i></h1>
+	 <p align='left' style='align:left;font-size:20px;'><ol><b class='link11' onclick='window.open("https://www.speedrun.com/knowledgebase/resources")' target="_blank" rel='noreffer noopener' title='speedrun.com' style='cursor:pointer;'>Speedrun Knowledge Base</b></ol><ol><b class='link11' onclick='window.open("https://www.streamscheme.com/how-to-add-a-speedrun-timer-on-twitch/")' rel='noreffer noopener' title='streamscheme.com' target="_blank" style='cursor:pointer;'>Setup LiveSplit for Twitch</b></ol><ol><b class='link11' onclick='window.open("https://www.youtube.com/watch?v=b8n5Prwbt3I")' rel='noreffer noopener' title='youtube.com' target="_blank" style='cursor:pointer;'>LiveSplit Install Video for OBS</b></ol>
+	</p>
+	 </span>
+	 </br>
+	 </div>
+    <div id='list' name='lists' class='block' style='display:none'>
+	<span style='float:left;width:96vw;'>
+	<h1 align='center' style='align:center;font-size:52px;'><i>Games</i></h1></br>
+	<div style='width:100vw;align:center;padding-right:1.5vw;' id='glist' >
+	 <span onclick='eldenring();' id='er' class='ering' title='View Elden Ring List' style='cursor:pointer;align:left;left:0;float:left;font-size:40px;width:48vw;padding:1vw;'>Elden Ring</span><span onclick='eldenringclose();' id='erclose' class='ering' title='Close Elden Ring List' style='display:none;'>Elden Ring</span></br><span align='center' style='align:center;font-size:24px;width:98vw;padding:1vw;' id='viewer'></span>
+	 </br>
+	 </div>
+	 </span>
+	</div>
+    <div id='runs' name='runs' class='block' style='display:none'>
+	
+	</div>
+  </div>
+ </div>
+ <footer class='footer' style='align:center;position:center;max-width:96vw;margin:auto;text-shadow:0px 1.25px 6px rgb(190, 101, 22,0.7);'>
+    <span class='bbbb' style="opacity:0.75;font-size:70%;bottom:0;color:grey;" align="center" ><p><b style='cursor:default'>&nbsp;&nbsp;Hosted on IPFS | Crafted by 3Douglas&nbsp;&nbsp;</b></br></br>&nbsp;&nbsp;<b onclick='document.getElementById("genhere").style.display="inline-block";document.getElementById("subtxt3").style.display="none";document.getElementById("subtxt4").style.display="inline-block";document.getElementById("genhere").scrollIntoView();' style='text-decoration:none;color:inherit;cursor:pointer;' id='subtxt3'>&nbsp;&nbsp;Build a Run&nbsp;&nbsp;</b>&nbsp;&nbsp;<b onclick='document.getElementById("genhere").style.display="none";document.getElementById("subtxt3").style.display="inline-block";document.getElementById("subtxt4").style.display="none";' style='text-decoration:none;color:inherit;cursor:pointer;display:none;' id='subtxt4'>&nbsp;&nbsp;Close Generator Box&nbsp;&nbsp;</b>&nbsp;&nbsp;<b onclick='document.getElementById("imphere").style.display="inline-block";document.getElementById("subtxt5").style.display="none";document.getElementById("subtxt6").style.display="inline-block";document.getElementById("impbox").scrollIntoView();' style='text-decoration:none;color:inherit;cursor:pointer;' id='subtxt5'>&nbsp;&nbsp;Import a Run&nbsp;&nbsp;</b>&nbsp;&nbsp;<b onclick='document.getElementById("imphere").style.display="none";document.getElementById("subtxt5").style.display="inline-block";document.getElementById("subtxt6").style.display="none";' style='text-decoration:none;color:inherit;cursor:pointer;display:none;' id='subtxt6'>&nbsp;&nbsp;Close Impot Box&nbsp;&nbsp;</b>&nbsp;&nbsp;</br></br>&nbsp;&nbsp;<b onclick='document.getElementById("subshere").style.display="inline-block";document.getElementById("subtxt1").style.display="none";document.getElementById("subtxt2").style.display="inline-block";document.getElementById("subbox").scrollIntoView();' style='text-decoration:none;color:inherit;cursor:pointer;' id='subtxt1'>&nbsp;&nbsp;Submit New Runs & Upgrades&nbsp;&nbsp;</b><b onclick='document.getElementById("subshere").style.display="none";document.getElementById("subtxt2").style.display="none";document.getElementById("subtxt1").style.display="inline-block";' style='text-decoration:none;color:inherit;cursor:pointer;display:none;' id='subtxt2'>&nbsp;&nbsp;Close Submit Box&nbsp;&nbsp;</b>&nbsp;&nbsp;</br>&nbsp;&nbsp;<b onclick='window.open("https://ipfs.io/ipfs/bafkreifsd5hjd6sdu4ib5khrf6p2tvdrouq5pcqcbyd2vrv7l3uhyhmjxq")' target="_blank" rel="noopener noreferrer" style='text-decoration:none;color:inherit;cursor:pointer;' id='subtxt7'>&nbsp;&nbsp;Read the Wave&nbsp;&nbsp;</b>&nbsp;&nbsp;</p></span>
+ <div id='subshere' class='ftr' style='display:none;text-align:center;font-size:22px;text-shadow:0px 0.75px 5px rgb(0,0,0,0.93);'><p style='text-align:center;'><span id='subbox'><hr style='border-color:rgb(0,0,0,0.24);'><b>Use this shoutbox to submit your new runs, new categories, new feature/upgrades. Please be kind and curtious for this is a public shoutbox that can be sideloaded.</b><hr style='border-color:rgb(0,0,0,0.24);'><iframe WIDTH='99%' HEIGHT='300' title='Shoutbox' src='https://shoutbox.widget.me/start.html?uid=sPAWx0xUploadx0xGeneric0x0all' frameborder='1' scrolling='auto' style='padding:0.5vw;text-align:center;box-shadow:0px 9px 13px rgb(215,225,215,0.53);border-radius:15px;border-width:0px;position:center;margin:auto;opacity:0.88;-webkit-box-reflect: below 0px linear-gradient(to bottom, rgba(0,0,0,0.0), rgba(0,0,0,0.0), rgba(0,0,0,0.0),rgba(0,0,0,0.0),rgba(0,0,0,0.0), rgba(0,0,0,0.0),rgba(0,0,0,0.0), rgba(0,0,0,0.0),rgba(0,0,0,0.0), rgba(0,0,0,0.0), rgba(0,0,0,0.0), rgba(0,0,0,0.0), rgba(0,0,0,0.0),rgba(0,0,0,0.0),rgba(0,0,0,0.0), rgba(0,0,0,0.0),rgba(0,0,0,0.0), rgba(0,0,0,0.0),rgba(0,0,0,0.0), rgba(0,0,0,0.0), rgba(0,0,0,0.0), rgba(0,0,0,0.0),rgba(0,0,0,0.0),rgba(0,0,0,0.0), rgba(0,0,0,0.0), rgba(0,0,0,0.0), rgba(0,0,0,0.5)); box-reflect: below 0px linear-gradient(to bottom, rgba(0,0,0,0.0), rgba(0,0,0,0.0), rgba(0,0,0,0.0), rgba(0,0,0,0.0), rgba(0,0,0,0.0), rgba(0,0,0,0.0),rgba(0,0,0,0.0), rgba(0,0,0,0.0),rgba(0,0,0,0.0), rgba(0,0,0,0.0),rgba(0,0,0,0.0),rgba(0,0,0,0.0), rgba(0,0,0,0.0),rgba(0,0,0,0.0), rgba(0,0,0,0.0),rgba(0,0,0,0.0), rgba(0,0,0,0.0), rgba(0,0,0,0.0),rgba(0,0,0,0.0), rgba(0,0,0,0.0),rgba(0,0,0,0.0), rgba(0,0,0,0.0),rgba(0,0,0,0.0), rgba(0,0,0,0.0),rgba(0,0,0,0.0), rgba(0,0,0,0.0), rgba(0,0,0,0.5));'></iframe></span></p><hr style='border-color:rgb(0,0,0,0.24);'></div>
+ 
+ <div id='genhere' class='ftr2' style='display:none;text-align:center;font-size:22px;text-shadow:0px 0.75px 5px rgb(0,0,0,0.93);position:center;align:center;'><p style='text-align:center;'><span id='subbox'><hr style='border-color:rgb(0,0,0,0.24);'><b>Use this generator to generate a run for importing.</b><hr style='border-color:rgb(0,0,0,0.24);'><span style='background-color:rgb(0,0,0,0.4);color:orange;'><b id='q1'>Is your run for a game that's on here right now?</br><button class='button0' onclick='document.getElementById("q1").style.display="none";document.getElementById("q1a").style.display="inline-block";document.getElementById("q1").style.display="inline-block";q1y();' >Yes</button> &nbsp; <button class='button0' onclick='document.getElementById("q1").style.display="none";q1n();' >No</button></b></br><b id='q1a' style='display:none'></b></br></br><b id='q2' style='display:none'>Insert Run Info:</br> sPAW <select id='q2select' class='button0' onfocus='document.getElementById("q2oblank").style="display:none";' onchange='document.getElementById("glh2").innerHTML=document.getElementById("q2select").value;' ><option id='q2oblank' name='0' value='0' class='button0' selected>Pick ...</option><option class='button0' id='q2o1' name='A' value='A'>A</option><option class='button0' id='q2o2' name='B' value='B'>B</option><option class='button0' id='q2o3' name='C' value='C'>C</option><option class='button0' id='q2o4' name='D' value='D' >D</option><option class='button0' id='q2o5' name='E' value='E'>E</option><option class='button0' id='q2o6' name='F' value='F'>F</option></select> <input class='input1' id='q2input' placeholder='Run Type?' oninput='document.getElementById("glh0").innerHTML=this.value;' /></br>Checkpoints: <select class='button0' id='q2select2' onfocus='document.getElementById("q2oblank2").style="display:none"' onchange='document.getElementById("glh3").innerHTML=document.getElementById("q2select2").value;'><option class='button0' id='q2oblank2' name='0' value='0' selected>Pick ...</option><option class='button0' id='q2o7' name='yes' value='1'>Yes</option><option class='button0' id='q2o8' name='no' value='0' >No</option></select> &nbsp; <button class='button3' onclick='document.getElementById("q2").style.display="none";q2a();' >Next</button></b></br><b id='q2a1'></b><span id='hashoutput' ></span></br><button class='button4' onclick='document.getElementById("genhere").style.display="none";document.getElementById("q2input").value="";document.getElementById("subtxt3").style.display="inline-block";document.getElementById("subtxt4").style.display="inline-block";' >Close Section</button></span></span></p><hr style='border-color:rgb(0,0,0,0.24);'></div>
+ 
+ 
+ <div id='imphere' class='ftr2' style='display:none;text-align:center;font-size:22px;text-shadow:0px 0.75px 5px rgb(0,0,0,0.93);position:center;align:center;'><p style='text-align:center;'><span id='subbox'><hr style='border-color:rgb(0,0,0,0.24);'><b>Use this importer to embed your new runs to use immediately or to share with others.</b><hr style='border-color:rgb(0,0,0,0.24);'><hr style='border-color:rgb(0,0,0,0.24);'><input id='importhash' placeholder='Paste Hash Here' class='input1' /> &nbsp; <button class='button4' onclick='importnow();'>Import</button></span></p></div>
+  
+ 
+ </footer>
+ 
+ <div style='display:none' id='hidden'>
+ <!-- this area is for in-app actions -->
+ <span id='game'></span>
+ <span id='pos'></span>
+ 
+ 
+ <!-- inital run for loading (start) -->
+ <span id='ersubs'>C,End Battles,</span>
+ <span id='ersubs1'>Discover Coe Grace,Rest Gatefront Grace,Talk to Witch at CoE,Obtain Dectus Medallion Half,Discover CoM Grace,Get Dectus Medallion Half,Find Dragoncrest Shield Talisman,Use Stormveil Castle North Pass,Discover South Raya Lucaria Gate Grace,Discover Draconic Tree Sentinel&#039;s Bridge Grace;</span>
+ <span id='ersubsindex'>10,</span>
+ <!-- inital run for loading (end) -->
+ 
+ 
+ <!-- this area is for storing Lowest Best saved times for Sum of Best & New Best comparisson -->
+ <span id='timehister0store'></span> <!-- sum of best goes here -->
+ <span id='timehister1store'></span>
+ <span id='timehister2store'></span>
+ <span id='timehister3store'></span>
+ <span id='timehister4store'></span>
+ <span id='timehister5store'></span>
+ <span id='timehister6store'></span>
+ <span id='timehister7store'></span>
+ <span id='timehister8store'></span>
+ <span id='timehister9store'></span>
+ <span id='timehister10store'></span>
+ 
+ 
+<!-- this area is for exporting -->
+ <span id='glh0'></span> 
+ <span id='glh1'></span>
+ <span id='glh2'></span>
+ <span id='glh3'></span>
+ <span id='glh4'></span>
+ <span id='glh5'></span>
+ 
+ <!-- this area is for importing -->
+ <span id='h0gl'></span> 
+ <span id='h1gl'></span>
+ <span id='h2gl'></span>
+ <span id='h3gl'></span>
+ <span id='h4gl'></span>
+ <span id='h5gl'></span>
+ 
+ </div>
+ </body>
+ <script>
+ 
+ <!-- window.onload = function () {
+ <!-- window.scrollTo(0, 0);
+ <!-- } -->
+
+ <!-- window.scroll(0,0); -->
+ 
+ window.onbeforeunload = function () {
+  window.scrollTo(0, 0);
+}
+ 
+ var fullsh = window.screen.height,
+     fullsw = window.screen.width,
+      avsh  = window.screen.availHeight,
+      avsw  = window.screen.availWidth;
+	  
+var counter = 1;
+	  
+ document.getElementById('content').style.height = avsh;	  
+ 
+ 
+ var bimg = '';
+ 
+ var images = [];
+ images.push('https://ipfs.io/ipfs/QmZe1VhMpGB7qVgnwnt8fzrf39hH4fAC5GZZ322xYgiTkq','https://ipfs.io/ipfs/bafybeig5be7oqkobi4lkspzve7kgka2ww6f6ho6t3xbboyijfricp4xm6i');
+ 
+ if(images.length > 1){
+ var il = Number(images.length);
+ var picker1 = Math.floor(Math.random()*(Number(il)));
+ bimg = images[picker1];
+ //document.getElementById('main').innerHTML = il + " :: " + picker1; <!--debugger-->
+ }
+ else {
+ bimg = images[0];
+ }
+ 
+ 
+ 
+ 
+ function scrollcheck() {
+  if(document.querySelectorAll('#landing').length >= 1){
+   if(document.getElementById('landing').display != "none" || document.getElementById('landing').visibility != "hidden") {
+    parallaxintro();
+   }
+  }
+  
+  
+ }
+ 
+ 
+ function parallaxintro() {
+ 
+ document.getElementById('landing').style = "display:inline-block;height:"+avsh+";";
+ 
+
+ document.getElementById('main').style = "display:inline-block;height:"+avsh+";width:"+avsw+";";
+ document.getElementById('about').style = "display:inline-block;height:"+avsh+";animation: fadein 0.73s 1 ease-in-out;";
+ 
+ document.getElementById('body').style = "height:"+fullsh+";background-image: url("+bimg+");background-repeat: no-repeat; background-attachment: fixed; background-position: center; background-size:100vh;";
+ 
+ document.getElementById('landing').style = "animation: fadeout 0.89s 1 ease-in-out;";
+ 
+ setTimeout(function() {document.getElementById('landing').remove();}, (600));
+ window.scroll(0,0);
+ document.getElementById('xtra').style = "display:inline-block;text-align:center;";
+ document.getElementById('list').style = "display:inline-block;text-align:center;";
+ }
+ 
+ 
+ function eldenring() {
+ document.getElementById('game').innerHTML = 'er';
+	 
+	 var ersubs = [];
+ 
+ document.getElementById('viewer').innerHTML = "<div style='width:73%;align:right;float:right;visibility:hidden;' id='padd'>&nbsp;This shouldn't show up&nbsp;</div><span style='font-size:48px;width:73%;align:right;float:right;display:none;' id='spawc'><b>sPAW C</b></br><iframe WIDTH='70%' HEIGHT='300' title='Shoutbox' src='https://shoutbox.widget.me/start.html?uid=EldenRing0x0sPAW0x0C' frameborder='1' scrolling='auto' style='padding:0.5vw;text-align:center;box-shadow:0px 0px 23px rgb(155,205,155,0.63);border-radius:1.5vw;border-width:0px;'></iframe></span><img src='https://upload.wikimedia.org/wikipedia/en/thumb/b/b9/Elden_Ring_Box_art.jpg/220px-Elden_Ring_Box_art.jpg' style='width:22%;align:right;right:0;float:right;position:top;' ></img><div style='width:73%;align:right;float:right;visibility:hidden;' id='padd2'>&nbsp;This shouldn't show up&nbsp;</br></div><span style='font-size:24px;width:22%;align:right;right:0;float:right;position:bottom;'><span id='mdata' ></span></span><span id='checks' style='display:none'></br><h1 style='font-size:52px'><b>Checkpoints</b></h1></br><div id='points'></div></span><span id='finrun'></span></span>";
+ 
+ <!-- <div style='display:float;float:left;padding:0.5vw;align:center;width:98vw;' id='er1' ><button class='playbtn' id='player1' onclick='document.getElementById(&#034;pos&#034;).innerHTML=&#034;1&#034;;starttimer();this.remove();'>START</button><button class='stopbtn' style='display:none' id='stoper1' onclick='document.getElementById(&#034;pos&#034;).innerHTML=&#034;1&#034;;this.remove();stoptimer();'>STOP</button> &nbsp; <span>CoE Grace</span> &nbsp; <span id='timeouter1'>00:00::00.00</span> &nbsp; <span id='differ1'></span> &nbsp; <span id='timehister1'></span></div><div style='display:float;float:left;padding:0.5vw;align:center;width:98vw;' id='er2' ><button class='playbtn' id='player2' onclick='document.getElementById(&#034;pos&#034;).innerHTML=&#034;2&#034;;starttimer();this.remove();' style='display:none;'>START</button><button style='display:none' class='stopbtn' id='stoper2' onclick='document.getElementById(&#034;pos&#034;).innerHTML=&#034;2&#034;;this.remove();stoptimer();'>STOP</button> &nbsp; <span>Gatefront Grace</span> <span id='timeouter2'>00:00::00.00</span> &nbsp; <span id='differ1'></span> &nbsp; <span id='timehister2'></span></div> -->
+
+ document.getElementById('mdata').innerHTML = "</br><span class='ering' style='cursor:pointer' onclick='showrun1()' ><b>sPAW C</b> [End Battles] </span></br></br>";
+
+ document.getElementById('erclose').style = "display:inline-block;cursor:pointer;align:left;left:0;float:left;font-size:40px;width:48vw;padding:1vw;";
+ document.getElementById('er').style = "display:none";
+ 
+}
+
+function showrun1(){
+
+ var poson = 1,
+     posoff = 0,
+     gameon = 'er',
+	 erlist = [],
+	 seeme = 'display:inline-block';
+	 
+erlist.push('Discover Coe Grace','Rest Gatefront Grace','Talk to Witch at CoE','Obtain Dectus Medallion Half','Discover CoM Grace','Get Dectus Medallion Half','Find Dragoncrest Shield Talisman','Use Stormveil Castle North Pass','Discover South Raya Lucaria Gate Grace','Discover Draconic Tree Sentinel&#039;s Bridge Grace');	
+
+	 
+ document.getElementById('padd').style='display:none';
+ document.getElementById('padd2').style='display:none';
+document.getElementById('spawc').style='display:inline-block;font-size:48px;width:73%;align:right;float:right;'; 
+	 
+ var nameis =  erlist[posoff], blankpoint = '', erll = erlist.length;
+ 
+ document.getElementById('checks').style='display:inline-block';
+ 
+ do{
+  if(posoff > 0) {
+    seeme = 'display:none';
+  } 
+ 
+ blankpoint = "<div style='display:float;float:left;padding:0.5vw;align:center;width:98vw;' id='"+ gameon + "" + poson +"' ><button class='playbtn' id='play"+ gameon + "" + poson +"' onclick='document.getElementById(&#034;pos&#034;).innerHTML=&#034;"+ poson +"&#034;;starttimer();this.remove();' style='"+seeme+"'>START</button><button class='stopbtn' style='display:none' id='stop"+ gameon + "" + poson +"' onclick='document.getElementById(&#034;pos&#034;).innerHTML=&#034;"+ poson +"&#034;;this.remove();stoptimer(); document.getElementById(&#039;savehere&#039;).style.display = &#039;none&#039;;'>STOP</button> &nbsp; <span>"+ nameis +"</span> &nbsp; <span id='timeout"+ gameon + "" + poson +"'>00:00::00.00</span> &nbsp; <span id='diff"+ gameon + "" + poson +"'></span> &nbsp; <span id='timehist"+ gameon + "" + poson +"'></div>";
+ 
+  if(document.getElementById('timehist'+ gameon + '' + poson + 'store').innerHTML.search(/(\d+|\w+)/) > 0){
+   document.getElementById('timehist'+ gameon + '' + poson).innerHTML = document.getElementById('timehist'+ gameon + '' + poson + 'store').innerHTML;
+ }
+ 
+ document.getElementById('points').innerHTML += blankpoint;
+ 
+ poson = poson + 1;
+ posoff = posoff + 1;
+ nameis = erlist[posoff];
+ 
+ }
+ while(posoff < erll);
+ 
+ 
+ document.getElementById('finrun').innerHTML = "<hr><button style='cursor:pointer;background-color: rgb(150,255,150,0.49);padding: 1vw;font-size:30px;margin: 0.5vw;box-shadow: 0px 0px 3px rgb(125,125,125,0.8);color:orange;border-radius: 15px;border: 2px solid rgb(175,255,175,0.7);-webkit-animation: swobble2 9.36s infinite alternate ease-in-out;animation: swobble2 9.36s infinite alternate ease-in-out;transition-duration: 2s'  class='button' onclick='document.getElementById(&#039;pos&#039;).innerHTML=&#039;1&#039;;poson=1;posoff=0;document.getElementById(&#039;points&#039;).innerHTML=&#039;&#039;;showrun1();jp=1;'>Reset</button> &nbsp; <button style='cursor:pointer;background-color: rgb(150,255,150,0.49);padding: 1vw;font-size:30px;margin: 0.5vw;box-shadow: 0px 0px 3px rgb(125,125,125,0.8);color:orange;border-radius: 15px;border: 2px solid rgb(175,255,175,0.7);-webkit-animation: swobble4 9.36s infinite alternate ease-in-out;animation: swobble4 9.36s infinite alternate ease-in-out;transition-duration: 2s' class='button3' onclick='document.getElementById(&#039;"+ gameon + "1&#039;).style=&#039;display:none;&#039;;document.getElementById(&#039;checks&#039;).style=&#039;display:none;&#039;;document.getElementById(&#039;points&#039;).innerHTML=&#039;&#039;;document.getElementById(&#039;spawc&#039;).style=&#039;display:none&#039;;document.getElementById(&#039;finrun&#039;).innerHTML=&#039;&#039;;document.getElementById(&#039;padd&#039;).style=&#039;display:inline-block;width:73%;align:right;float:right;visibility:hidden;&#039;;document.getElementById(&#039;padd2&#039;).style=&#039;display:inline-block;width:73%;align:right;float:right;visibility:hidden;&#039;;jp=1;'>Close</button>";
+ }
+ 
+ function eldenringclose() {
+ 
+ document.getElementById('game').innerHTML = '';
+	 
+ var ersubs = '';
+ 
+ document.getElementById('viewer').innerHTML = '';
+ 
+ 
+ document.getElementById('er').style = "display:inline-block;cursor:pointer;align:left;left:0;float:left;font-size:40px;width:48vw;padding:1vw;";
+ document.getElementById('erclose').style = "display:none";
+ 
+ }
+ 
+ 
+  var timer;
+ 
+ 
+ function starttimer() {
+ var whereat = document.getElementById('game').innerHTML + "" + document.getElementById('pos').innerHTML;
+ var timeis = 0.0, hris = 0, minis = 0, secis = 0;
+ timer = setInterval(function timeon() {
+ timeis = timeis + 1;
+ 
+ if(timeis < 261.0189) {
+  timeis = timeis;
+ }
+ 
+ if(timeis > 261.0189) {
+  timeis = timeis -  261.0189; 
+  secis = secis + 1;
+ }
+ 
+ if(secis > 60) {
+  secis = secis - 60; 
+  minis = minis + 1;
+ }
+ 
+ if(minis > 60) {
+  minis = minis - 60;
+  hris = hris + 1;
+  }
+  
+  
+  
+ 
+ document.getElementById('timeout'+whereat).innerHTML = hris + ":" + minis + "::" + secis + "." + timeis.toString().split('.')[0];
+ }, 2);
+ 
+ document.getElementById('stop'+whereat).style.display = "inline-block";
+ 
+ }
+ 
+ 
+ function stoptimer() {
+ clearInterval(timer);
+ var whereat = document.getElementById('game').innerHTML + "" + Number(document.getElementById('pos').innerHTML);
+ var wherenext = Number(document.getElementById('pos').innerHTML) + 1;
+ var whereto = document.getElementById('game').innerHTML + "" +  wherenext;
+ var timeout = document.getElementById('timeout' + whereat).innerHTML.split(':')[0] + "" + document.getElementById('timeout' + whereat).innerHTML.split(':')[1].split('::')[0] + "" + document.getElementById('timeout' + whereat).innerHTML.split('::')[1].split('.')[0];
+ var timehis = 0, timefrom = 0;
+ 
+ document.getElementById("play" + whereto).style = "display:inline-block;animation: fadein 0.49s 1 ease-in-out;";
+ 
+ 
+ 
+ if(document.getElementById('timehist' + whereto + 'store').innerHTML.search(/(\w+|\d+)/) > 0) { <!-- is there anything is stored history (store) -->
+  timefrom = document.getElementById('timehist'+whereto + 'store').innerHTML.split(':')[0] + "" + document.getElementById('timehist' + whereto + 'store').innerHTML.split(':')[1].split('::')[0] + "" + document.getElementById('timehist' + whereto + 'store').innerHTML.split('::')[1].split('.')[0];
+ }
+ 
+ if(document.getElementById('timehist' + whereto).innerHTML.search(/(\w+|\d+)/) > 0) { <!-- is there anything in history (hist) -->
+  timehis = document.getElementById('timehist'+whereto).innerHTML.split(':')[0] + "" + document.getElementById('timehist' + whereto).innerHTML.split(':')[1].split('::')[0] + "" + document.getElementById('timehist' + whereto).innerHTML.split('::')[1].split('.')[0];
+ }
+   
+   if(timeout < timefrom && timehis > timefrom || timeout < timehis && timefrom > timehis) {
+    document.getElementById('timehist'+whereat).innerHTML = document.getElementById('timeout'+whereat).innerHTML; <!-- timeout is lowest -->
+   }
+   else if(timefrom < timeout && timehis > timeout || timefrom < timehis && timeout > timehis){
+    document.getElementById('timehist'+whereat).innerHTML = document.getElementById('timeout'+whereat + 'store').innerHTML; <!-- timefrom is lowest (stored history) -->
+   }
+   else if(timehis < timeout && timefrom > timeout || timehis < timefrom && timeout > timefrom){
+    document.getElementById('timehist'+whereat).innerHTML = document.getElementById('timehist'+whereat).innerHTML; <!-- timehis is lowest (history) -->
+   }
+   else {
+    document.getElementById('timehist'+whereat).innerHTML = document.getElementById('timeout'+whereat).innerHTML; <!-- Nothing in history (hist) -->
+   }
+ 
+ var jbs = timeout, tbs = '', slingblade = 0;
+ 
+ saveer(); <!-- this may not be in the besst part and we may be able to move this function in here as apart of here natively but idk if thta's worth it -->
+ 
+if(timefrom <= timehis){
+ tbs = timefrom;
+}
+else {
+ tbs = timehis;
+}
+
+if(Number(jbs) === "0" || Number(tbs) === "0") {
+ document.getElementById('diff'+whereat).innerHTML = "--";
+}
+else { 
+ slingblade = Math.abs(Number(jbs) - Number(tbs));
+ document.getElementById('diff'+whereat).innerHTML = slingblade;
+}
+ 
+
+ 
+ var ghe = document.getElementById('diff'+whereat).innerHTML;
+ 
+ if(ghe !== "--") {
+ 
+ if(ghe.search('-') === "-1") {
+  document.getElementById('diff'+whereat).style = "color:green";
+ }   
+ if(ghe < Math.floor(timehis*0.5)) {
+  document.getElementById('diff'+whereat).style = "color:gold";
+ }   
+  if(ghe.search('-') >= 0) {
+   document.getElementById('diff'+whereat).style = "color:red";
+ }
+ 
+ }
+ 
+ 
+ }
+ 
+ 
+ function saveer(){
+ var poson = document.getElementById('pos').innerHTML;
+ var timehis2 = 0, timefrom2 = 0; 
+ var wherenext = Number(document.getElementById('pos').innerHTML) + 1;
+ var whereto = document.getElementById('game').innerHTML + "" +  wherenext;
+ var jp = 1; <!-- checkpoints start at 1, checkpoint 0 is for full run times -->
+ var gma = document.getElementById('game').innerHTML;
+ 
+ do{
+ 
+  if(document.getElementById('timehist' + whereto + 'store').innerHTML.search(/\:+/) >= 0) { <!-- is there stored times in stored history (store) -->
+   timefrom2 = document.getElementById('timehist'+whereto + 'store').innerHTML.split(':')[0] + "" + document.getElementById('timehist' + whereto + 'store').innerHTML.split(':')[1].split('::')[0] + "" + document.getElementById('timehist' + whereto + 'store').innerHTML.split('::')[1].split('.')[0];
+  }
+  
+  if(document.getElementById('timehist'+whereto).innerHTML.search(/\:+/) >= 0) { <!-- is there any stored times in history (hist) -->
+   timehis2 = document.getElementById('timeout'+whereto).innerHTML.split(':')[0] + "" + document.getElementById('timeout' + whereto).innerHTML.split(':')[1].split('::')[0] + "" + document.getElementById('timeout' + whereto).innerHTML.split('::')[1].split('.')[0];
+  }
+ 
+   if(timefrom2 < timehis2 && timehis2 === /(\0|0|0?=0+|0+)/){<!-- if timefrom2 is less and no null or 0 is active in history -->
+    document.getElementById('timehist'+ gma + '' + jp + 'store').innerHTML = document.getElementById('timehist'+ gma + '' + jp).innerHTML;
+   }
+   
+    //document.getElementById('timehist'+ document.getElementById('game').innerHTML + '' + jp + 'store').innerHTML = document.getElementById('timehist'+ document.getElementById('game').innerHTML + '' + jp).innerHTML;
+    jp = jp + 1;
+ }
+ while(jp <= poson);
+ jp = 1;
+ //document.getElementById('savehere').style.display='none';
+}
+
+
+function q1y() {
+document.getElementById('q1').style.display='none';
+var giff = document.getElementById('glist');
+//var gifflist = giff.querySelectorAll("span").length;
+var glist = Number(giff.querySelectorAll("span").length)/3;
+var gamelist = [], gidlist = [];
+var gcount = 0;
+var offg = 0;
+
+do{
+gamelist.push(''+giff.querySelectorAll("span")[offg].innerText+'');
+
+gidlist.push(''+giff.querySelectorAll("span")[offg].getAttribute('id')+'');
+
+document.getElementById("q1a").innerHTML += '<button class="button0" onclick="document.getElementById(&#039;glh1&#039;).innerHTML=document.getElementById(&#039;'+gidlist[gcount]+'&#039;).innerText;document.getElementById(&#039;q2&#039;).style.display=&#039;inline-block&#039;;document.getElementById(&#039;q1a&#039;).style.display=&#039;none&#039;;" >' + gamelist[gcount] + '</button>';
+
+gcount = gcount + 1;
+offg = offg + 3;
+}
+while(gcount < gamelist.length);
+document.getElementById("q1a").innerHTML = '<b style="align:center;position:center;">Which Game is Your Run For?</b></br>' + document.getElementById("q1a").innerHTML;
+
+gcount = 0;
+}
+
+function q1n() {
+document.getElementById("q1a").style.display = 'inline-block';
+document.getElementById("q1a").innerHTML = '<b style="align:center;position:center;">What Game is Your Run For?</b></br><input placeholder="Game Title" id="gen1a" oninput="document.getElementById(&#039;glh1&#039;).innerHTML=this.value;document.getElementById(&#039;next1&#039;).style.display=&#039;inline-block&#039;" class="input1"  /> &nbsp; <button class="button4" onclick="document.getElementById(&#039;q2&#039;).style.display=&#039;inline-block&#039;;document.getElementById(&#039;q1a&#039;).style.display&#039;none&#039;;" style="dislay:none;" >Next</button></br>';
+
+}
+
+
+//<b id='q2'>Insert Run Info:</br> sPAW <select id='q2select'><option id='q2oblank' name='0' value='0' selected>Pick ...</option><option id='q2o1' name='A' value='A'  onclick='document.getElementById('glh2').innerHTML=&#039;1&#039;'>A</option><option id='q2o2' name='B' value='B'  onclick='document.getElementById('glh2').innerHTML=&#039;2&#039;'>B</option><option id='q2o3' name='C' value='C'  onclick='document.getElementById('glh2').innerHTML=&#039;3&#039;'>C</option><option id='q2o4' name='D' value='D'  onclick='document.getElementById('glh2').innerHTML=&#039;4&#039;'>D</option><option id='q2o5' name='E' value='E'  onclick='document.getElementById('glh2').innerHTML=&#039;5&#039;'>E</option><option id='q2o6' name='F' value='F'  onclick='document.getElementById('glh2').innerHTML=&#039;6&#039;'>F</option></select> <input id='q2input' placeholder='Run Type?' /> Checkpoints: <select id='q2select2'><option id='q2oblank2' name='0' value='0' selected>Pick ...</option><option id='q2o7' name='yes' value='yes' onclick='document.getElementById('glh3').innerHTML=&#039;1&#039;'>Yes</option><option id='q2o8' name='no' value='no' onclick='document.getElementById('glh3').innerHTML=&#039;0&#039;'>No</option></select>
+
+function q2a() {
+var whoa1 = document.getElementById('glh0').innerHTML, whoa2 = document.getElementById('glh2').innerHTML;
+
+document.getElementById('glh2').innerHTML = whoa2 + ',' + whoa1 + ',';
+document.getElementById('glh0').innerHTML = '';
+
+if(document.getElementById('glh3').innerHTML == "1") {
+ document.getElementById('q2a1').innerHTML = '</br><b style="align:center;position:center;">Insert Checkpoints:</b></br></br><input placeholder="Checkpoint title" id="checkpoint" oninput="document.getElementById(&#039;ready&#039;).style.display=&#039;inline-block&#039;" class="input1" placeholder-color="white" /> &nbsp; <button id="ready" class="button" onclick="document.getElementById(&#039;glh3&#039;).innerHTML+=document.getElementById(&#034;checkpoint&#034;).value + &#039;,&#039;;document.getElementById(&#039;checkpoint&#039;).value=&#039;&#039;;counter=counter+1;document.getElementById(&#039;checkpoint&#039;).value=&#039;&#039;;" >Next Point</button></br><button id="done1" class="button0" onclick="document.getElementById(&#039;hashoutput&#039;).style.display=&#039;inline-block&#039;;hashrun();" >Finish & Add Run</button> &nbsp;&nbsp; <button id="done1" class="button0" onclick="document.getElementById(&#039;hashoutput&#039;).style.display=&#039;inline-block&#039;;hashrun();document.getElementById(&#039;q2a&#039;).style.display=&#039;none&#039;;" >Get Sharable Hash</button></br></br>';
+}
+else {
+document.getElementById('q2a1').innerHTML = '<button id="done1" class="button0" onclick="document.getElementById(&#039;hashoutput&#039;).style.display=&#039;inline-block&#039;;hashrun();" >Finish & Add Run</button> &nbsp;&nbsp; <button id="done1" class="button0" onclick="document.getElementById(&#039;hashoutput&#039;).style.display=&#039;inline-block&#039;;hashrun();document.getElementById(&#039;q2a1&#039;).style.display=&#039;none&#039;;" >Get Sharable Hash</button></br></br>';
+}
+
+
+}
+
+<!-- export -->
+function hashrun() {
+
+var hrun = '', api1 = '', api2 = '0', api3 = '', api4 = '', api5 = '', api6 = '', api1b = '';
+
+if(document.getElementById('glh1').innerHTML !== "") { <!-- game -->
+api1 = document.getElementById('glh1').innerHTML;
+ if(document.getElementById('glh1').innerHTML.search(/\s+/g) >= 0){
+  api1b = document.getElementById('glh1').innerHTML.replace(/\s+/g, "");
+ }
+ else{
+ api1b = ocument.getElementById('glh1').innerHTML;
+ }
+}
+api2 = document.getElementById('glh2').innerHTML; <!-- game run -->
+
+api3 = document.getElementById('glh3').innerHTML; <!-- checkpoints -->
+
+if(document.getElementById('glh4').innerHTML !== "") { <!-- just ran times -->
+api4 = document.getElementById('glh4').innerHTML;
+}
+if(document.getElementById('glh5').innerHTML !== "") { <!-- best history times -->
+api5 = document.getElementById('glh5').innerHTML;
+}
+if(document.getElementById('glh0').innerHTML !== "") { <!-- sum of best (sob) time -->
+api6 = document.getElementById('glh0').innerHTML;
+}
+
+<!-- wave data API structure -->
+var rdata = "|game,.." + api1 + "..,run,.." + api2 + "..,points,.." + api3 + "..,shoutbox,.." + api1b + "0x0sPAW0x0" + api2.toString().split(",")[0] + "x0x" + api2.toString().split(",")[1].split(",")[0] + "0x0" + "..,recent,.." + api4 + "..,hist,.." + api5 + "..,sob,.." + api6 + "..,end|";
+//sob === sum of best
+hrun = "s4" + window.btoa(rdata); <!--4snur dot run is the soloPAW runs hash typed (4s is the front backwards "s4" to be shorthand for sPAW runs) -->
+                             // + "4srun"           <!-- run hashes are some form of game run hash typed -->
+										   
+<!-- wave data api ..,iljq,..   so it looks like (start)|[metadata],..[data]..,[metadata],..[data]..,[..length based on need..],..[data can be any length of information just don't use the marker tags within a data or metadata section]..,end|(end)       markers::  start/end |    v1 seperator:: ,.. & ..,    v2 seperator::  ;,, & ,,;   v3 seperator::  .,{ & },.   v4 seperator::  _|\ & /|_   v5 seperator::   -\| & |/-           ............ [blank metadata is markerless data] -->
+
+if(hrun.toString().search(/=+/) >= 0){
+
+if(hrun.toString().search("==") >= 0){
+hrun = hrun.toString().replace("==", "4snur==");
+}
+else{
+hrun = hrun.toString().replace("=", "4snur=");
+}
+
+}
+
+
+document.getElementById('hashoutput').innerHTML = hrun;
+
+}
+
+
+<!-- example of game -->
+//<span onclick='eldenring();' id='er' class='ering' title='View Elden Ring List' style='cursor:pointer;align:left;left:0;float:left;font-size:40px;width:48vw;padding:1vw;'>Elden Ring</span><span onclick='eldenringclose();' id='erclose' class='ering' title='Close Elden Ring List' style='display:none;'>Elden Ring</span></br><span align='center' style='align:center;font-size:24px;width:98vw;padding:1vw;' id='viewer'></span>
+
+
+<!-- import new game + run -->
+function importnow() {
+
+
+} 
+ 
+<!-- import run -->
+//function importthere() {
+
+
+//} 
+ 
+ 
+ </script>
+ </html>
